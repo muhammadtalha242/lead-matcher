@@ -33,11 +33,14 @@ class AdvancedBusinessMatcher:
             logger.error(f"Failed to load German language model: {e}")
             raise
             
-    def load_data(self, keywords_path: str, sellers_path: str, buyers_path: str) -> None:
+        
+    def load_data(self, keywords_path: str, buyers_path: str, sellers_path: str) -> None:
         """Load and prepare the data with error handling."""
         try:
             # Load keywords and create enhanced synonym dictionary
-            self.keywords_df = pd.read_csv(keywords_path)
+            path_dir = './data/'
+            filePath = f"{path_dir}{keywords_path}"
+            self.keywords_df = pd.read_csv(filePath)
             logger.info(f"Successfully loaded keywords from {keywords_path}")
             
             # Create keyword dictionary with synonyms
@@ -55,14 +58,15 @@ class AdvancedBusinessMatcher:
                         'original': row['Keyword']
                     }
             
-            # Load sellers and buyers data
-            self.sellers_df = pd.read_csv(sellers_path)
-            self.buyers_df = pd.read_csv(buyers_path)
-            logger.info(f"Successfully loaded seller and buyer data")
+            # Load buyers data
+            self.buyers_df = pd.read_csv(f"{path_dir}{buyers_path}")
+            logger.info(f"Successfully loaded buyer data from {buyers_path}")
             
-            # Preprocess descriptions
+            # Load sellers data
+            self.sellers_df = pd.read_csv(f"{path_dir}{sellers_path}")
+            logger.info(f"Successfully loaded seller data from {sellers_path}")
+            
             self._preprocess_descriptions()
-            
         except Exception as e:
             logger.error(f"Error loading data: {e}")
             raise
@@ -71,7 +75,7 @@ class AdvancedBusinessMatcher:
         """Preprocess all descriptions using NLP."""
         try:
             # Process seller descriptions
-            self.sellers_df['processed_description'] = self.sellers_df.apply(
+            self.buyers_df['processed_description'] = self.buyers_df.apply(
                 lambda x: self._process_text(
                     ' '.join(filter(pd.notna, [
                         str(x['Titel']) if pd.notna(x['Titel']) else '',
@@ -83,11 +87,12 @@ class AdvancedBusinessMatcher:
             )
             
             # Process buyer descriptions
-            self.buyers_df['processed_description'] = self.buyers_df.apply(
+            self.sellers_df['processed_description'] = self.sellers_df.apply(
                 lambda x: self._process_text(
                     ' '.join(filter(pd.notna, [
-                        str(x['summary']) if pd.notna(x['summary']) else '',
-                        str(x['long description']) if pd.notna(x['long description']) else ''
+                        str(x['long_description']) if pd.notna(x['long_description']) else '',
+                        str(x['title']) if pd.notna(x['title']) else '',
+                        str(x['description']) if pd.notna(x['description']) else ''
                     ]))
                 ),
                 axis=1
@@ -177,7 +182,7 @@ class AdvancedBusinessMatcher:
             
             # Calculate location score
             buyer_loc = self._extract_location_parts(buyer['location (state + city)'])
-            seller_loc = self._extract_location_parts(seller['location (state + city)'])
+            seller_loc = self._extract_location_parts(seller['location'])
             
             location_matches = 0
             total_locations = 0
@@ -235,16 +240,12 @@ class AdvancedBusinessMatcher:
                     
                     if final_score >= threshold:
                         match_info = {
-                            'buyer_name': buyer['contact details'].split('\n')[0] 
-                                if pd.notna(buyer['contact details']) else 'Unknown',
-                            'seller_id': seller['source (link)'].split('=')[-1] 
-                                if pd.notna(seller['source (link)']) else 'Unknown',
                             'final_score': final_score,
                             'location_score': scores['location'],
                             'keyword_score': scores['keyword'],
                             'semantic_score': scores['semantic'],
                             'buyer_location': buyer['location (state + city)'],
-                            'seller_location': seller['location (state + city)'],
+                            'seller_location': seller['location'],
                             'matching_keywords': self._get_matching_keywords(
                                 buyer['processed_description'],
                                 seller['processed_description']
@@ -306,9 +307,9 @@ def main():
         
         # Load data
         matcher.load_data(
-            keywords_path='dejuna data feed - keywords.csv',
-            sellers_path='dejuna data feed - seller nexxt change.csv',
-            buyers_path='dejuna data feed - buyer dejuna.csv'
+            keywords_path="Updated_Keywords_and_Synonyms.csv",
+            buyers_path="dejuna data feed - buyer dejuna-new.csv",
+            sellers_path="nexxt_change_sales_listings_20241101_005703.csv"
         )
         
         # Find matches

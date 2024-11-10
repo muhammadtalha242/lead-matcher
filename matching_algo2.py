@@ -341,7 +341,9 @@ class BusinessMatcher:
         """Load and prepare the data with error handling."""
         try:
             # Load keywords and create enhanced synonym dictionary
-            self.keywords_df = pd.read_csv(keywords_path)
+            path_dir = './data/'
+            filePath = f"{path_dir}{keywords_path}"
+            self.keywords_df = pd.read_csv(filePath)
             logger.info(f"Successfully loaded keywords from {keywords_path}")
             
             # Create keyword dictionary with synonyms
@@ -360,11 +362,11 @@ class BusinessMatcher:
                     }
             
             # Load buyers data
-            self.buyers_df = pd.read_csv(buyers_path)
+            self.buyers_df = pd.read_csv(f"{path_dir}{buyers_path}")
             logger.info(f"Successfully loaded buyer data from {buyers_path}")
             
             # Load sellers data
-            self.sellers_df = pd.read_csv(sellers_path)
+            self.sellers_df = pd.read_csv(f"{path_dir}{sellers_path}")
             logger.info(f"Successfully loaded seller data from {sellers_path}")
             
         except Exception as e:
@@ -373,6 +375,10 @@ class BusinessMatcher:
 
     def _extract_location_parts(self, location: str) -> Dict[str, Set[str]]:
         """Extract and categorize location parts into states and cities."""
+        """
+        state > city
+        state > city
+        """
         locations = {
             'states': set(),
             'cities': set()
@@ -383,7 +389,8 @@ class BusinessMatcher:
         
         try:
             # Split on common delimiters and clean up
-            parts = re.split(r'[,>\n]\s*', str(location))
+            # parts = re.split(r'[,>\n]\s*', str(location))
+            parts = re.split(r'[>/\n]\s*', str(location))
             for part in parts:
                 part = part.strip().lower()
                 if part:
@@ -398,15 +405,16 @@ class BusinessMatcher:
                     
         except Exception as e:
             logger.error(f"Error extracting location parts: {e}")
-            
+        
         return locations
+
+    #can be improved ===> make it faster
 
     def _check_location_match(self, buyer_loc: str, seller_loc: str) -> Tuple[bool, Set[str]]:
         """Check if locations match and return matching locations."""
         try:
             buyer_locations = self._extract_location_parts(buyer_loc)
             seller_locations = self._extract_location_parts(seller_loc)
-            
             # Check state matches
             matching_states = buyer_locations['states'].intersection(seller_locations['states'])
             
@@ -446,6 +454,7 @@ class BusinessMatcher:
                     
         except Exception as e:
             logger.error(f"Error finding matching keywords: {e}")
+
         return matching_keywords
 
     def _check_keyword_match(self, buyer: pd.Series, seller: pd.Series) -> Tuple[bool, List[str]]:
@@ -467,6 +476,7 @@ class BusinessMatcher:
             ])).lower()
             
             matching_keywords = self._find_matching_keywords(buyer_text, seller_text)
+
             has_match = len(matching_keywords) > 0
             
             return has_match, matching_keywords
@@ -485,9 +495,6 @@ class BusinessMatcher:
                     try:
                         # Check keyword matches
                         has_keyword_match, matching_keywords = self._check_keyword_match(buyer, seller)
-                        if has_keyword_match:
-                            logger.info(f'buyer:{buyer}, text2:{seller} ==>matching_keywords: {matching_keywords}')
-                        
                         # Check location matches using correct column names
                         has_location_match, matching_locations = self._check_location_match(
                             buyer.get('location (state + city)', ''),
@@ -536,14 +543,13 @@ class BusinessMatcher:
         try:
             if not output_path:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                output_path = f'business_matches_{timestamp}.xlsx'
+                output_path = f'./matches/business_matches_{timestamp}.xlsx'
 
             # Create a Pandas Excel writer
             writer = pd.ExcelWriter(output_path, engine='xlsxwriter')
             
             # Convert matches to DataFrame
             matches_df = pd.DataFrame(matches)
-            
             # Convert list columns to strings
             matches_df['matching_keywords'] = matches_df['matching_keywords'].apply(lambda x: ', '.join(x))
             matches_df['matching_locations'] = matches_df['matching_locations'].apply(lambda x: ', '.join(x))
@@ -611,13 +617,12 @@ class BusinessMatcher:
 def main():
     # Initialize matcher
     matcher = BusinessMatcher()
-    
     try:
         # Load data
         matcher.load_data(
-            keywords_path='dejuna data feed - keywords.csv',
-            buyers_path='dejuna data feed - buyer dejuna-new.csv',
-            sellers_path='nexxt_change_sales_listings_20241101_005703.csv'
+            keywords_path="Updated_Keywords_and_Synonyms.csv",
+            buyers_path="dejuna data feed - buyer dejuna-new.csv",
+            sellers_path="nexxt_change_sales_listings_20241101_005703.csv"
         )
         
         # Find matches
