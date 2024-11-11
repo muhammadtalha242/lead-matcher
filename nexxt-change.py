@@ -217,7 +217,7 @@ def main():
         # Visit main page
         driver.get(base_url)
         # total_pages = get_total_pages(driver)
-        total_pages = 200
+        total_pages = 17
         print(f"Found {total_pages} pages to scrape")
         
         # Scrape each page

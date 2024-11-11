@@ -284,8 +284,6 @@ def print_matches(matches: List[Dict]) -> None:
     print("\n=== DETAILED BUSINESS MATCHES ===\n")
     for i, match in enumerate(matches, 1):
         print(f"Match {i}:")
-        print(f"Buyer: {match['buyer_name']}")
-        print(f"Seller ID: {match['seller_id']}")
         print(f"\nScores:")
         print(f"Overall Match Score: {match['final_score']:.2f}")
         print(f"- Location Match: {match['location_score']:.2f}")

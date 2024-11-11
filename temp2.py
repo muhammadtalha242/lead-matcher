@@ -1,56 +1,81 @@
 import pandas as pd
 
-# Creating a dictionary to simulate the structure of the provided CSV data with additional keywords and synonyms.
-data = {
-    "Keyword": ["Tischlerei", "Zimmerei", "Hausverwaltung", "Pension", "Gebäudereinigung", "Textilreinigung", "Heizung Sanitär", "Elektrofirma", 
-                "Dachdeckerei", "Malerfirma", "Metallbau", "Schlosserei", "Bauunternehmen", "Maschinenbau", "Gartenbaubetrieb", "Glaserei", 
-                "Behälterbau", "Tankschutz", "Oberflächenbeschichtung", "Steinmetzbetrieb", "Hausmeisterservice", "Pflegedienst", 
-                "Sanitätshaus", "Zahnarztpraxis", "Arztpraxis", "Tierarztpraxis", "Rechtsanwaltskanzlei", "Steuerberatung", 
-                "Notariat", "Architekturbüro", "Ingenieurbüro", "Fotostudio", "Kosmetikstudio", "Friseursalon", "Reisebüro", 
-                "Musikschule", "Fitnessstudio", "Kunstgalerie", "Landwirtschaft", "Bäckerei", "Metzgerei", "Winzerei", "Brauer", 
-                "Hotel", "Verlag", "Druckerei", "Filmproduktion", "Apotheke", "Supermarkt", "Modegeschäft", "Blumenladen"],
-    "Synonym 1": ["Schreinerei", "Zimmerer", "Immobilienverwaltung", "Frühstückspension", "Reinigungsfirma", "Wäscherei", "Heizungsbau", "Elektrobetrieb", 
-                  "Dachdeckerbetrieb", "Malerbetrieb", "Metallbaufirma", "Schlosser", "Baufirma", "Maschinenbaufirma", "Gartenbaufirma", "Glaser", 
-                  "Behälteranlagen", "Tank-Wartung", "Oberflächenschutz", "Steinmetz", "Hausmeisterfirma", "Ambulanter Pflegedienst", 
-                  "Orthopädietechnik", "Zahnarzt", "Arzt", "Tierarzt", "Anwaltskanzlei", "Steuerberater", 
-                  "Notar", "Architekt", "Engineering", "Fotograf", "Beauty Salon", "Haarstudio", "Reisedienstleistungen", 
-                  "Musikunterricht", "Gym", "Galerie", "Bauernhof", "Bäcker", "Fleischerei", "Weingut", "Brauerei", 
-                  "Unterkunft", "Buchverlag", "Druckhaus", "Videoproduktion", "Pharmazie", "Lebensmittelgeschäft", "Boutique", "Florist"],
-    "Synonym 2": ["Möbelbau", "Holzbau", "Mietsverwaltung", "Herberge", "Facility Management", "Chemische Reinigung", "SHK", "Elektrotechnik", 
-                  "Dachdeckerfirma", "Maler", "Metallbaubetrieb", "Metallverarbeitung", "Bauträger", "Maschinenbauer", "Gartenbauunternehmen", "Glasbau", 
-                  "Industriebehälter", "Tank-Reinigung", "Lackierung", "Natursteinbetrieb", "Hausmeister", "Krankenpflege", 
-                  "Rehatechnik", "Dentalpraxis", "Medizinische Praxis", "Veterinärmedizin", "Rechtsberatung", "Fiscalberatung", 
-                  "Beurkundung", "Planungsbüro", "Baustatik", "Fotoatelier", "Schönheitspflege", "Coiffeur", "Urlaubsplanung", 
-                  "Instrumentalunterricht", "Fitnesstraining", "Kunsthandel", "Agrarbetrieb", "Brotproduktion", "Fleischwaren", "Weinbau", "Bierherstellung", 
-                  "Beherbergungsbetrieb", "Zeitschriftenverlag", "Printservice", "Filmstudio", "Medikamentenverkauf", "Einkaufsmarkt", "Fashion Store", "Blumengeschäft"],
-    "Synonym 3": ["Tischlermeister", "Dachstuhl", "WEG Verwaltung", "Boutique Hotel", "Putzdienst", "Bügelservice", "Heizung Sanitär Klima", "Elektroinstallation", 
-                  "Dachdeckermeister", "Malermeister", "Metallbauer", "Stahlbau", "Baumeister", "Anlagenbau", "Garten- und Landschaftsbau", "Fensterbau", 
-                  "Behälterbeschichtung", "Tank-Instandhaltung", "Beschichtungstechnik", "Grabsteine", "Gebäudeservice", "Altenpflege", 
-                  "Medizintechnik", "Mundhygiene", "Allgemeinmedizin", "Tierklinik", "Juridische Dienste", "Buchprüfung", 
-                  "Beglaubigung", "Bauplanung", "Bauingenieurwesen", "Portraitfotografie", "Kosmetikerin", "Haarpflege", "Travel Agency", 
-                  "Musikakademie", "Sportstudio", "Kunstverkauf", "Agrarwirtschaft", "Konditorei", "Wurstherstellung", "Weinherstellung", "Bierbrauerei", 
-                  "Gastgewerbe", "Verlagswesen", "Druckservice", "Filmgesellschaft", "Pharmazeutika", "Konsum", "Textilhandel", "Blumenhandel"],
-    "Synonym 4": ["Schreinermeister", "Zimmermann", "Property Management", "Gästehaus", "Hausreinigung", "Laundry Service", "Sanitär Heizung Klima", "Elektromeister", 
-                  "Dacharbeiten", "Anstrich", "Metallbauunternehmen", "Geländerbau", "Bauhandwerk", "Engineering", "Gärtnerei", "Spiegelherstellung", 
-                  "Tankbau", "Tank-Reparatur", "Galvanik", "Marmorarbeiten", "Facility Service", "Pflegeheim", 
-                  "Homecare", "Kieferorthopädie", "Facharztpraxis", "Veterinärpraxis", "Anwalt", "Steuerkanzlei", 
-                  "Notariatskanzlei", "Architekturdesign", "Technisches Büro", "Werbefotografie", "Wellnessstudio", "Friseurmeister", "Reisevermittlung", 
-                  "Musikpädagogik", "Wellnesscenter", "Ausstellungsraum", "Landwirt", "Backwaren", "Schlachterei", "Kellerei", "Braukunst", 
-                  "Hotellerie", "Publikationshaus", "Druckproduktion", "Filmherstellung", "Drogerie", "Biomarkt", "Bekleidungsgeschäft", "Gärtnerei"],
-    "Synonym 5": ["Möbelwerkstatt", "Dachdecker", "Immobilienmanagement", "Ferienhaus", "Reinigungsservice", "Kleiderreinigung", "Installateur", "elektrotechnikermeister", 
-                  "Dachsanierung", "Renovierung", "Metallbaumeister", "Schlossermeister", "Baugeschäft", "Industrietechnik", "Landschaftsbau", "Glasbauunternehmen", 
-                  "Tankherstellung", "Tank-Installation", "Beschichtungsservice", "Steinbildhauer", "Gebäudemanagement", "Betreuung", 
-                  "Gesundheitstechnik", "Zahnmedizin", "Mediziner", "Tiermedizin", "Rechtsanwalt", "Tax Consulting", 
-                  "Notariatsservice", "Bauzeichner", "Planungsingenieur", "Bildbearbeitung", "Nagelstudio", "Haarmode", "Reiseberatung", 
-                  "Musikzentrum", "Fitnessclub", "Kunstvermittlung", "Ackerbau", "Bäckereibetrieb", "Metzger", "Weinproduktion", "Bierproduktion", 
-                  "Hospiz", "Medienhaus", "Druckbetrieb", "Medienproduktion", "Apothekenbetrieb", "Einkaufszentrum", "Modegeschäft", "Blumenfachgeschäft"]
+# Load the CSV file into a DataFrame
+input_csv = './data/dejuna data feed - buyer dejuna (2).csv'  # Replace this with your actual file path
+output_csv = 'dejuna_data_feed_updated_detailed.csv'
+
+# Erstellen eines Mappings von Titeln zu Industrie und Sub-Industrie
+mapping = {
+    "Elektroinstallationsfirma oder ein Ingenieurbüro für Gebäudetechnik gesucht": ("Ingenieurdienstleistungen", "Elektroinstallation, Gebäudetechnik, Brandschutztechnik"),
+    "Heizung Sanitärbetrieb im Raum Celle - Hannover gesucht": ("Handwerk", "Heizung, Sanitär, Klima (SHK)"),
+    "Physiotherapeut sucht Praxis in Nürnberg": ("Gesundheitswesen", "Physiotherapie"),
+    "Jungunternehmer sucht Physio-Praxis in Düsseldorf": ("Gesundheitswesen", "Physiotherapie, Fitnessstudios"),
+    "Schreinermeister sucht Tischlerei zur Übernahme": ("Handwerk", "Schreinerei, Möbelbau"),
+    "Geschäftsführer sucht Transportfirma zum Kauf": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "MBI-Kandidat sucht Logistik-Firma": ("Transport und Logistik", "Spedition, Logistikdienstleistungen"),
+    "Führungskraft möchte Logistik-Firma übernehmen": ("Transport und Logistik", "Straßentransport, Spedition"),
+    "Logistik-Berater sucht Firma zur Übernahme": ("Transport und Logistik", "Spedition, Logistikdienstleistungen"),
+    "Logistik-Geschäftsführer sucht Transportunternehmen": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "Disponent möchte sich selbstständig machen": ("Transport und Logistik", "Schüttguttransporte, Schwertransporte"),
+    "Geschäftsführer sucht Dienstleistungsunternehmen": ("Dienstleistungssektor", "Logistikdienstleistungen, Spedition"),
+    "Logistiker sucht Spedition oder Kontrakt-Logistik": ("Transport und Logistik", "Spedition, Kontraktlogistik, Lagerhaltung"),
+    "Geschäftsführer sucht Spedition zur Übernahme": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "Investor kauft Speditionen auf": ("Transport und Logistik", "Spedition, Logistikdienstleistungen"),
+    "Inahber von 2 Speditionen sucht weitere Firmen zum Kauf": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "Umzugsunternehmer sucht Möbelspedition": ("Transport und Logistik", "Umzugsdienste, Möbeltransporte"),
+    "Familienunternehmen sucht Geschäftsfelderweiterung im Schwerlastverkehr": ("Transport und Logistik", "Schwertransporte, Spezialtransporte"),
+    "Unternehmer sucht Transportunternehmen": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "Speditionsgruppe sucht passende Firma zum Kauf": ("Transport und Logistik", "Spedition, Logistikdienstleistungen"),
+    "Logistikgruppe sucht Möbelspedition": ("Transport und Logistik", "Möbeltransporte, Umzugsdienste"),
+    "Logistik-Immobilien gesucht": ("Immobilien und Logistik", "Logistikimmobilien, Containerdienste"),
+    "Geschäftsführer sucht Pflegedienst zur Übernahme": ("Gesundheitswesen", "Ambulanter Pflegedienst, Pflegeleistungen"),
+    "Unternehmen sucht Erweiterung: Tank, Behälter, Heizung, Oberflächenschutz etc.": ("Industriedienstleistungen", "Tankbau, Oberflächenschutz, Industrieanstriche"),
+    "Unternehmer sucht Hausverwaltung zum Kauf": ("Immobilien", "Hausverwaltung"),
+    "Immobilienunternehmer sucht Hausverwaltung": ("Immobilien", "Hausverwaltung"),
+    "Elektroingenieur sucht Elektrofirma zur Übernahme": ("Elektroindustrie", "Elektroinstallation, Kommunikationstechnik"),
+    "Hausverwalter sucht HV zur Übernahme": ("Immobilien", "Hausverwaltung"),
+    "Junger Hausverwalter sucht in Mittelfranken": ("Immobilien", "Hausverwaltung"),
+    "Unternehmer sucht Hausverwaltung": ("Immobilien", "Hausverwaltung"),
+    "Heizungsbaumeister sucht SHK Betrieb": ("Handwerk", "Heizung, Sanitär, Klima (SHK)"),
+    "SHK Betrieb in Sachsen gesucht": ("Handwerk", "Heizung, Sanitär, Klima (SHK)"),
+    "Angehender Heizungsbaumeister sucht SHK Betrieb": ("Handwerk", "Heizung, Sanitär, Klima (SHK)"),
+    "Firma gesucht:Gebäudetechnik oder Brandschutz": ("Ingenieurdienstleistungen", "Gebäudetechnik, Brandschutztechnik"),
+    "Schlossermeister sucht weiteren Schlosserei-Betrieb zur Übernahme.": ("Handwerk", "Metallbau, Schlosserei"),
+    "Schreinermeister sucht Tischlerei": ("Handwerk", "Schreinerei, Tischlerei"),
+    "KFZ-Meister sucht Werkstatt": ("Fahrzeugdienstleistungen", "Kfz-Reparaturwerkstätten"),
+    "Historisches Weingut gesucht": ("Landwirtschaft und Weinbau", "Weinbau, Weingut"),
+    "Geschäftsführer sucht Logistik-Unternehmen": ("Transport und Logistik", "Spezialtransporte, Industrielogistik, Pharmalogistik"),
+    "Maschinenkonstrukteur sucht Maschinenbau-Betrieb": ("Herstellung und Engineering", "Maschinenbau, Anlagenbau"),
+    "Finanzberaterin sucht Versicherungsagentur zur Übernahme": ("Finanzdienstleistungen", "Versicherungsmakler"),
+    "Logistik-Firma sucht Spedition zur Übernahme": ("Transport und Logistik", "Spedition, Transportdienstleistungen"),
+    "Hausverwaltungsgruppe sucht weitere Hausverwaltung": ("Immobilien", "Hausverwaltung"),
+    "Jung-Unternehmer sucht Hausverwaltung zum Kauf": ("Immobilien", "Hausverwaltung"),
+    "Ambulanter Pflegedienst in Süd-Hessen gesucht": ("Gesundheitswesen", "Ambulante Pflege, Pflegedienstleistungen"),
+    "Industriemeister Metall sucht Schlosserei zur Übernahme": ("Handwerk", "Metallbau, Schlosserei"),
+    "Versicherungsmakler sucht Versicherungsagentur": ("Finanzdienstleistungen", "Versicherungsmakler"),
 }
 
-# Convert the dictionary to a DataFrame
-df = pd.DataFrame(data)
+# Lesen der CSV-Datei in einen DataFrame
+df = pd.read_csv(input_csv, encoding='utf-8')
 
-# Save DataFrame as CSV file
-file_path = "Updated_Keywords_and_Synonyms.csv"
-df.to_csv(file_path, index=False)
+# Funktion zum Zuordnen der Industrie und Sub-Industrie basierend auf dem Titel
+def get_industrie(row):
+    titel = row['Titel']
+    if titel in mapping:
+        return mapping[titel][0]
+    else:
+        return 'Unbekannt'
 
-file_path
+def get_sub_industrie(row):
+    titel = row['Titel']
+    if titel in mapping:
+        return mapping[titel][1]
+    else:
+        return 'Unbekannt'
+
+# Neue Spalten 'Industrie' und 'Sub-Industrie' hinzufügen
+df['Industrie'] = df.apply(get_industrie, axis=1)
+df['Sub-Industrie'] = df.apply(get_sub_industrie, axis=1)
+
+# Aktualisierten DataFrame in eine neue CSV-Datei schreiben
+df.to_csv(output_csv, index=False, encoding='utf-8')
