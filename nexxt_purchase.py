@@ -1,23 +1,11 @@
-import pandas as pd
-import logging
-from typing import List, Dict, Set, Tuple
-import re
-from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 import csv
+from datetime import datetime
 import time
-import hashlib
-
-# Set up logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 def setup_driver():
     options = webdriver.ChromeOptions()
@@ -66,7 +54,9 @@ def scrape_ad_details(driver, url):
         
         try:
             # Get Beschreibung content
+            # inserat_details = safe_find_element(driver, By.ID, "inserat-detail")
             detail_box = safe_find_element(driver, By.CLASS_NAME, "inserat-details-detail-box")
+            # detail_box = inserat_details.find_element()
             if detail_box:
                 beschreibung_elements = detail_box.find_elements(By.TAG_NAME, "p")
                 beschreibung_text = "\n".join([safe_get_text(elem) for elem in beschreibung_elements])
@@ -158,12 +148,7 @@ def extract_card_data(card):
     
     return data
 
-def generate_hash(data):
-    """Generate a hash of the combined fields for duplicate detection"""
-    combined_data = f"{data['date']}{data['title']}{data['description']}{data['location']}{data['url']}"
-    return hashlib.sha256(combined_data.encode('utf-8')).hexdigest()
-
-def scrape_listings_from_page(driver, existing_hashes):
+def scrape_listings_from_page(driver):
     listings = []
     
     try:
@@ -179,37 +164,29 @@ def scrape_listings_from_page(driver, existing_hashes):
             try:
                 # Extract basic information from card
                 card_data = extract_card_data(card)
-                # if card_data['url']:
-                # Generate hash for duplicate detection
-                listing_hash = generate_hash(card_data)
                 
-                # Stop scraping if we find a duplicate hash
-                if listing_hash in existing_hashes:
-                    print("Duplicate found. Stopping further scraping.")
-                    print(f"Duplicate URL: {card_data['url']}")
-                    return listings, True
-                
-                # Get detailed information from the ad page
-                print(f"Scraping details for: {card_data['title']}")
-                details = scrape_ad_details(driver, card_data['url'])
-                
-                # Combine all information
-                listing_data = {
-                    **card_data,
-                    'long_description': details.get('long_description', ''),
-                    'standort': '; '.join(details.get('Standort', '')),
-                    'branchen': '; '.join(details.get('Branchen', [])),
-                    'mitarbeiter': details.get('Anzahl Mitarbeiter', ''),
-                    'jahresumsatz': details.get('Letzter Jahresumsatz', ''),
-                    'preisvorstellung': details.get('Preisvorstellung', ''),
-                    'international': details.get('Internationale Tätigkeit', '')
-                }
-                
-                listings.append(listing_data)
-                print(f"Successfully scraped: {card_data['title']} => {card_data['date']}")
-                
-                # Add a small delay between ads
-                time.sleep(1.5)
+                if card_data['url']:  # Only proceed if we got a valid URL
+                    # Get detailed information from the ad page
+                    print(f"Scraping details for: {card_data['title']}")
+                    details = scrape_ad_details(driver, card_data['url'])
+                    
+                    # Combine all information
+                    listing_data = {
+                        **card_data,
+                        'long_description': details.get('long_description', ''),
+                        'standort': '; '.join(details.get('Standort', '')),
+                        'branchen': '; '.join(details.get('Branchen', [])),
+                        'mitarbeiter': details.get('Anzahl Mitarbeiter', ''),
+                        'jahresumsatz': details.get('Letzter Jahresumsatz', ''),
+                        'preisvorstellung': details.get('Preisvorstellung', ''),
+                        'international': details.get('Internationale Tätigkeit', '')
+                    }
+                    
+                    listings.append(listing_data)
+                    print(f"Successfully scraped: {card_data['title']}")
+                    
+                    # Add a small delay between ads
+                    time.sleep(0.5)
                 
             except Exception as e:
                 print(f"Error processing card: {str(e)}")
@@ -218,85 +195,63 @@ def scrape_listings_from_page(driver, existing_hashes):
     except Exception as e:
         print(f"Error processing page: {str(e)}")
     
-    return listings, False
+    return listings
 
-def load_existing_data(filename):
-    """Load existing data from the CSV file to avoid duplicates"""
+def get_total_pages(driver):
     try:
-        df = pd.read_csv(filename)
-        hashes = set()
-        for _, row in df.iterrows():
-            combined_data = f"{row['date']}{row['title']}{row['description']}{row['location']}{row['url']}"
-            listing_hash = hashlib.sha256(combined_data.encode('utf-8')).hexdigest()
-            hashes.add(listing_hash)
-        return hashes
-    except FileNotFoundError:
-        return set()
+        pagination = driver.find_elements(By.CLASS_NAME, "pagination-item")
+        if pagination:
+            last_page = int(pagination[-2].text.strip())
+            return last_page
     except Exception as e:
-        print(f"Error loading existing data: {str(e)}")
-        return set()
+        print(f"Error getting total pages: {str(e)}")
+    return 1
 
 def main():
     driver = setup_driver()
     # base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Verkaufsangebot_Suche/Verkaufsangebotssuche_Formular.html" # sales req
     base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Kaufgesuch_Suche/Kaufgesuche_Formular.html" #purchase request
-    # filename = "./data/nexxt_change_sales_listings.csv"
-    filename = "./data/nexxt_change_purchase_listings.csv"
     all_listings = []
     
-    # Load existing data to avoid duplicates
-    if filename:
-        existing_hashes = load_existing_data(filename)
-    else: 
-        existing_hashes = set()
     try:
-        #LAST SCAPPED TILL: 318
         # Visit main page
         driver.get(base_url)
-        total_pages = 70
-        start_page = 7
+        # total_pages = get_total_pages(driver)
+        total_pages = 2
         print(f"Found {total_pages} pages to scrape")
         
         # Scrape each page
-        for page in range(start_page, start_page+total_pages):
-            print(f"\nScraping page {page} of {start_page+total_pages}")
+        for page in range(1, total_pages + 1):
+            print(f"\nScraping page {page} of {total_pages}")
             
             if page > 1:
-                # page_url = f"{base_url}?gtp=%252676d53c18-299c-4f55-8c88-f79ed3ce6d02_list%253D{page}" # sales page
-                page_url = f"{base_url}?gtp=%252686eb08f2-8f72-4780-a40b-049454c7eccf_list%253D{page}"   # purchase page
-
+                # page_url = f"{base_url}?gtp=%252676d53c18-299c-4f55-8c88-f79ed3ce6d02_list%253D{page}"
+                page_url = f"{base_url}?gtp=%252686eb08f2-8f72-4780-a40b-049454c7eccf_list%253D{page}"
                 driver.get(page_url)
             
-            page_listings, duplicate_found = scrape_listings_from_page(driver, existing_hashes)
+            page_listings = scrape_listings_from_page(driver)
             all_listings.extend(page_listings)
             
-            # Stop scraping if a duplicate is found
-            if duplicate_found:
-                break
-            
             # Add a delay between pages
-            time.sleep(2)
+            time.sleep(1)
         
         # Save results to CSV
-        if all_listings:
-            with open(filename, 'a', newline='', encoding='utf-8') as csvfile:
-                fieldnames = [
-                    'date', 'title', 'description', 'location', 'url',
-                    'long_description','standort', 'branchen', 'mitarbeiter', 'jahresumsatz',
-                    'preisvorstellung', 'international',
-                ]
-                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        # filename = f"nexxt_change_sales_listings_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        filename = f"nexxt_change_purchase_listings_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        
+        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
+            fieldnames = [
+                'date', 'title', 'description', 'location', 'url',
+                'long_description','standort', 'branchen', 'mitarbeiter', 'jahresumsatz',
+                'preisvorstellung', 'international',
+            ]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            
+            writer.writeheader()
+            for listing in all_listings:
+                writer.writerow(listing)
                 
-                # Write only if the file is new
-                if csvfile.tell() == 0:
-                    writer.writeheader()
-                
-                for listing in all_listings:
-                    writer.writerow(listing)
-                    
-            print(f"\nScraping completed. {len(all_listings)} new listings appended to {filename}")
-        else:
-            print("\nNo new listings found to append.")
+        print(f"\nScraping completed. {len(all_listings)} listings saved to {filename}")
         
     except Exception as e:
         print(f"An error occurred: {str(e)}")

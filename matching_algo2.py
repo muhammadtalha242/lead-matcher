@@ -181,11 +181,7 @@ class BusinessMatcher:
             return False
         # Use SequenceMatcher to calculate similarity ratio
         ratio = SequenceMatcher(None, buyer_industry, seller_industry).ratio()
-        if ratio >= 0.5:
-            logger.info(f"buyer_industry{buyer_industry}, seller_industry: {seller_industry}")
-            logger.info(f"=========>ratio: {ratio}")
-            logger.info("<=========>")
-        return ratio >= 0.4  # Lowered threshold to 0.4
+        return ratio >= 0.5  # Lowered threshold to 0.4
 
     def find_matches(self) -> List[Dict]:
         """Find matches requiring both location and keyword matches."""
