@@ -41,7 +41,7 @@ class BusinessMatcher:
                     synonyms = set()
                     synonyms.add(row['Keyword'].lower())
                     
-                    for col in [f'Synonym {i}' for i in range(1, 6)]:
+                    for col in [f'Synonym {i}' for i in range(1, 5)]:
                         if pd.notna(row[col]):
                             synonyms.add(row[col].lower())
                             
@@ -144,9 +144,9 @@ class BusinessMatcher:
         try:
             # Use the correct column names for buyer and seller
             buyer_text = ' '.join(filter(pd.notna, [
-                str(buyer.get('Titel', '')),
-                str(buyer.get('summary', '')),
-                str(buyer.get('long description', '')),
+                str(buyer.get('title', '')),
+                str(buyer.get('description', '')),
+                str(buyer.get('long_description', '')),
                 str(buyer.get('Industrie', '')),
                 str(buyer.get('Sub-Industrie', ''))
             ])).lower()
@@ -176,13 +176,15 @@ class BusinessMatcher:
             str(buyer.get('Sub-Industrie', ''))
         ])).lower()
         
-        seller_industry = str(seller.get('branchen', '')).lower()
-
+        seller_industry = ' '.join(str(seller.get('branchen', '')).lower().split('>'))
         if not buyer_industry or not seller_industry:
             return False
-
         # Use SequenceMatcher to calculate similarity ratio
         ratio = SequenceMatcher(None, buyer_industry, seller_industry).ratio()
+        if ratio >= 0.5:
+            logger.info(f"buyer_industry{buyer_industry}, seller_industry: {seller_industry}")
+            logger.info(f"=========>ratio: {ratio}")
+            logger.info("<=========>")
         return ratio >= 0.4  # Lowered threshold to 0.4
 
     def find_matches(self) -> List[Dict]:
@@ -199,7 +201,7 @@ class BusinessMatcher:
                             continue
                         # Check location matches using correct column names
                         has_location_match, matching_locations = self._check_location_match(
-                            buyer.get('location (state + city)', ''),
+                            buyer.get('location', ''),
                             seller.get('location', '')
                         )
                         if not has_location_match:
@@ -208,11 +210,11 @@ class BusinessMatcher:
                         # Create a match
                         match_info = {
                             # Buyer information
-                            'buyer_name': buyer.get('Titel', ''),
-                            'buyer_location': buyer.get('location (state + city)', ''),
-                            'buyer_summary': buyer.get('summary', ''),
-                            'buyer_title': buyer.get('Titel', ''),
-                            'buyer_long_description': buyer.get('long description', ''),
+                            'buyer_name': buyer.get('title', ''),
+                            'buyer_location': buyer.get('location', ''),
+                            'buyer_summary': buyer.get('description', ''),
+                            'buyer_title': buyer.get('title', ''),
+                            'buyer_long_description': buyer.get('long_description', ''),
                             'buyer_industry': buyer.get('Sub-Industrie', ''),
                             'buyer_contact': buyer.get('contact details', ''),
                             
@@ -233,7 +235,7 @@ class BusinessMatcher:
                         matches.append(match_info)
                     
                     except Exception as e:
-                        logger.error(f"Error processing match for buyer {buyer.get('Titel', 'Unknown')}: {str(e)}")
+                        logger.error(f"Error processing match for buyer {buyer.get('title', 'Unknown')}: {str(e)}")
                         continue
             
         except Exception as e:
@@ -323,7 +325,7 @@ def main():
     try:
         # Load data
         matcher.load_data(
-            keywords_path="Updated_Keywords_and_Synonyms.csv",
+            keywords_path="Updated_Keyword_List_with_Synonyms.csv",
             buyers_path="dejuna_data_feed_updated_detailed.csv",
             sellers_path="nexxt_change_sales_listings_20241101_005703.csv"
         )
@@ -333,7 +335,8 @@ def main():
         logger.info(f"Found {len(matches)} matches")
         
         # Export matches to Excel
-        matcher.export_matches_to_excel(matches)
+        if len(matches)>0:
+            matcher.export_matches_to_excel(matches)
         
     except Exception as e:
         logger.error(f"Error in main execution: {e}")
