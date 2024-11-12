@@ -326,8 +326,8 @@ def main():
         # Load data
         matcher.load_data(
             keywords_path="Updated_Keyword_List_with_Synonyms.csv",
-            buyers_path="dejuna_data_feed_updated_detailed.csv",
-            sellers_path="nexxt_change_sales_listings_20241101_005703.csv"
+            buyers_path="buyer_dejuna.csv",
+            sellers_path="nexxt_change_sales_listings.csv"
         )
         
         # Find matches
