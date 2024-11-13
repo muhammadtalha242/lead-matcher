@@ -67,15 +67,21 @@ class EnhancedBusinessMatcher:
 
     def _get_buyer_text_content(self, record: Dict) -> str:
         """Extract and combine relevant text content from a buyer record"""
-        fields = ['Titel', 'summary', 'long description']
-        return ' '.join(self._normalize_text(record.get(field, '')) for field in fields)
+        fields = ['title', 'description', 'long_description']
+                # Include additional business-relevant fields
+        text_content = ' '.join(self._normalize_text(record.get(field, '')) for field in fields)
+        # Include additional business-relevant fields
+        extra_fields = ['Industrie', 'Sub-Industrie']
+        text_content += ' ' + ' '.join(self._normalize_text(record.get(field, '')) for field in extra_fields)
+        return text_content
+
 
     def _get_seller_text_content(self, record: Dict) -> str:
         """Extract and combine relevant text content from a seller record"""
         fields = ['title', 'description', 'long_description']
         text_content = ' '.join(self._normalize_text(record.get(field, '')) for field in fields)
         # Include additional business-relevant fields
-        extra_fields = ['branchen', 'international']
+        extra_fields = ['branchen']
         text_content += ' ' + ' '.join(self._normalize_text(record.get(field, '')) for field in extra_fields)
         return text_content
 
@@ -90,7 +96,8 @@ class EnhancedBusinessMatcher:
             'cities': set()
         }
         
-        parts = re.split(r'[,>\n]\s*', location)
+        # parts = re.split(r'[,>\n]\s*', location)
+        parts = re.split(r'[>/,\n]\s*', str(location))
         for part in parts:
             part = part.strip()
             if part in self.keyword_matcher.german_states:
@@ -166,7 +173,7 @@ class EnhancedBusinessMatcher:
                 
                 # Check location match
                 has_location_match, matching_locations = self._check_location_match(
-                    buyer.get('location (state + city)', ''),
+                    buyer.get('location', ''),
                     {'location': seller.get('location', ''), 'standort': seller.get('standort', '')}
                 )
                 
@@ -184,10 +191,10 @@ class EnhancedBusinessMatcher:
                     'matching_locations': sorted(matching_locations),
                     'buyer_info': {
                         'date': buyer.get('publishing date', ''),
-                        'location': buyer.get('location (state + city)', ''),
-                        'title': buyer.get('Titel', ''),
-                        'summary': buyer.get('summary', ''),
-                        'description': buyer.get('long description', ''),
+                        'location': buyer.get('location', ''),
+                        'title': buyer.get('title', ''),
+                        'description': buyer.get('description', ''),
+                        'description': buyer.get('long_description', ''),
                         'contact': buyer.get('contact details', '')
                     },
                     'seller_info': {
@@ -220,7 +227,7 @@ class EnhancedBusinessMatcher:
             
         if not output_file:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_file = f'business_matches_{timestamp}.xlsx'
+            output_file = f'./matches/business_matches_{timestamp}.xlsx'
             
         try:
             # Convert matches to DataFrame with proper handling of null values
@@ -233,7 +240,7 @@ class EnhancedBusinessMatcher:
                     'Buyer Date': match['buyer_info'].get('date', ''),
                     'Buyer Location': match['buyer_info'].get('location', ''),
                     'Buyer Title': match['buyer_info'].get('title', ''),
-                    'Buyer Summary': match['buyer_info'].get('summary', ''),
+                    'Buyer Summary': match['buyer_info'].get('description', ''),
                     'Buyer Description': match['buyer_info'].get('description', ''),
                     'Buyer Contact': match['buyer_info'].get('contact', ''),
                     'Seller Date': match['seller_info'].get('date', ''),
@@ -293,8 +300,8 @@ def main():
     try:
         # Read input files with proper error handling
         try:
-            buyers_df = pd.read_csv('dejuna data feed - buyer dejuna-new.csv')
-            sellers_df = pd.read_csv('nexxt_change_sales_listings_20241101_005703.csv')
+            buyers_df = pd.read_csv('./data/buyer_dejuna.csv')
+            sellers_df = pd.read_csv('./data/nexxt_change_sales_listings.csv')
         except Exception as e:
             logger.error(f"Error reading input files: {e}")
             raise
