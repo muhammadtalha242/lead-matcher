@@ -6,6 +6,13 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from datetime import datetime
 import numpy as np
+from rapidfuzz import fuzz
+import nltk
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
+german_stop_words = set(stopwords.words('german'))
+
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -42,11 +49,12 @@ class KeywordMatcher:
             return set()
         text = str(text).lower()
         found_categories = set()
-        
+
         for category_id, category in self.categories.items():
-            if any(keyword in text for keyword in category.keywords):
-                found_categories.add(category_id)
-        
+            for keyword in category.keywords:
+                if fuzz.partial_ratio(keyword, text) > 80:
+                    found_categories.add(category_id)
+                    break
         return found_categories
 
 class EnhancedBusinessMatcher:
@@ -60,10 +68,14 @@ class EnhancedBusinessMatcher:
             raise
 
     def _normalize_text(self, text: str) -> str:
-        """Normalize text for consistent matching"""
         if pd.isna(text):
             return ""
-        return str(text).lower().strip()
+        text = str(text).lower()
+        text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
+        text = re.sub(r'\d+', '', text)  # Remove numbers
+        tokens = text.split()
+        tokens = [word for word in tokens if word not in german_stop_words]
+        return ' '.join(tokens)
 
     def _get_buyer_text_content(self, record: Dict) -> str:
         """Extract and combine relevant text content from a buyer record"""
@@ -193,7 +205,7 @@ class EnhancedBusinessMatcher:
                         'date': buyer.get('publishing date', ''),
                         'location': buyer.get('location', ''),
                         'title': buyer.get('title', ''),
-                        'description': buyer.get('description', ''),
+                        'summary': buyer.get('description', ''),
                         'description': buyer.get('long_description', ''),
                         'contact': buyer.get('contact details', '')
                     },
@@ -300,8 +312,8 @@ def main():
     try:
         # Read input files with proper error handling
         try:
-            buyers_df = pd.read_csv('./data/buyer_dejuna.csv')
-            sellers_df = pd.read_csv('./data/nexxt_change_sales_listings.csv')
+            buyers_df = pd.read_csv('./data/buyer_dejuna.csv', encoding='utf-8')
+            sellers_df = pd.read_csv('./data/nexxt_change_sales_listings.csv', encoding='utf-8')
         except Exception as e:
             logger.error(f"Error reading input files: {e}")
             raise
