@@ -238,10 +238,10 @@ def load_existing_data(filename):
 
 def main():
     driver = setup_driver()
-    # base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Verkaufsangebot_Suche/Verkaufsangebotssuche_Formular.html" # sales req
-    base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Kaufgesuch_Suche/Kaufgesuche_Formular.html" #purchase request
-    # filename = "./data/nexxt_change_sales_listings.csv"
-    filename = "./data/nexxt_change_purchase_listings.csv"
+    base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Verkaufsangebot_Suche/Verkaufsangebotssuche_Formular.html" # sales req
+    # base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Kaufgesuch_Suche/Kaufgesuche_Formular.html" #purchase request
+    filename = "./data/nexxt_change_sales_listings_update.csv"
+    # filename = "./data/nexxt_change_purchase_listings.csv"
     all_listings = []
     
     # Load existing data to avoid duplicates
@@ -262,8 +262,8 @@ def main():
             print(f"\nScraping page {page} of {start_page+total_pages}")
             
             if page > 1:
-                # page_url = f"{base_url}?gtp=%252676d53c18-299c-4f55-8c88-f79ed3ce6d02_list%253D{page}" # sales page
-                page_url = f"{base_url}?gtp=%252686eb08f2-8f72-4780-a40b-049454c7eccf_list%253D{page}"   # purchase page
+                page_url = f"{base_url}?gtp=%252676d53c18-299c-4f55-8c88-f79ed3ce6d02_list%253D{page}" # sales page
+                # page_url = f"{base_url}?gtp=%252686eb08f2-8f72-4780-a40b-049454c7eccf_list%253D{page}"   # purchase page
 
                 driver.get(page_url)
             
