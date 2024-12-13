@@ -1,221 +1,318 @@
+# 'deepset/gbert-base'    
+
 import pandas as pd
-import logging
-from typing import List, Dict, Set, Tuple
-import re
+import numpy as np
+import json
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import spacy
+from sklearn.neighbors import BallTree
+import logging
+from geopy.distance import geodesic
+import re
+import nltk
+from nltk.corpus import stopwords
+from datetime import datetime
+from nltk.stem import SnowballStemmer
+from joblib import Parallel, delayed
+import gc
 
+# Download required NLTK data
+nltk.download('stopwords')
+nltk.download('punkt')
+
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
 
-class EnhancedBusinessMatcher:
-    def __init__(self):
-        """Initialize the matcher with NLP components."""
-        self.sellers_df = None
-        self.buyers_df = None
-        # Define common business type keywords
-        self.business_types = {
-            'shk': {'shk', 'sanitär', 'heizung', 'klima', 'sanitärtechnik', 'heizungstechnik'},
-            'elektro': {'elektro', 'elektriker', 'elektroinstallation', 'elektrotechnik', 'elektroinstallationsfirma'}
-        }
-        
-        self.german_states = {
-            'baden-württemberg', 'bayern', 'berlin', 'brandenburg', 'bremen',
-            'hamburg', 'hessen', 'mecklenburg-vorpommern', 'niedersachsen',
-            'nordrhein-westfalen', 'rheinland-pfalz', 'saarland', 'sachsen',
-            'sachsen-anhalt', 'schleswig-holstein', 'thüringen'
-        }
-        
-        # Load NLP model
-        try:
-            self.sentence_model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
-            logger.info("Successfully loaded NLP model")
-        except Exception as e:
-            logger.error(f"Error loading NLP model: {e}")
-            raise
+def preprocess_text(text):
+    if pd.isnull(text):
+        return ''
+    # Lowercase the text
+    text = text.lower()
+    # Remove URLs, emails, and phone numbers
+    text = re.sub(r'http\S+|www.\S+|\S+@\S+|\b\d{10,}\b', '', text)
+    # Remove punctuation and special characters
+    text = re.sub(r'[^a-zA-ZäöüÄÖÜß\s]', '', text)
+    # Remove extra whitespace
+    text = ' '.join(text.split())
+    # Remove stopwords
+    stop_words = set(stopwords.words('german'))
+    tokens = nltk.word_tokenize(text)
+    tokens = [word for word in tokens if word not in stop_words]
+    # Optional: Apply stemming or lemmatization
+    stemmer = SnowballStemmer('german')
+    tokens = [stemmer.stem(word) for word in tokens]
+    # Join tokens back to string
+    text = ' '.join(tokens)
+    return text
 
-    def _get_text_summary(self, row: pd.Series) -> str:
-        """Combine relevant text fields into a single summary."""
-        return ' '.join(filter(pd.notna, [
-            str(row['Titel']) if pd.notna(row['Titel']) else '',
-            str(row['summary']) if pd.notna(row['summary']) else '',
-            str(row['long description']) if pd.notna(row['long description']) else ''
-        ])).lower()
+def flatten_df(df, prefix):
+    flat_records = []
+    for idx, row in df.iterrows():
+        latitudes = row['latitude']
+        longitudes = row['longitude']
+        if isinstance(latitudes, list) and isinstance(longitudes, list):
+            for lat, lon in zip(latitudes, longitudes):
+                if lat is not None and lon is not None and not pd.isnull(lat) and not pd.isnull(lon):
+                    flat_record = row.to_dict()
+                    flat_record['latitude'] = lat
+                    flat_record['longitude'] = lon
+                    flat_records.append(flat_record)
+        else:
+            # Handle cases where latitude and longitude are single values
+            if row['latitude'] is not None and row['longitude'] is not None:
+                flat_record = row.to_dict()
+                flat_records.append(flat_record)
+    return pd.DataFrame(flat_records)
 
-    def _identify_business_type(self, text: str) -> Set[str]:
-        """Identify business types mentioned in the text."""
-        text = text.lower()
-        found_types = set()
-        
-        for btype, keywords in self.business_types.items():
-            if any(keyword in text for keyword in keywords):
-                found_types.add(btype)
-                
-        return found_types
+def combine_text_fields(row):
+    return ' '.join([
+        row.get('title_preprocessed', ''),
+        row.get('description_preprocessed', ''),
+        row.get('long_description_preprocessed', ''),
+        row.get('branchen_preprocessed', '')
+    ])
 
-    def _extract_location_parts(self, location: str) -> Dict[str, Set[str]]:
-        """Extract and categorize location parts into states and cities."""
-        locations = {
-            'states': set(),
-            'cities': set()
-        }
-        
-        if pd.isna(location):
-            return locations
-            
-        parts = re.split(r'[,>\n]\s*', str(location).lower())
-        for part in parts:
-            part = part.strip()
-            if part in self.german_states:
-                locations['states'].add(part)
-            else:
-                # Clean city names
-                city = re.sub(r'^region\s+', '', part)
-                if city:
-                    locations['cities'].add(city)
-                    
-        return locations
+def get_embedding_batch(texts, model, batch_size=64):
+    """
+    Encode texts in batches to optimize memory usage.
+    """
+    embeddings = model.encode(texts, batch_size=batch_size, show_progress_bar=True, convert_to_numpy=True, normalize_embeddings=True)
+    return embeddings.astype('float32')  # Use float32 to save memory
 
-    def _check_location_match(self, buyer_loc: str, seller_loc: str) -> Tuple[bool, Set[str]]:
-        """Check if locations match and return matching locations."""
-        try:
-            buyer_locs = self._extract_location_parts(buyer_loc)
-            seller_locs = self._extract_location_parts(seller_loc)
-            
-            # Check for matches in states or cities
-            matching_states = buyer_locs['states'].intersection(seller_locs['states'])
-            matching_cities = buyer_locs['cities'].intersection(seller_locs['cities'])
-            
-            # Location matches if either states or cities match
-            has_match = bool(matching_states or matching_cities)
-            matching_locations = matching_states.union(matching_cities)
-            
-            # Debug logging
-            logger.debug(f"Buyer locations: {buyer_locs}")
-            logger.debug(f"Seller locations: {seller_locs}")
-            logger.debug(f"Matching locations: {matching_locations}")
-            
-            return has_match, matching_locations
-            
-        except Exception as e:
-            logger.error(f"Error checking location match: {e}")
-            return False, set()
-
-    def _calculate_similarity(self, text1: str, text2: str) -> float:
-        """Calculate semantic similarity between two texts."""
-        try:
-            # Encode texts
-            embedding1 = self.sentence_model.encode(str(text1))
-            embedding2 = self.sentence_model.encode(str(text2))
-            
-            # Calculate cosine similarity
-            similarity = cosine_similarity(
-                embedding1.reshape(1, -1),
-                embedding2.reshape(1, -1)
-            )[0][0]
-            
-            return float(similarity)
-            
-        except Exception as e:
-            logger.error(f"Error calculating similarity: {e}")
-            return 0.0
-
-    def find_matches(self, similarity_threshold: float = 0.3) -> List[Dict]:
-        """Find matches using business type and location matching with semantic similarity."""
-        matches = []
-        
-        try:
-            for _, buyer in self.buyers_df.iterrows():
-                buyer_text = self._get_text_summary(buyer)
-                buyer_types = self._identify_business_type(buyer_text)
-                
-                for _, seller in self.sellers_df.iterrows():
-                    seller_text = self._get_text_summary(seller)
-                    seller_types = self._identify_business_type(seller_text)
-                    
-                    # Check for business type overlap
-                    common_types = buyer_types.intersection(seller_types)
-                    
-                    # Calculate semantic similarity
-                    similarity = self._calculate_similarity(buyer_text, seller_text)
-                    
-                    # Check location matches
-                    has_location_match, matching_locations = self._check_location_match(
-                        buyer['location (state + city)'],
-                        seller['location (state + city)']
-                    )
-                    
-                    # Debug logging
-                    logger.debug(f"Comparing buyer {buyer['contact details']} with seller {seller['source (link)']}")
-                    logger.debug(f"Business types - Buyer: {buyer_types}, Seller: {seller_types}")
-                    logger.debug(f"Location match: {has_location_match}")
-                    logger.debug(f"Similarity score: {similarity}")
-                    
-                    # Create match if criteria are met
-                    if (common_types or similarity >= similarity_threshold) and has_location_match:
-                        match_info = {
-                            'buyer_name': buyer['contact details'].split('\n')[0] 
-                                if pd.notna(buyer['contact details']) else 'Unknown',
-                            'seller_id': seller['source (link)'].split('=')[-1] 
-                                if pd.notna(seller['source (link)']) else 'Unknown',
-                            'semantic_similarity': round(similarity, 3),
-                            'business_types': sorted(common_types),
-                            'buyer_location': buyer['location (state + city)'],
-                            'seller_location': seller['location (state + city)'],
-                            'matching_locations': sorted(matching_locations),
-                            'buyer_summary': buyer['summary'],
-                            'seller_summary': seller['summary']
-                        }
-                        matches.append(match_info)
-            
-            # Sort matches by similarity score
-            matches.sort(key=lambda x: x['semantic_similarity'], reverse=True)
-            
-        except Exception as e:
-            logger.error(f"Error finding matches: {e}")
-            
-        return matches
-
-def print_matches(matches: List[Dict]) -> None:
-    """Print matches with detailed information."""
-    print("\n=== BUSINESS MATCHES ===\n")
-    for i, match in enumerate(matches, 1):
-        print(f"Match {i}:")
-        print(f"Semantic Similarity: {match['semantic_similarity']:.3f}")
-        if match['business_types']:
-            print(f"Business Types: {', '.join(match['business_types'])}")
-        print(f"\nBuyer: {match['buyer_name']}")
-        print(f"Buyer Summary: {match['buyer_summary']}")
-        print(f"\nSeller ID: {match['seller_id']}")
-        print(f"Seller Summary: {match['seller_summary']}")
-        print(f"\nMatching Locations: {', '.join(match['matching_locations'])}")
-        print(f"Buyer Location: {match['buyer_location']}")
-        print(f"Seller Location: {match['seller_location']}")
-        print("-" * 70)
+def is_valid_coordinate(lat, lon):
+    try:
+        lat = float(lat)
+        lon = float(lon)
+        if -90 <= lat <= 90 and -180 <= lon <= 180:
+            return True
+        else:
+            return False
+    except:
+        return False
 
 def main():
-    # Set debug logging
-    logger.setLevel(logging.DEBUG)
-    
-    matcher = EnhancedBusinessMatcher()
-    
-    try:
-        # Load data
-        matcher.sellers_df = pd.read_csv('100_Sample_Seller_Data.csv')
-        matcher.buyers_df = pd.read_csv('100_Sample_Buyer_Data.csv')
-        
-        # Find matches
-        matches = matcher.find_matches()
-        
-        # Print results
-        print_matches("PRINT: ",matches)
-        
-        logger.info(f"Found {len(matches)} matches")
-        
-    except Exception as e:
-        logger.error(f"Error in main execution: {e}")
-        raise
+    # Load updated datasets
+    logging.info('Loading datasets...')
+    buyers_df = pd.read_csv('./data/buyer_dejuna_geocoded.csv')
+    sellers_df = pd.read_csv('./data/nexxt_change_sales_listings_geocoded.csv')
 
-if __name__ == "__main__":
+    # Parse JSON-encoded latitude and longitude lists
+    logging.info('Parsing latitude and longitude...')
+    buyers_df['latitude'] = buyers_df['latitude'].apply(lambda x: json.loads(x) if pd.notnull(x) else [])
+    buyers_df['longitude'] = buyers_df['longitude'].apply(lambda x: json.loads(x) if pd.notnull(x) else [])
+
+    sellers_df['latitude'] = sellers_df['latitude'].apply(lambda x: json.loads(x) if pd.notnull(x) else [])
+    sellers_df['longitude'] = sellers_df['longitude'].apply(lambda x: json.loads(x) if pd.notnull(x) else [])
+
+    # Preprocess buyers' text fields
+    logging.info('Preprocessing buyers\' text fields...')
+    buyers_df['title_preprocessed'] = buyers_df['title'].apply(preprocess_text)
+    buyers_df['description_preprocessed'] = buyers_df['description'].apply(preprocess_text)
+    buyers_df['long_description_preprocessed'] = buyers_df['long_description'].apply(preprocess_text)
+    # Handle cases where 'Industrie' or 'Sub-Industrie' might be missing
+    buyers_df['branchen_preprocessed'] = buyers_df.apply(
+        lambda row: (preprocess_text(row['Industrie']) + " " + preprocess_text(row['Sub-Industrie']))
+                    if 'Industrie' in row and 'Sub-Industrie' in row else preprocess_text(row.get('branchen', '')),
+        axis=1
+    )
+
+    # Preprocess sellers' text fields
+    logging.info('Preprocessing sellers\' text fields...')
+    sellers_df['title_preprocessed'] = sellers_df['title'].apply(preprocess_text)
+    sellers_df['description_preprocessed'] = sellers_df['description'].apply(preprocess_text)
+    sellers_df['long_description_preprocessed'] = sellers_df['long_description'].apply(preprocess_text)
+    sellers_df['branchen_preprocessed'] = sellers_df['branchen'].apply(preprocess_text)
+
+    # Combine text fields
+    logging.info('Combining text fields...')
+    buyers_df['combined_text'] = buyers_df.apply(combine_text_fields, axis=1)
+    sellers_df['combined_text'] = sellers_df.apply(combine_text_fields, axis=1)
+
+    # Flatten buyers and sellers dataframes
+    logging.info('Flattening buyers dataframe...')
+    buyers_flat = flatten_df(buyers_df, 'buyer')
+    logging.info(f'Flattened buyers dataframe: {len(buyers_flat)} records.')
+
+    logging.info('Flattening sellers dataframe...')
+    sellers_flat = flatten_df(sellers_df, 'seller')
+    logging.info(f'Flattened sellers dataframe: {len(sellers_flat)} records.')
+
+    # Filter out invalid coordinates
+    logging.info('Filtering out invalid coordinates...')
+    buyers_flat = buyers_flat[buyers_flat.apply(lambda x: is_valid_coordinate(x['latitude'], x['longitude']), axis=1)]
+    sellers_flat = sellers_flat[sellers_flat.apply(lambda x: is_valid_coordinate(x['latitude'], x['longitude']), axis=1)]
+
+    # Initialize the models
+    logging.info('Loading the Sentence Transformer models...')
+    model_names = [
+        'all-mpnet-base-v2',                               # Top Model
+        # 'paraphrase-multilingual-MiniLM-L12-v2',          # Second Model
+        # 'distiluse-base-multilingual-cased',                         # Third Model
+        # 'paraphrase-multilingual-mpnet-base-v2'
+    ]
+    models = {}
+    for name in model_names:
+        try:
+            logging.info(f"Loading model: {name}")
+            model = SentenceTransformer(name)
+            models[name] = model
+        except Exception as e:
+            logging.error(f"Error loading model {name}: {e}")
+
+    # Encode sellers' combined_text with each model and store in separate arrays
+    seller_embeddings = {}
+    logging.info('Encoding sellers\' text with each model...')
+    for name, model in models.items():
+        logging.info(f"Encoding sellers with model: {name}")
+        # Batch encode to optimize memory usage
+        embeddings = get_embedding_batch(sellers_flat['combined_text'].tolist(), model, batch_size=64)
+        seller_embeddings[name] = embeddings  # Shape: (num_sellers, embedding_dim)
+        # Optionally, delete the combined_text column to save memory
+        # del sellers_flat['combined_text'] 
+        gc.collect()
+
+    # Prepare seller coordinates for BallTree (in radians)
+    logging.info('Preparing BallTree for geographic queries...')
+    seller_coords = np.radians(sellers_flat[['latitude', 'longitude']].astype(float).values)
+    ball_tree = BallTree(seller_coords, metric='haversine')
+
+    # Set similarity threshold per model (optional)
+    similarity_threshold = 0.79  # You can adjust this or set per model
+
+    # Initialize matches list
+    matches = []
+
+    # Earth's radius in kilometers
+    earth_radius = 6371.0
+    radius_km = 50.0
+    radius_rad = radius_km / earth_radius  # Convert km to radians
+
+    total_buyers = len(buyers_flat)
+    logging.info('Starting matching process...')
+    for i, buyer_row in buyers_flat.iterrows():
+        if not is_valid_coordinate(buyer_row['latitude'], buyer_row['longitude']):
+            continue  # Skip invalid buyer coordinates
+
+        buyer_coord = np.radians([float(buyer_row['latitude']), float(buyer_row['longitude'])]).reshape(1, -1)
+        buyer_open_to_foreign = False  # Modify as per your data
+
+        # Adjust the query radius based on openness
+        if buyer_open_to_foreign:
+            current_radius_rad = np.pi  # pi radians ~ 20015 km, effectively no limit
+        else:
+            current_radius_rad = radius_rad  # 50 km radius
+
+        # Query BallTree for sellers within the radius
+        indices = ball_tree.query_radius(buyer_coord, r=current_radius_rad)[0]
+
+        if len(indices) == 0:
+            continue  # No sellers within the specified radius
+
+        # Initialize a dictionary to keep track of matches per model
+        model_matches = {name: [] for name in models.keys()}
+
+        # Encode buyer's combined_text with each model
+        buyer_embeddings = {}
+        for name, model in models.items():
+            buyer_embedding = model.encode(buyer_row['combined_text'], convert_to_numpy=True, normalize_embeddings=True)
+            buyer_embeddings[name] = buyer_embedding.astype('float32').reshape(1, -1)  # Shape: (1, embedding_dim)
+
+        # Compute cosine similarity for each model
+        for name in models.keys():
+            seller_emb = seller_embeddings[name][indices]  # Shape: (num_matched_sellers, embedding_dim)
+            sim_scores = cosine_similarity(buyer_embeddings[name], seller_emb)[0]  # Shape: (num_matched_sellers,)
+            # Determine which sellers exceed the similarity threshold
+            matching_indices = np.where(sim_scores >= similarity_threshold)[0]
+            model_matches[name] = matching_indices
+
+        # Create a set of all matched seller indices across all models
+        all_matched_indices = set()
+        for name, indices_model in model_matches.items():
+            all_matched_indices.update(indices_model)
+
+        # For each matched seller, determine which models matched
+        for seller_idx in all_matched_indices:
+            seller_real_idx = indices[seller_idx]
+            seller_row = sellers_flat.iloc[seller_real_idx]
+
+            # Calculate distance
+            distance = geodesic(
+                (float(buyer_row['latitude']), float(buyer_row['longitude'])),
+                (float(seller_row['latitude']), float(seller_row['longitude']))
+            ).kilometers
+
+            seller_open_to_foreign = False  # Modify as per your data
+
+            # Determine which models matched for this seller
+            matched_models = []
+            for name in models.keys():
+                if seller_idx in model_matches[name]:
+                    matched_models.append(name)
+
+            # Create a dictionary indicating 'Yes'/'No' per model
+            model_match_dict = {}
+            for name in models.keys():
+                model_match_dict[name] = 'Yes' if seller_idx in model_matches[name] else 'No'
+
+            # Store the match
+            match = {
+                'buyer_date': buyer_row.get('date', ''),
+                'buyer_title': buyer_row.get('title', ''),
+                'buyer_summary': buyer_row.get('description', ''),
+                'buyer_long_description': buyer_row.get('long_description', ''),
+                'buyer_location': buyer_row.get('location', ''),
+                'buyer_latitude': buyer_row['latitude'],
+                'buyer_longitude': buyer_row['longitude'],
+                'buyer_open_to_foreign': buyer_open_to_foreign,
+                'seller_date': seller_row.get('date', ''),
+                'seller_title': seller_row.get('title', ''),
+                'seller_summary': seller_row.get('description', ''),
+                'seller_long_description': seller_row.get('long_description', ''),
+                'seller_location': seller_row.get('location', ''),
+                'seller_latitude': seller_row['latitude'],
+                'seller_longitude': seller_row['longitude'],
+                'seller_open_to_foreign': seller_open_to_foreign,
+                'seller_url': seller_row.get('url', ''),
+                'distance_km': distance
+            }
+
+            # Add model match indicators
+            for name in models.keys():
+                match[f'match_{name}'] = model_match_dict[name]
+
+            matches.append(match)
+
+        # Log progress every 50 buyers
+        if (i + 1) % 50 == 0:
+            logging.info(f"Processed {i + 1}/{total_buyers} buyers.")
+
+        # Clear buyer_embeddings to free memory
+        del buyer_embeddings
+        gc.collect()
+
+    # Create DataFrame from matches
+    logging.info('Creating matches DataFrame...')
+    matches_df = pd.DataFrame(matches)
+
+    if not matches_df.empty:
+        # Reorder columns to have model match indicators at the end
+        model_columns = [f'match_{name}' for name in models.keys()]
+        other_columns = [col for col in matches_df.columns if col not in model_columns]
+        matches_df = matches_df[other_columns + model_columns]
+
+        # Save the matches to a CSV file
+        timestamp = datetime.now().strftime("%d_%H-%M")
+        output_path = f'./matches/nlp_business_matches_{timestamp}_similarity_threshold_{similarity_threshold}.csv'
+        matches_df.to_csv(output_path, index=False)
+        logging.info(f'Done=> length:: {len(matches_df)} filename=> {output_path}')
+    else:
+        logging.info('No matches found.')
+
+    # Clean up to free memory
+    del seller_embeddings
+    del sellers_flat
+    del buyers_flat
+    gc.collect()
+
+if __name__ == '__main__':
     main()
