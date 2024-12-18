@@ -1,0 +1,5344 @@
+[
+  {
+    "code": "A",
+    "description": "Agriculture, forestry and fishing",
+    "children": [
+      {
+        "code": "A1",
+        "description": "Crop and animal production, hunting and related service activities",
+        "children": [
+          {
+            "code": "A1.1",
+            "description": "Growing of non-perennial crops",
+            "children": [
+              {
+                "code": "A1.1.1",
+                "description": "Growing of cereals (except rice), leguminous crops and oil seeds",
+                "children": []
+              },
+              {
+                "code": "A1.1.2",
+                "description": "Growing of rice",
+                "children": []
+              },
+              {
+                "code": "A1.1.3",
+                "description": "Growing of vegetables and melons, roots and tubers",
+                "children": []
+              },
+              {
+                "code": "A1.1.4",
+                "description": "Growing of sugar cane",
+                "children": []
+              },
+              {
+                "code": "A1.1.5",
+                "description": "Growing of tobacco",
+                "children": []
+              },
+              {
+                "code": "A1.1.6",
+                "description": "Growing of fibre crops",
+                "children": []
+              },
+              {
+                "code": "A1.1.9",
+                "description": "Growing of other non-perennial crops",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.2",
+            "description": "Growing of perennial crops",
+            "children": [
+              {
+                "code": "A1.2.1",
+                "description": "Growing of grapes",
+                "children": []
+              },
+              {
+                "code": "A1.2.2",
+                "description": "Growing of tropical and subtropical fruits",
+                "children": []
+              },
+              {
+                "code": "A1.2.3",
+                "description": "Growing of citrus fruits",
+                "children": []
+              },
+              {
+                "code": "A1.2.4",
+                "description": "Growing of pome fruits and stone fruits",
+                "children": []
+              },
+              {
+                "code": "A1.2.5",
+                "description": "Growing of other tree and bush fruits and nuts",
+                "children": []
+              },
+              {
+                "code": "A1.2.6",
+                "description": "Growing of oleaginous fruits",
+                "children": []
+              },
+              {
+                "code": "A1.2.7",
+                "description": "Growing of beverage crops",
+                "children": []
+              },
+              {
+                "code": "A1.2.8",
+                "description": "Growing of spices, aromatic, drug and pharmaceutical crops",
+                "children": []
+              },
+              {
+                "code": "A1.2.9",
+                "description": "Growing of other perennial crops",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.3",
+            "description": "Plant propagation",
+            "children": [
+              {
+                "code": "A1.3.0",
+                "description": "Plant propagation",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.4",
+            "description": "Animal production",
+            "children": [
+              {
+                "code": "A1.4.1",
+                "description": "Raising of dairy cattle",
+                "children": []
+              },
+              {
+                "code": "A1.4.2",
+                "description": "Raising of other cattle and buffaloes",
+                "children": []
+              },
+              {
+                "code": "A1.4.3",
+                "description": "Raising of horses and other equines",
+                "children": []
+              },
+              {
+                "code": "A1.4.4",
+                "description": "Raising of camels and camelids",
+                "children": []
+              },
+              {
+                "code": "A1.4.5",
+                "description": "Raising of sheep and goats",
+                "children": []
+              },
+              {
+                "code": "A1.4.6",
+                "description": "Raising of swine/pigs",
+                "children": []
+              },
+              {
+                "code": "A1.4.7",
+                "description": "Raising of poultry",
+                "children": []
+              },
+              {
+                "code": "A1.4.9",
+                "description": "Raising of other animals",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.5",
+            "description": "Mixed farming",
+            "children": [
+              {
+                "code": "A1.5.0",
+                "description": "Mixed farming",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.6",
+            "description": "Support activities to agriculture and post-harvest crop activities",
+            "children": [
+              {
+                "code": "A1.6.1",
+                "description": "Support activities for crop production",
+                "children": []
+              },
+              {
+                "code": "A1.6.2",
+                "description": "Support activities for animal production",
+                "children": []
+              },
+              {
+                "code": "A1.6.3",
+                "description": "Post-harvest crop activities",
+                "children": []
+              },
+              {
+                "code": "A1.6.4",
+                "description": "Seed processing for propagation",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A1.7",
+            "description": "Hunting, trapping and related service activities",
+            "children": [
+              {
+                "code": "A1.7.0",
+                "description": "Hunting, trapping and related service activities",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "A2",
+        "description": "Forestry and logging",
+        "children": [
+          {
+            "code": "A2.1",
+            "description": "Silviculture and other forestry activities",
+            "children": [
+              {
+                "code": "A2.1.0",
+                "description": "Silviculture and other forestry activities",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A2.2",
+            "description": "Logging",
+            "children": [
+              {
+                "code": "A2.2.0",
+                "description": "Logging",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A2.3",
+            "description": "Gathering of wild growing non-wood products",
+            "children": [
+              {
+                "code": "A2.3.0",
+                "description": "Gathering of wild growing non-wood products",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A2.4",
+            "description": "Support services to forestry",
+            "children": [
+              {
+                "code": "A2.4.0",
+                "description": "Support services to forestry",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "A3",
+        "description": "Fishing and aquaculture",
+        "children": [
+          {
+            "code": "A3.1",
+            "description": "Fishing",
+            "children": [
+              {
+                "code": "A3.1.1",
+                "description": "Marine fishing",
+                "children": []
+              },
+              {
+                "code": "A3.1.2",
+                "description": "Freshwater fishing",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "A3.2",
+            "description": "Aquaculture",
+            "children": [
+              {
+                "code": "A3.2.1",
+                "description": "Marine aquaculture",
+                "children": []
+              },
+              {
+                "code": "A3.2.2",
+                "description": "Freshwater aquaculture",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "B",
+    "description": "Mining and quarrying",
+    "children": [
+      {
+        "code": "B5",
+        "description": "Mining of coal and lignite",
+        "children": [
+          {
+            "code": "B5.1",
+            "description": "Mining of hard coal",
+            "children": [
+              {
+                "code": "B5.1.0",
+                "description": "Mining of hard coal",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "B5.2",
+            "description": "Mining of lignite",
+            "children": [
+              {
+                "code": "B5.2.0",
+                "description": "Mining of lignite",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B6",
+        "description": "Extraction of crude petroleum and natural gas",
+        "children": [
+          {
+            "code": "B6.1",
+            "description": "Extraction of crude petroleum",
+            "children": [
+              {
+                "code": "B6.1.0",
+                "description": "Extraction of crude petroleum",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "B6.2",
+            "description": "Extraction of natural gas",
+            "children": [
+              {
+                "code": "B6.2.0",
+                "description": "Extraction of natural gas",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B7",
+        "description": "Mining of metal ores",
+        "children": [
+          {
+            "code": "B7.1",
+            "description": "Mining of iron ores",
+            "children": [
+              {
+                "code": "B7.1.0",
+                "description": "Mining of iron ores",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "B7.2",
+            "description": "Mining of non-ferrous metal ores",
+            "children": [
+              {
+                "code": "B7.2.1",
+                "description": "Mining of uranium and thorium ores",
+                "children": []
+              },
+              {
+                "code": "B7.2.9",
+                "description": "Mining of other non-ferrous metal ores",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B8",
+        "description": "Other mining and quarrying",
+        "children": [
+          {
+            "code": "B8.1",
+            "description": "Quarrying of stone, sand and clay",
+            "children": [
+              {
+                "code": "B8.1.1",
+                "description": "Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate",
+                "children": []
+              },
+              {
+                "code": "B8.1.2",
+                "description": "Operation of gravel and sand pits; mining of clays and kaolin",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "B8.9",
+            "description": "Mining and quarrying n.e.c.",
+            "children": [
+              {
+                "code": "B8.9.1",
+                "description": "Mining of chemical and fertiliser minerals",
+                "children": []
+              },
+              {
+                "code": "B8.9.2",
+                "description": "Extraction of peat",
+                "children": []
+              },
+              {
+                "code": "B8.9.3",
+                "description": "Extraction of salt",
+                "children": []
+              },
+              {
+                "code": "B8.9.9",
+                "description": "Other mining and quarrying n.e.c.",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "B9",
+        "description": "Mining support service activities",
+        "children": [
+          {
+            "code": "B9.1",
+            "description": "Support activities for petroleum and natural gas extraction",
+            "children": [
+              {
+                "code": "B9.1.0",
+                "description": "Support activities for petroleum and natural gas extraction",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "B9.9",
+            "description": "Support activities for other mining and quarrying",
+            "children": [
+              {
+                "code": "B9.9.0",
+                "description": "Support activities for other mining and quarrying",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C",
+    "description": "Manufacturing",
+    "children": []
+  },
+  {
+    "code": "C10",
+    "description": "Manufacture of food products",
+    "children": [
+      {
+        "code": "C10.1",
+        "description": "Processing and preserving of meat and production of meat products",
+        "children": [
+          {
+            "code": "C10.1.1",
+            "description": "Processing and preserving of meat",
+            "children": []
+          },
+          {
+            "code": "C10.1.2",
+            "description": "Processing and preserving of poultry meat",
+            "children": []
+          },
+          {
+            "code": "C10.1.3",
+            "description": "Production of meat and poultry meat products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.2",
+        "description": "Processing and preserving of fish, crustaceans and molluscs",
+        "children": [
+          {
+            "code": "C10.2.0",
+            "description": "Processing and preserving of fish, crustaceans and molluscs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.3",
+        "description": "Processing and preserving of fruit and vegetables",
+        "children": [
+          {
+            "code": "C10.3.1",
+            "description": "Processing and preserving of potatoes",
+            "children": []
+          },
+          {
+            "code": "C10.3.2",
+            "description": "Manufacture of fruit and vegetable juice",
+            "children": []
+          },
+          {
+            "code": "C10.3.9",
+            "description": "Other processing and preserving of fruit and vegetables",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.4",
+        "description": "Manufacture of vegetable and animal oils and fats",
+        "children": [
+          {
+            "code": "C10.4.1",
+            "description": "Manufacture of oils and fats",
+            "children": []
+          },
+          {
+            "code": "C10.4.2",
+            "description": "Manufacture of margarine and similar edible fats",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.5",
+        "description": "Manufacture of dairy products",
+        "children": [
+          {
+            "code": "C10.5.1",
+            "description": "Operation of dairies and cheese making",
+            "children": []
+          },
+          {
+            "code": "C10.5.2",
+            "description": "Manufacture of ice cream",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.6",
+        "description": "Manufacture of grain mill products, starches and starch products",
+        "children": [
+          {
+            "code": "C10.6.1",
+            "description": "Manufacture of grain mill products",
+            "children": []
+          },
+          {
+            "code": "C10.6.2",
+            "description": "Manufacture of starches and starch products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.7",
+        "description": "Manufacture of bakery and farinaceous products",
+        "children": [
+          {
+            "code": "C10.7.1",
+            "description": "Manufacture of bread; manufacture of fresh pastry goods and cakes",
+            "children": []
+          },
+          {
+            "code": "C10.7.2",
+            "description": "Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes",
+            "children": []
+          },
+          {
+            "code": "C10.7.3",
+            "description": "Manufacture of macaroni, noodles, couscous and similar farinaceous products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.8",
+        "description": "Manufacture of other food products",
+        "children": [
+          {
+            "code": "C10.8.1",
+            "description": "Manufacture of sugar",
+            "children": []
+          },
+          {
+            "code": "C10.8.2",
+            "description": "Manufacture of cocoa, chocolate and sugar confectionery",
+            "children": []
+          },
+          {
+            "code": "C10.8.3",
+            "description": "Processing of tea and coffee",
+            "children": []
+          },
+          {
+            "code": "C10.8.4",
+            "description": "Manufacture of condiments and seasonings",
+            "children": []
+          },
+          {
+            "code": "C10.8.5",
+            "description": "Manufacture of prepared meals and dishes",
+            "children": []
+          },
+          {
+            "code": "C10.8.6",
+            "description": "Manufacture of homogenised food preparations and dietetic food",
+            "children": []
+          },
+          {
+            "code": "C10.8.9",
+            "description": "Manufacture of other food products n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C10.9",
+        "description": "Manufacture of prepared animal feeds",
+        "children": [
+          {
+            "code": "C10.9.1",
+            "description": "Manufacture of prepared feeds for farm animals",
+            "children": []
+          },
+          {
+            "code": "C10.9.2",
+            "description": "Manufacture of prepared pet foods",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C11",
+    "description": "Manufacture of beverages",
+    "children": [
+      {
+        "code": "C11.0",
+        "description": "Manufacture of beverages",
+        "children": [
+          {
+            "code": "C11.0.1",
+            "description": "Distilling, rectifying and blending of spirits",
+            "children": []
+          },
+          {
+            "code": "C11.0.2",
+            "description": "Manufacture of wine from grape",
+            "children": []
+          },
+          {
+            "code": "C11.0.3",
+            "description": "Manufacture of cider and other fruit wines",
+            "children": []
+          },
+          {
+            "code": "C11.0.4",
+            "description": "Manufacture of other non-distilled fermented beverages",
+            "children": []
+          },
+          {
+            "code": "C11.0.5",
+            "description": "Manufacture of beer",
+            "children": []
+          },
+          {
+            "code": "C11.0.6",
+            "description": "Manufacture of malt",
+            "children": []
+          },
+          {
+            "code": "C11.0.7",
+            "description": "Manufacture of soft drinks; production of mineral waters and other bottled waters",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C12",
+    "description": "Manufacture of tobacco products",
+    "children": [
+      {
+        "code": "C12.0",
+        "description": "Manufacture of tobacco products",
+        "children": [
+          {
+            "code": "C12.0.0",
+            "description": "Manufacture of tobacco products",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C13",
+    "description": "Manufacture of textiles",
+    "children": [
+      {
+        "code": "C13.1",
+        "description": "Preparation and spinning of textile fibres",
+        "children": [
+          {
+            "code": "C13.1.0",
+            "description": "Preparation and spinning of textile fibres",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C13.2",
+        "description": "Weaving of textiles",
+        "children": [
+          {
+            "code": "C13.2.0",
+            "description": "Weaving of textiles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C13.3",
+        "description": "Finishing of textiles",
+        "children": [
+          {
+            "code": "C13.3.0",
+            "description": "Finishing of textiles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C13.9",
+        "description": "Manufacture of other textiles",
+        "children": [
+          {
+            "code": "C13.9.1",
+            "description": "Manufacture of knitted and crocheted fabrics",
+            "children": []
+          },
+          {
+            "code": "C13.9.2",
+            "description": "Manufacture of made-up textile articles, except apparel",
+            "children": []
+          },
+          {
+            "code": "C13.9.3",
+            "description": "Manufacture of carpets and rugs",
+            "children": []
+          },
+          {
+            "code": "C13.9.4",
+            "description": "Manufacture of cordage, rope, twine and netting",
+            "children": []
+          },
+          {
+            "code": "C13.9.5",
+            "description": "Manufacture of non-wovens and articles made from non-wovens, except apparel",
+            "children": []
+          },
+          {
+            "code": "C13.9.6",
+            "description": "Manufacture of other technical and industrial textiles",
+            "children": []
+          },
+          {
+            "code": "C13.9.9",
+            "description": "Manufacture of other textiles n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C14",
+    "description": "Manufacture of wearing apparel",
+    "children": [
+      {
+        "code": "C14.1",
+        "description": "Manufacture of wearing apparel, except fur apparel",
+        "children": [
+          {
+            "code": "C14.1.1",
+            "description": "Manufacture of leather clothes",
+            "children": []
+          },
+          {
+            "code": "C14.1.2",
+            "description": "Manufacture of workwear",
+            "children": []
+          },
+          {
+            "code": "C14.1.3",
+            "description": "Manufacture of other outerwear",
+            "children": []
+          },
+          {
+            "code": "C14.1.4",
+            "description": "Manufacture of underwear",
+            "children": []
+          },
+          {
+            "code": "C14.1.9",
+            "description": "Manufacture of other wearing apparel and accessories",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C14.2",
+        "description": "Manufacture of articles of fur",
+        "children": [
+          {
+            "code": "C14.2.0",
+            "description": "Manufacture of articles of fur",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C14.3",
+        "description": "Manufacture of knitted and crocheted apparel",
+        "children": [
+          {
+            "code": "C14.3.1",
+            "description": "Manufacture of knitted and crocheted hosiery",
+            "children": []
+          },
+          {
+            "code": "C14.3.9",
+            "description": "Manufacture of other knitted and crocheted apparel",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C15",
+    "description": "Manufacture of leather and related products",
+    "children": [
+      {
+        "code": "C15.1",
+        "description": "Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur",
+        "children": [
+          {
+            "code": "C15.1.1",
+            "description": "Tanning and dressing of leather; dressing and dyeing of fur",
+            "children": []
+          },
+          {
+            "code": "C15.1.2",
+            "description": "Manufacture of luggage, handbags and the like, saddlery and harness",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C15.2",
+        "description": "Manufacture of footwear",
+        "children": [
+          {
+            "code": "C15.2.0",
+            "description": "Manufacture of footwear",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C16",
+    "description": "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
+    "children": [
+      {
+        "code": "C16.1",
+        "description": "Sawmilling and planing of wood",
+        "children": [
+          {
+            "code": "C16.1.0",
+            "description": "Sawmilling and planing of wood",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C16.2",
+        "description": "Manufacture of products of wood, cork, straw and plaiting materials",
+        "children": [
+          {
+            "code": "C16.2.1",
+            "description": "Manufacture of veneer sheets and wood-based panels",
+            "children": []
+          },
+          {
+            "code": "C16.2.2",
+            "description": "Manufacture of assembled parquet floors",
+            "children": []
+          },
+          {
+            "code": "C16.2.3",
+            "description": "Manufacture of other builders' carpentry and joinery",
+            "children": []
+          },
+          {
+            "code": "C16.2.4",
+            "description": "Manufacture of wooden containers",
+            "children": []
+          },
+          {
+            "code": "C16.2.9",
+            "description": "Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C17",
+    "description": "Manufacture of paper and paper products",
+    "children": [
+      {
+        "code": "C17.1",
+        "description": "Manufacture of pulp, paper and paperboard",
+        "children": [
+          {
+            "code": "C17.1.1",
+            "description": "Manufacture of pulp",
+            "children": []
+          },
+          {
+            "code": "C17.1.2",
+            "description": "Manufacture of paper and paperboard",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C17.2",
+        "description": "Manufacture of articles of paper and paperboard",
+        "children": [
+          {
+            "code": "C17.2.1",
+            "description": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard",
+            "children": []
+          },
+          {
+            "code": "C17.2.2",
+            "description": "Manufacture of household and sanitary goods and of toilet requisites",
+            "children": []
+          },
+          {
+            "code": "C17.2.3",
+            "description": "Manufacture of paper stationery",
+            "children": []
+          },
+          {
+            "code": "C17.2.4",
+            "description": "Manufacture of wallpaper",
+            "children": []
+          },
+          {
+            "code": "C17.2.9",
+            "description": "Manufacture of other articles of paper and paperboard",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C18",
+    "description": "Printing and reproduction of recorded media",
+    "children": [
+      {
+        "code": "C18.1",
+        "description": "Printing and service activities related to printing",
+        "children": [
+          {
+            "code": "C18.1.1",
+            "description": "Printing of newspapers",
+            "children": []
+          },
+          {
+            "code": "C18.1.2",
+            "description": "Other printing",
+            "children": []
+          },
+          {
+            "code": "C18.1.3",
+            "description": "Pre-press and pre-media services",
+            "children": []
+          },
+          {
+            "code": "C18.1.4",
+            "description": "Binding and related services",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C18.2",
+        "description": "Reproduction of recorded media",
+        "children": [
+          {
+            "code": "C18.2.0",
+            "description": "Reproduction of recorded media",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C19",
+    "description": "Manufacture of coke and refined petroleum products",
+    "children": [
+      {
+        "code": "C19.1",
+        "description": "Manufacture of coke oven products",
+        "children": [
+          {
+            "code": "C19.1.0",
+            "description": "Manufacture of coke oven products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C19.2",
+        "description": "Manufacture of refined petroleum products",
+        "children": [
+          {
+            "code": "C19.2.0",
+            "description": "Manufacture of refined petroleum products",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C20",
+    "description": "Manufacture of chemicals and chemical products",
+    "children": [
+      {
+        "code": "C20.1",
+        "description": "Manufacture of basic chemicals, fertilisers and nitrogen compounds, plastics and synthetic rubber in primary forms",
+        "children": [
+          {
+            "code": "C20.1.1",
+            "description": "Manufacture of industrial gases",
+            "children": []
+          },
+          {
+            "code": "C20.1.2",
+            "description": "Manufacture of dyes and pigments",
+            "children": []
+          },
+          {
+            "code": "C20.1.3",
+            "description": "Manufacture of other inorganic basic chemicals",
+            "children": []
+          },
+          {
+            "code": "C20.1.4",
+            "description": "Manufacture of other organic basic chemicals",
+            "children": []
+          },
+          {
+            "code": "C20.1.5",
+            "description": "Manufacture of fertilisers and nitrogen compounds",
+            "children": []
+          },
+          {
+            "code": "C20.1.6",
+            "description": "Manufacture of plastics in primary forms",
+            "children": []
+          },
+          {
+            "code": "C20.1.7",
+            "description": "Manufacture of synthetic rubber in primary forms",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C20.2",
+        "description": "Manufacture of pesticides and other agrochemical products",
+        "children": [
+          {
+            "code": "C20.2.0",
+            "description": "Manufacture of pesticides and other agrochemical products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C20.3",
+        "description": "Manufacture of paints, varnishes and similar coatings, printing ink and mastics",
+        "children": [
+          {
+            "code": "C20.3.0",
+            "description": "Manufacture of paints, varnishes and similar coatings, printing ink and mastics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C20.4",
+        "description": "Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",
+        "children": [
+          {
+            "code": "C20.4.1",
+            "description": "Manufacture of soap and detergents, cleaning and polishing preparations",
+            "children": []
+          },
+          {
+            "code": "C20.4.2",
+            "description": "Manufacture of perfumes and toilet preparations",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C20.5",
+        "description": "Manufacture of other chemical products",
+        "children": [
+          {
+            "code": "C20.5.1",
+            "description": "Manufacture of explosives",
+            "children": []
+          },
+          {
+            "code": "C20.5.2",
+            "description": "Manufacture of glues",
+            "children": []
+          },
+          {
+            "code": "C20.5.3",
+            "description": "Manufacture of essential oils",
+            "children": []
+          },
+          {
+            "code": "C20.5.9",
+            "description": "Manufacture of other chemical products n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C20.6",
+        "description": "Manufacture of man-made fibres",
+        "children": [
+          {
+            "code": "C20.6.0",
+            "description": "Manufacture of man-made fibres",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C21",
+    "description": "Manufacture of basic pharmaceutical products and pharmaceutical preparations",
+    "children": [
+      {
+        "code": "C21.1",
+        "description": "Manufacture of basic pharmaceutical products",
+        "children": [
+          {
+            "code": "C21.1.0",
+            "description": "Manufacture of basic pharmaceutical products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C21.2",
+        "description": "Manufacture of pharmaceutical preparations",
+        "children": [
+          {
+            "code": "C21.2.0",
+            "description": "Manufacture of pharmaceutical preparations",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C22",
+    "description": "Manufacture of rubber and plastic products",
+    "children": [
+      {
+        "code": "C22.1",
+        "description": "Manufacture of rubber products",
+        "children": [
+          {
+            "code": "C22.1.1",
+            "description": "Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres",
+            "children": []
+          },
+          {
+            "code": "C22.1.9",
+            "description": "Manufacture of other rubber products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C22.2",
+        "description": "Manufacture of plastics products",
+        "children": [
+          {
+            "code": "C22.2.1",
+            "description": "Manufacture of plastic plates, sheets, tubes and profiles",
+            "children": []
+          },
+          {
+            "code": "C22.2.2",
+            "description": "Manufacture of plastic packing goods",
+            "children": []
+          },
+          {
+            "code": "C22.2.3",
+            "description": "Manufacture of builders’ ware of plastic",
+            "children": []
+          },
+          {
+            "code": "C22.2.9",
+            "description": "Manufacture of other plastic products",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C23",
+    "description": "Manufacture of other non-metallic mineral products",
+    "children": [
+      {
+        "code": "C23.1",
+        "description": "Manufacture of glass and glass products",
+        "children": [
+          {
+            "code": "C23.1.1",
+            "description": "Manufacture of flat glass",
+            "children": []
+          },
+          {
+            "code": "C23.1.2",
+            "description": "Shaping and processing of flat glass",
+            "children": []
+          },
+          {
+            "code": "C23.1.3",
+            "description": "Manufacture of hollow glass",
+            "children": []
+          },
+          {
+            "code": "C23.1.4",
+            "description": "Manufacture of glass fibres",
+            "children": []
+          },
+          {
+            "code": "C23.1.9",
+            "description": "Manufacture and processing of other glass, including technical glassware",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.2",
+        "description": "Manufacture of refractory products",
+        "children": [
+          {
+            "code": "C23.2.0",
+            "description": "Manufacture of refractory products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.3",
+        "description": "Manufacture of clay building materials",
+        "children": [
+          {
+            "code": "C23.3.1",
+            "description": "Manufacture of ceramic tiles and flags",
+            "children": []
+          },
+          {
+            "code": "C23.3.2",
+            "description": "Manufacture of bricks, tiles and construction products, in baked clay",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.4",
+        "description": "Manufacture of other porcelain and ceramic products",
+        "children": [
+          {
+            "code": "C23.4.1",
+            "description": "Manufacture of ceramic household and ornamental articles",
+            "children": []
+          },
+          {
+            "code": "C23.4.2",
+            "description": "Manufacture of ceramic sanitary fixtures",
+            "children": []
+          },
+          {
+            "code": "C23.4.3",
+            "description": "Manufacture of ceramic insulators and insulating fittings",
+            "children": []
+          },
+          {
+            "code": "C23.4.4",
+            "description": "Manufacture of other technical ceramic products",
+            "children": []
+          },
+          {
+            "code": "C23.4.9",
+            "description": "Manufacture of other ceramic products",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.5",
+        "description": "Manufacture of cement, lime and plaster",
+        "children": [
+          {
+            "code": "C23.5.1",
+            "description": "Manufacture of cement",
+            "children": []
+          },
+          {
+            "code": "C23.5.2",
+            "description": "Manufacture of lime and plaster",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.6",
+        "description": "Manufacture of articles of concrete, cement and plaster",
+        "children": [
+          {
+            "code": "C23.6.1",
+            "description": "Manufacture of concrete products for construction purposes",
+            "children": []
+          },
+          {
+            "code": "C23.6.2",
+            "description": "Manufacture of plaster products for construction purposes",
+            "children": []
+          },
+          {
+            "code": "C23.6.3",
+            "description": "Manufacture of ready-mixed concrete",
+            "children": []
+          },
+          {
+            "code": "C23.6.4",
+            "description": "Manufacture of mortars",
+            "children": []
+          },
+          {
+            "code": "C23.6.5",
+            "description": "Manufacture of fibre cement",
+            "children": []
+          },
+          {
+            "code": "C23.6.9",
+            "description": "Manufacture of other articles of concrete, plaster and cement",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.7",
+        "description": "Cutting, shaping and finishing of stone",
+        "children": [
+          {
+            "code": "C23.7.0",
+            "description": "Cutting, shaping and finishing of stone",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C23.9",
+        "description": "Manufacture of abrasive products and non-metallic mineral products n.e.c.",
+        "children": [
+          {
+            "code": "C23.9.1",
+            "description": "Production of abrasive products",
+            "children": []
+          },
+          {
+            "code": "C23.9.9",
+            "description": "Manufacture of other non-metallic mineral products n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C24",
+    "description": "Manufacture of basic metals",
+    "children": [
+      {
+        "code": "C24.1",
+        "description": "Manufacture of basic iron and steel and of ferro-alloys",
+        "children": [
+          {
+            "code": "C24.1.0",
+            "description": "Manufacture of basic iron and steel and of ferro-alloys",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C24.2",
+        "description": "Manufacture of tubes, pipes, hollow profiles and related fittings, of steel",
+        "children": [
+          {
+            "code": "C24.2.0",
+            "description": "Manufacture of tubes, pipes, hollow profiles and related fittings, of steel",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C24.3",
+        "description": "Manufacture of other products of first processing of steel",
+        "children": [
+          {
+            "code": "C24.3.1",
+            "description": "Cold drawing of bars",
+            "children": []
+          },
+          {
+            "code": "C24.3.2",
+            "description": "Cold rolling of narrow strip",
+            "children": []
+          },
+          {
+            "code": "C24.3.3",
+            "description": "Cold forming or folding",
+            "children": []
+          },
+          {
+            "code": "C24.3.4",
+            "description": "Cold drawing of wire",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C24.4",
+        "description": "Manufacture of basic precious and other non-ferrous metals",
+        "children": [
+          {
+            "code": "C24.4.1",
+            "description": "Precious metals production",
+            "children": []
+          },
+          {
+            "code": "C24.4.2",
+            "description": "Aluminium production",
+            "children": []
+          },
+          {
+            "code": "C24.4.3",
+            "description": "Lead, zinc and tin production",
+            "children": []
+          },
+          {
+            "code": "C24.4.4",
+            "description": "Copper production",
+            "children": []
+          },
+          {
+            "code": "C24.4.5",
+            "description": "Other non-ferrous metal production",
+            "children": []
+          },
+          {
+            "code": "C24.4.6",
+            "description": "Processing of nuclear fuel",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C24.5",
+        "description": "Casting of metals",
+        "children": [
+          {
+            "code": "C24.5.1",
+            "description": "Casting of iron",
+            "children": []
+          },
+          {
+            "code": "C24.5.2",
+            "description": "Casting of steel",
+            "children": []
+          },
+          {
+            "code": "C24.5.3",
+            "description": "Casting of light metals",
+            "children": []
+          },
+          {
+            "code": "C24.5.4",
+            "description": "Casting of other non-ferrous metals",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C25",
+    "description": "Manufacture of fabricated metal products, except machinery and equipment",
+    "children": [
+      {
+        "code": "C25.1",
+        "description": "Manufacture of structural metal products",
+        "children": [
+          {
+            "code": "C25.1.1",
+            "description": "Manufacture of metal structures and parts of structures",
+            "children": []
+          },
+          {
+            "code": "C25.1.2",
+            "description": "Manufacture of doors and windows of metal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.2",
+        "description": "Manufacture of tanks, reservoirs and containers of metal",
+        "children": [
+          {
+            "code": "C25.2.1",
+            "description": "Manufacture of central heating radiators and boilers",
+            "children": []
+          },
+          {
+            "code": "C25.2.9",
+            "description": "Manufacture of other tanks, reservoirs and containers of metal",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.3",
+        "description": "Manufacture of steam generators, except central heating hot water boilers",
+        "children": [
+          {
+            "code": "C25.3.0",
+            "description": "Manufacture of steam generators, except central heating hot water boilers",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.4",
+        "description": "Manufacture of weapons and ammunition",
+        "children": [
+          {
+            "code": "C25.4.0",
+            "description": "Manufacture of weapons and ammunition",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.5",
+        "description": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy",
+        "children": [
+          {
+            "code": "C25.5.0",
+            "description": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.6",
+        "description": "Treatment and coating of metals; machining",
+        "children": [
+          {
+            "code": "C25.6.1",
+            "description": "Treatment and coating of metals",
+            "children": []
+          },
+          {
+            "code": "C25.6.2",
+            "description": "Machining",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.7",
+        "description": "Manufacture of cutlery, tools and general hardware",
+        "children": [
+          {
+            "code": "C25.7.1",
+            "description": "Manufacture of cutlery",
+            "children": []
+          },
+          {
+            "code": "C25.7.2",
+            "description": "Manufacture of locks and hinges",
+            "children": []
+          },
+          {
+            "code": "C25.7.3",
+            "description": "Manufacture of tools",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C25.9",
+        "description": "Manufacture of other fabricated metal products",
+        "children": [
+          {
+            "code": "C25.9.1",
+            "description": "Manufacture of steel drums and similar containers",
+            "children": []
+          },
+          {
+            "code": "C25.9.2",
+            "description": "Manufacture of light metal packaging",
+            "children": []
+          },
+          {
+            "code": "C25.9.3",
+            "description": "Manufacture of wire products, chain and springs",
+            "children": []
+          },
+          {
+            "code": "C25.9.4",
+            "description": "Manufacture of fasteners and screw machine products",
+            "children": []
+          },
+          {
+            "code": "C25.9.9",
+            "description": "Manufacture of other fabricated metal products n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C26",
+    "description": "Manufacture of computer, electronic and optical products",
+    "children": [
+      {
+        "code": "C26.1",
+        "description": "Manufacture of electronic components and boards",
+        "children": [
+          {
+            "code": "C26.1.1",
+            "description": "Manufacture of electronic components",
+            "children": []
+          },
+          {
+            "code": "C26.1.2",
+            "description": "Manufacture of loaded electronic boards",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.2",
+        "description": "Manufacture of computers and peripheral equipment",
+        "children": [
+          {
+            "code": "C26.2.0",
+            "description": "Manufacture of computers and peripheral equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.3",
+        "description": "Manufacture of communication equipment",
+        "children": [
+          {
+            "code": "C26.3.0",
+            "description": "Manufacture of communication equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.4",
+        "description": "Manufacture of consumer electronics",
+        "children": [
+          {
+            "code": "C26.4.0",
+            "description": "Manufacture of consumer electronics",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.5",
+        "description": "Manufacture of instruments and appliances for measuring, testing and navigation; watches and clocks",
+        "children": [
+          {
+            "code": "C26.5.1",
+            "description": "Manufacture of instruments and appliances for measuring, testing and navigation",
+            "children": []
+          },
+          {
+            "code": "C26.5.2",
+            "description": "Manufacture of watches and clocks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.6",
+        "description": "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+        "children": [
+          {
+            "code": "C26.6.0",
+            "description": "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.7",
+        "description": "Manufacture of optical instruments and photographic equipment",
+        "children": [
+          {
+            "code": "C26.7.0",
+            "description": "Manufacture of optical instruments and photographic equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C26.8",
+        "description": "Manufacture of magnetic and optical media",
+        "children": [
+          {
+            "code": "C26.8.0",
+            "description": "Manufacture of magnetic and optical media",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C27",
+    "description": "Manufacture of electrical equipment",
+    "children": [
+      {
+        "code": "C27.1",
+        "description": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",
+        "children": [
+          {
+            "code": "C27.1.1",
+            "description": "Manufacture of electric motors, generators and transformers",
+            "children": []
+          },
+          {
+            "code": "C27.1.2",
+            "description": "Manufacture of electricity distribution and control apparatus",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C27.2",
+        "description": "Manufacture of batteries and accumulators",
+        "children": [
+          {
+            "code": "C27.2.0",
+            "description": "Manufacture of batteries and accumulators",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C27.3",
+        "description": "Manufacture of wiring and wiring devices",
+        "children": [
+          {
+            "code": "C27.3.1",
+            "description": "Manufacture of fibre optic cables",
+            "children": []
+          },
+          {
+            "code": "C27.3.2",
+            "description": "Manufacture of other electronic and electric wires and cables",
+            "children": []
+          },
+          {
+            "code": "C27.3.3",
+            "description": "Manufacture of wiring devices",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C27.4",
+        "description": "Manufacture of electric lighting equipment",
+        "children": [
+          {
+            "code": "C27.4.0",
+            "description": "Manufacture of electric lighting equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C27.5",
+        "description": "Manufacture of domestic appliances",
+        "children": [
+          {
+            "code": "C27.5.1",
+            "description": "Manufacture of electric domestic appliances",
+            "children": []
+          },
+          {
+            "code": "C27.5.2",
+            "description": "Manufacture of non-electric domestic appliances",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C27.9",
+        "description": "Manufacture of other electrical equipment",
+        "children": [
+          {
+            "code": "C27.9.0",
+            "description": "Manufacture of other electrical equipment",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C28",
+    "description": "Manufacture of machinery and equipment n.e.c.",
+    "children": [
+      {
+        "code": "C28.1",
+        "description": "Manufacture of general-purpose machinery",
+        "children": [
+          {
+            "code": "C28.1.1",
+            "description": "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",
+            "children": []
+          },
+          {
+            "code": "C28.1.2",
+            "description": "Manufacture of fluid power equipment",
+            "children": []
+          },
+          {
+            "code": "C28.1.3",
+            "description": "Manufacture of other pumps and compressors",
+            "children": []
+          },
+          {
+            "code": "C28.1.4",
+            "description": "Manufacture of other taps and valves",
+            "children": []
+          },
+          {
+            "code": "C28.1.5",
+            "description": "Manufacture of bearings, gears, gearing and driving elements",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C28.2",
+        "description": "Manufacture of other general-purpose machinery",
+        "children": [
+          {
+            "code": "C28.2.1",
+            "description": "Manufacture of ovens, furnaces and furnace burners",
+            "children": []
+          },
+          {
+            "code": "C28.2.2",
+            "description": "Manufacture of lifting and handling equipment",
+            "children": []
+          },
+          {
+            "code": "C28.2.3",
+            "description": "Manufacture of office machinery and equipment (except computers and peripheral equipment)",
+            "children": []
+          },
+          {
+            "code": "C28.2.4",
+            "description": "Manufacture of power-driven hand tools",
+            "children": []
+          },
+          {
+            "code": "C28.2.5",
+            "description": "Manufacture of non-domestic cooling and ventilation equipment",
+            "children": []
+          },
+          {
+            "code": "C28.2.9",
+            "description": "Manufacture of other general-purpose machinery n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C28.3",
+        "description": "Manufacture of agricultural and forestry machinery",
+        "children": [
+          {
+            "code": "C28.3.0",
+            "description": "Manufacture of agricultural and forestry machinery",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C28.4",
+        "description": "Manufacture of metal forming machinery and machine tools",
+        "children": [
+          {
+            "code": "C28.4.1",
+            "description": "Manufacture of metal forming machinery",
+            "children": []
+          },
+          {
+            "code": "C28.4.9",
+            "description": "Manufacture of other machine tools",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C28.9",
+        "description": "Manufacture of other special-purpose machinery",
+        "children": [
+          {
+            "code": "C28.9.1",
+            "description": "Manufacture of machinery for metallurgy",
+            "children": []
+          },
+          {
+            "code": "C28.9.2",
+            "description": "Manufacture of machinery for mining, quarrying and construction",
+            "children": []
+          },
+          {
+            "code": "C28.9.3",
+            "description": "Manufacture of machinery for food, beverage and tobacco processing",
+            "children": []
+          },
+          {
+            "code": "C28.9.4",
+            "description": "Manufacture of machinery for textile, apparel and leather production",
+            "children": []
+          },
+          {
+            "code": "C28.9.5",
+            "description": "Manufacture of machinery for paper and paperboard production",
+            "children": []
+          },
+          {
+            "code": "C28.9.6",
+            "description": "Manufacture of plastics and rubber machinery",
+            "children": []
+          },
+          {
+            "code": "C28.9.9",
+            "description": "Manufacture of other special-purpose machinery n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C29",
+    "description": "Manufacture of motor vehicles, trailers and semi-trailers",
+    "children": [
+      {
+        "code": "C29.1",
+        "description": "Manufacture of motor vehicles",
+        "children": [
+          {
+            "code": "C29.1.0",
+            "description": "Manufacture of motor vehicles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C29.2",
+        "description": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers",
+        "children": [
+          {
+            "code": "C29.2.0",
+            "description": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C29.3",
+        "description": "Manufacture of parts and accessories for motor vehicles",
+        "children": [
+          {
+            "code": "C29.3.1",
+            "description": "Manufacture of electrical and electronic equipment for motor vehicles",
+            "children": []
+          },
+          {
+            "code": "C29.3.2",
+            "description": "Manufacture of other parts and accessories for motor vehicles",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C30",
+    "description": "Manufacture of other transport equipment",
+    "children": [
+      {
+        "code": "C30.1",
+        "description": "Building of ships and boats",
+        "children": [
+          {
+            "code": "C30.1.1",
+            "description": "Building of ships and floating structures",
+            "children": []
+          },
+          {
+            "code": "C30.1.2",
+            "description": "Building of pleasure and sporting boats",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C30.2",
+        "description": "Manufacture of railway locomotives and rolling stock",
+        "children": [
+          {
+            "code": "C30.2.0",
+            "description": "Manufacture of railway locomotives and rolling stock",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C30.3",
+        "description": "Manufacture of air and spacecraft and related machinery",
+        "children": [
+          {
+            "code": "C30.3.0",
+            "description": "Manufacture of air and spacecraft and related machinery",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C30.4",
+        "description": "Manufacture of military fighting vehicles",
+        "children": [
+          {
+            "code": "C30.4.0",
+            "description": "Manufacture of military fighting vehicles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C30.9",
+        "description": "Manufacture of transport equipment n.e.c.",
+        "children": [
+          {
+            "code": "C30.9.1",
+            "description": "Manufacture of motorcycles",
+            "children": []
+          },
+          {
+            "code": "C30.9.2",
+            "description": "Manufacture of bicycles and invalid carriages",
+            "children": []
+          },
+          {
+            "code": "C30.9.9",
+            "description": "Manufacture of other transport equipment n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C31",
+    "description": "Manufacture of furniture",
+    "children": [
+      {
+        "code": "C31.0",
+        "description": "Manufacture of furniture",
+        "children": [
+          {
+            "code": "C31.0.1",
+            "description": "Manufacture of office and shop furniture",
+            "children": []
+          },
+          {
+            "code": "C31.0.2",
+            "description": "Manufacture of kitchen furniture",
+            "children": []
+          },
+          {
+            "code": "C31.0.3",
+            "description": "Manufacture of mattresses",
+            "children": []
+          },
+          {
+            "code": "C31.0.9",
+            "description": "Manufacture of other furniture",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C32",
+    "description": "Other manufacturing",
+    "children": [
+      {
+        "code": "C32.1",
+        "description": "Manufacture of jewellery, bijouterie and related articles",
+        "children": [
+          {
+            "code": "C32.1.1",
+            "description": "Striking of coins",
+            "children": []
+          },
+          {
+            "code": "C32.1.2",
+            "description": "Manufacture of jewellery and related articles",
+            "children": []
+          },
+          {
+            "code": "C32.1.3",
+            "description": "Manufacture of imitation jewellery and related articles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C32.2",
+        "description": "Manufacture of musical instruments",
+        "children": [
+          {
+            "code": "C32.2.0",
+            "description": "Manufacture of musical instruments",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C32.3",
+        "description": "Manufacture of sports goods",
+        "children": [
+          {
+            "code": "C32.3.0",
+            "description": "Manufacture of sports goods",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C32.4",
+        "description": "Manufacture of games and toys",
+        "children": [
+          {
+            "code": "C32.4.0",
+            "description": "Manufacture of games and toys",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C32.5",
+        "description": "Manufacture of medical and dental instruments and supplies",
+        "children": [
+          {
+            "code": "C32.5.0",
+            "description": "Manufacture of medical and dental instruments and supplies",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C32.9",
+        "description": "Manufacturing n.e.c.",
+        "children": [
+          {
+            "code": "C32.9.1",
+            "description": "Manufacture of brooms and brushes",
+            "children": []
+          },
+          {
+            "code": "C32.9.9",
+            "description": "Other manufacturing n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C33",
+    "description": "Repair and installation of machinery and equipment",
+    "children": [
+      {
+        "code": "C33.1",
+        "description": "Repair of fabricated metal products, machinery and equipment",
+        "children": [
+          {
+            "code": "C33.1.1",
+            "description": "Repair of fabricated metal products",
+            "children": []
+          },
+          {
+            "code": "C33.1.2",
+            "description": "Repair of machinery",
+            "children": []
+          },
+          {
+            "code": "C33.1.3",
+            "description": "Repair of electronic and optical equipment",
+            "children": []
+          },
+          {
+            "code": "C33.1.4",
+            "description": "Repair of electrical equipment",
+            "children": []
+          },
+          {
+            "code": "C33.1.5",
+            "description": "Repair and maintenance of ships and boats",
+            "children": []
+          },
+          {
+            "code": "C33.1.6",
+            "description": "Repair and maintenance of aircraft and spacecraft",
+            "children": []
+          },
+          {
+            "code": "C33.1.7",
+            "description": "Repair and maintenance of other transport equipment",
+            "children": []
+          },
+          {
+            "code": "C33.1.9",
+            "description": "Repair of other equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "C33.2",
+        "description": "Installation of industrial machinery and equipment",
+        "children": [
+          {
+            "code": "C33.2.0",
+            "description": "Installation of industrial machinery and equipment",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "D",
+    "description": "Electricity, gas, steam and air conditioning supply",
+    "children": []
+  },
+  {
+    "code": "D35",
+    "description": "Electricity, gas, steam and air conditioning supply",
+    "children": [
+      {
+        "code": "D35.1",
+        "description": "Electric power generation, transmission and distribution",
+        "children": [
+          {
+            "code": "D35.1.1",
+            "description": "Production of electricity",
+            "children": []
+          },
+          {
+            "code": "D35.1.2",
+            "description": "Transmission of electricity",
+            "children": []
+          },
+          {
+            "code": "D35.1.3",
+            "description": "Distribution of electricity",
+            "children": []
+          },
+          {
+            "code": "D35.1.4",
+            "description": "Trade of electricity",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "D35.2",
+        "description": "Manufacture of gas; distribution of gaseous fuels through mains",
+        "children": [
+          {
+            "code": "D35.2.1",
+            "description": "Manufacture of gas",
+            "children": []
+          },
+          {
+            "code": "D35.2.2",
+            "description": "Distribution of gaseous fuels through mains",
+            "children": []
+          },
+          {
+            "code": "D35.2.3",
+            "description": "Trade of gas through mains",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "D35.3",
+        "description": "Steam and air conditioning supply",
+        "children": [
+          {
+            "code": "D35.3.0",
+            "description": "Steam and air conditioning supply",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E",
+    "description": "Water supply; sewerage; waste managment and remediation activities",
+    "children": []
+  },
+  {
+    "code": "E36",
+    "description": "Water collection, treatment and supply",
+    "children": [
+      {
+        "code": "E36.0",
+        "description": "Water collection, treatment and supply",
+        "children": [
+          {
+            "code": "E36.0.0",
+            "description": "Water collection, treatment and supply",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E37",
+    "description": "Sewerage",
+    "children": [
+      {
+        "code": "E37.0",
+        "description": "Sewerage",
+        "children": [
+          {
+            "code": "E37.0.0",
+            "description": "Sewerage",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E38",
+    "description": "Waste collection, treatment and disposal activities; materials recovery",
+    "children": [
+      {
+        "code": "E38.1",
+        "description": "Waste collection",
+        "children": [
+          {
+            "code": "E38.1.1",
+            "description": "Collection of non-hazardous waste",
+            "children": []
+          },
+          {
+            "code": "E38.1.2",
+            "description": "Collection of hazardous waste",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "E38.2",
+        "description": "Waste treatment and disposal",
+        "children": [
+          {
+            "code": "E38.2.1",
+            "description": "Treatment and disposal of non-hazardous waste",
+            "children": []
+          },
+          {
+            "code": "E38.2.2",
+            "description": "Treatment and disposal of hazardous waste",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "E38.3",
+        "description": "Materials recovery",
+        "children": [
+          {
+            "code": "E38.3.1",
+            "description": "Dismantling of wrecks",
+            "children": []
+          },
+          {
+            "code": "E38.3.2",
+            "description": "Recovery of sorted materials",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E39",
+    "description": "Remediation activities and other waste management services",
+    "children": [
+      {
+        "code": "E39.0",
+        "description": "Remediation activities and other waste management services",
+        "children": [
+          {
+            "code": "E39.0.0",
+            "description": "Remediation activities and other waste management services",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "F",
+    "description": "Construction",
+    "children": []
+  },
+  {
+    "code": "F41",
+    "description": "Construction of buildings",
+    "children": [
+      {
+        "code": "F41.1",
+        "description": "Development of building projects",
+        "children": [
+          {
+            "code": "F41.1.0",
+            "description": "Development of building projects",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F41.2",
+        "description": "Construction of residential and non-residential buildings",
+        "children": [
+          {
+            "code": "F41.2.0",
+            "description": "Construction of residential and non-residential buildings",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "F42",
+    "description": "Civil engineering",
+    "children": [
+      {
+        "code": "F42.1",
+        "description": "Construction of roads and railways",
+        "children": [
+          {
+            "code": "F42.1.1",
+            "description": "Construction of roads and motorways",
+            "children": []
+          },
+          {
+            "code": "F42.1.2",
+            "description": "Construction of railways and underground railways",
+            "children": []
+          },
+          {
+            "code": "F42.1.3",
+            "description": "Construction of bridges and tunnels",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F42.2",
+        "description": "Construction of utility projects",
+        "children": [
+          {
+            "code": "F42.2.1",
+            "description": "Construction of utility projects for fluids",
+            "children": []
+          },
+          {
+            "code": "F42.2.2",
+            "description": "Construction of utility projects for electricity and telecommunications",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F42.9",
+        "description": "Construction of other civil engineering projects",
+        "children": [
+          {
+            "code": "F42.9.1",
+            "description": "Construction of water projects",
+            "children": []
+          },
+          {
+            "code": "F42.9.9",
+            "description": "Construction of other civil engineering projects n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "F43",
+    "description": "Specialised construction activities",
+    "children": [
+      {
+        "code": "F43.1",
+        "description": "Demolition and site preparation",
+        "children": [
+          {
+            "code": "F43.1.1",
+            "description": "Demolition",
+            "children": []
+          },
+          {
+            "code": "F43.1.2",
+            "description": "Site preparation",
+            "children": []
+          },
+          {
+            "code": "F43.1.3",
+            "description": "Test drilling and boring",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F43.2",
+        "description": "Electrical, plumbing and other construction installation activities",
+        "children": [
+          {
+            "code": "F43.2.1",
+            "description": "Electrical installation",
+            "children": []
+          },
+          {
+            "code": "F43.2.2",
+            "description": "Plumbing, heat and air-conditioning installation",
+            "children": []
+          },
+          {
+            "code": "F43.2.9",
+            "description": "Other construction installation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F43.3",
+        "description": "Building completion and finishing",
+        "children": [
+          {
+            "code": "F43.3.1",
+            "description": "Plastering",
+            "children": []
+          },
+          {
+            "code": "F43.3.2",
+            "description": "Joinery installation",
+            "children": []
+          },
+          {
+            "code": "F43.3.3",
+            "description": "Floor and wall covering",
+            "children": []
+          },
+          {
+            "code": "F43.3.4",
+            "description": "Painting and glazing",
+            "children": []
+          },
+          {
+            "code": "F43.3.9",
+            "description": "Other building completion and finishing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "F43.9",
+        "description": "Other specialised construction activities",
+        "children": [
+          {
+            "code": "F43.9.1",
+            "description": "Roofing activities",
+            "children": []
+          },
+          {
+            "code": "F43.9.9",
+            "description": "Other specialised construction activities n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "G",
+    "description": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+    "children": []
+  },
+  {
+    "code": "G45",
+    "description": "Wholesale and retail trade and repair of motor vehicles and motorcycles",
+    "children": [
+      {
+        "code": "G45.1",
+        "description": "Sale of motor vehicles",
+        "children": [
+          {
+            "code": "G45.1.1",
+            "description": "Sale of cars and light motor vehicles",
+            "children": []
+          },
+          {
+            "code": "G45.1.9",
+            "description": "Sale of other motor vehicles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G45.2",
+        "description": "Maintenance and repair of motor vehicles",
+        "children": [
+          {
+            "code": "G45.2.0",
+            "description": "Maintenance and repair of motor vehicles",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G45.3",
+        "description": "Sale of motor vehicle parts and accessories",
+        "children": [
+          {
+            "code": "G45.3.1",
+            "description": "Wholesale trade of motor vehicle parts and accessories",
+            "children": []
+          },
+          {
+            "code": "G45.3.2",
+            "description": "Retail trade of motor vehicle parts and accessories",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G45.4",
+        "description": "Sale, maintenance and repair of motorcycles and related parts and accessories",
+        "children": [
+          {
+            "code": "G45.4.0",
+            "description": "Sale, maintenance and repair of motorcycles and related parts and accessories",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "G46",
+    "description": "Wholesale trade, except of motor vehicles and motorcycles",
+    "children": [
+      {
+        "code": "G46.1",
+        "description": "Wholesale on a fee or contract basis",
+        "children": [
+          {
+            "code": "G46.1.1",
+            "description": "Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished goods",
+            "children": []
+          },
+          {
+            "code": "G46.1.2",
+            "description": "Agents involved in the sale of fuels, ores, metals and industrial chemicals",
+            "children": []
+          },
+          {
+            "code": "G46.1.3",
+            "description": "Agents involved in the sale of timber and building materials",
+            "children": []
+          },
+          {
+            "code": "G46.1.4",
+            "description": "Agents involved in the sale of machinery, industrial equipment, ships and aircraft",
+            "children": []
+          },
+          {
+            "code": "G46.1.5",
+            "description": "Agents involved in the sale of furniture, household goods, hardware and ironmongery",
+            "children": []
+          },
+          {
+            "code": "G46.1.6",
+            "description": "Agents involved in the sale of textiles, clothing, fur, footwear and leather goods",
+            "children": []
+          },
+          {
+            "code": "G46.1.7",
+            "description": "Agents involved in the sale of food, beverages and tobacco",
+            "children": []
+          },
+          {
+            "code": "G46.1.8",
+            "description": "Agents specialised in the sale of other particular products",
+            "children": []
+          },
+          {
+            "code": "G46.1.9",
+            "description": "Agents involved in the sale of a variety of goods",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.2",
+        "description": "Wholesale of agricultural raw materials and live animals",
+        "children": [
+          {
+            "code": "G46.2.1",
+            "description": "Wholesale of grain, unmanufactured tobacco, seeds and animal feeds",
+            "children": []
+          },
+          {
+            "code": "G46.2.2",
+            "description": "Wholesale of flowers and plants",
+            "children": []
+          },
+          {
+            "code": "G46.2.3",
+            "description": "Wholesale of live animals",
+            "children": []
+          },
+          {
+            "code": "G46.2.4",
+            "description": "Wholesale of hides, skins and leather",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.3",
+        "description": "Wholesale of food, beverages and tobacco",
+        "children": [
+          {
+            "code": "G46.3.1",
+            "description": "Wholesale of fruit and vegetables",
+            "children": []
+          },
+          {
+            "code": "G46.3.2",
+            "description": "Wholesale of meat and meat products",
+            "children": []
+          },
+          {
+            "code": "G46.3.3",
+            "description": "Wholesale of dairy products, eggs and edible oils and fats",
+            "children": []
+          },
+          {
+            "code": "G46.3.4",
+            "description": "Wholesale of beverages",
+            "children": []
+          },
+          {
+            "code": "G46.3.5",
+            "description": "Wholesale of tobacco products",
+            "children": []
+          },
+          {
+            "code": "G46.3.6",
+            "description": "Wholesale of sugar and chocolate and sugar confectionery",
+            "children": []
+          },
+          {
+            "code": "G46.3.7",
+            "description": "Wholesale of coffee, tea, cocoa and spices",
+            "children": []
+          },
+          {
+            "code": "G46.3.8",
+            "description": "Wholesale of other food, including fish, crustaceans and molluscs",
+            "children": []
+          },
+          {
+            "code": "G46.3.9",
+            "description": "Non-specialised wholesale of food, beverages and tobacco",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.4",
+        "description": "Wholesale of household goods",
+        "children": [
+          {
+            "code": "G46.4.1",
+            "description": "Wholesale of textiles",
+            "children": []
+          },
+          {
+            "code": "G46.4.2",
+            "description": "Wholesale of clothing and footwear",
+            "children": []
+          },
+          {
+            "code": "G46.4.3",
+            "description": "Wholesale of electrical household appliances",
+            "children": []
+          },
+          {
+            "code": "G46.4.4",
+            "description": "Wholesale of china and glassware and cleaning materials",
+            "children": []
+          },
+          {
+            "code": "G46.4.5",
+            "description": "Wholesale of perfume and cosmetics",
+            "children": []
+          },
+          {
+            "code": "G46.4.6",
+            "description": "Wholesale of pharmaceutical goods",
+            "children": []
+          },
+          {
+            "code": "G46.4.7",
+            "description": "Wholesale of furniture, carpets and lighting equipment",
+            "children": []
+          },
+          {
+            "code": "G46.4.8",
+            "description": "Wholesale of watches and jewellery",
+            "children": []
+          },
+          {
+            "code": "G46.4.9",
+            "description": "Wholesale of other household goods",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.5",
+        "description": "Wholesale of information and communication equipment",
+        "children": [
+          {
+            "code": "G46.5.1",
+            "description": "Wholesale of computers, computer peripheral equipment and software",
+            "children": []
+          },
+          {
+            "code": "G46.5.2",
+            "description": "Wholesale of electronic and telecommunications equipment and parts",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.6",
+        "description": "Wholesale of other machinery, equipment and supplies",
+        "children": [
+          {
+            "code": "G46.6.1",
+            "description": "Wholesale of agricultural machinery, equipment and supplies",
+            "children": []
+          },
+          {
+            "code": "G46.6.2",
+            "description": "Wholesale of machine tools",
+            "children": []
+          },
+          {
+            "code": "G46.6.3",
+            "description": "Wholesale of mining, construction and civil engineering machinery",
+            "children": []
+          },
+          {
+            "code": "G46.6.4",
+            "description": "Wholesale of machinery for the textile industry and of sewing and knitting machines",
+            "children": []
+          },
+          {
+            "code": "G46.6.5",
+            "description": "Wholesale of office furniture",
+            "children": []
+          },
+          {
+            "code": "G46.6.6",
+            "description": "Wholesale of other office machinery and equipment",
+            "children": []
+          },
+          {
+            "code": "G46.6.9",
+            "description": "Wholesale of other machinery and equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.7",
+        "description": "Other specialised wholesale",
+        "children": [
+          {
+            "code": "G46.7.1",
+            "description": "Wholesale of solid, liquid and gaseous fuels and related products",
+            "children": []
+          },
+          {
+            "code": "G46.7.2",
+            "description": "Wholesale of metals and metal ores",
+            "children": []
+          },
+          {
+            "code": "G46.7.3",
+            "description": "Wholesale of wood, construction materials and sanitary equipment",
+            "children": []
+          },
+          {
+            "code": "G46.7.4",
+            "description": "Wholesale of hardware, plumbing and heating equipment and supplies",
+            "children": []
+          },
+          {
+            "code": "G46.7.5",
+            "description": "Wholesale of chemical products",
+            "children": []
+          },
+          {
+            "code": "G46.7.6",
+            "description": "Wholesale of other intermediate products",
+            "children": []
+          },
+          {
+            "code": "G46.7.7",
+            "description": "Wholesale of waste and scrap",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G46.9",
+        "description": "Non-specialised wholesale trade",
+        "children": [
+          {
+            "code": "G46.9.0",
+            "description": "Non-specialised wholesale trade",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "G47",
+    "description": "Retail trade, except of motor vehicles and motorcycles",
+    "children": [
+      {
+        "code": "G47.1",
+        "description": "Retail sale in non-specialised stores",
+        "children": [
+          {
+            "code": "G47.1.1",
+            "description": "Retail sale in non-specialised stores with food, beverages or tobacco predominating",
+            "children": []
+          },
+          {
+            "code": "G47.1.9",
+            "description": "Other retail sale in non-specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.2",
+        "description": "Retail sale of food, beverages and tobacco in specialised stores",
+        "children": [
+          {
+            "code": "G47.2.1",
+            "description": "Retail sale of fruit and vegetables in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.2",
+            "description": "Retail sale of meat and meat products in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.3",
+            "description": "Retail sale of fish, crustaceans and molluscs in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.4",
+            "description": "Retail sale of bread, cakes, flour confectionery and sugar confectionery in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.5",
+            "description": "Retail sale of beverages in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.6",
+            "description": "Retail sale of tobacco products in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.2.9",
+            "description": "Other retail sale of food in specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.3",
+        "description": "Retail sale of automotive fuel in specialised stores",
+        "children": [
+          {
+            "code": "G47.3.0",
+            "description": "Retail sale of automotive fuel in specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.4",
+        "description": "Retail sale of information and communication equipment in specialised stores",
+        "children": [
+          {
+            "code": "G47.4.1",
+            "description": "Retail sale of computers, peripheral units and software in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.4.2",
+            "description": "Retail sale of telecommunications equipment in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.4.3",
+            "description": "Retail sale of audio and video equipment in specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.5",
+        "description": "Retail sale of other household equipment in specialised stores",
+        "children": [
+          {
+            "code": "G47.5.1",
+            "description": "Retail sale of textiles in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.5.2",
+            "description": "Retail sale of hardware, paints and glass in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.5.3",
+            "description": "Retail sale of carpets, rugs, wall and floor coverings in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.5.4",
+            "description": "Retail sale of electrical household appliances in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.5.9",
+            "description": "Retail sale of furniture, lighting equipment and other household articles in specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.6",
+        "description": "Retail sale of cultural and recreation goods in specialised stores",
+        "children": [
+          {
+            "code": "G47.6.1",
+            "description": "Retail sale of books in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.6.2",
+            "description": "Retail sale of newspapers and stationery in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.6.3",
+            "description": "Retail sale of music and video recordings in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.6.4",
+            "description": "Retail sale of sporting equipment in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.6.5",
+            "description": "Retail sale of games and toys in specialised stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.7",
+        "description": "Retail sale of other goods in specialised stores",
+        "children": [
+          {
+            "code": "G47.7.1",
+            "description": "Retail sale of clothing in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.2",
+            "description": "Retail sale of footwear and leather goods in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.3",
+            "description": "Dispensing chemist in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.4",
+            "description": "Retail sale of medical and orthopaedic goods in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.5",
+            "description": "Retail sale of cosmetic and toilet articles in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.6",
+            "description": "Retail sale of flowers, plants, seeds, fertilisers, pet animals and pet food in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.7",
+            "description": "Retail sale of watches and jewellery in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.8",
+            "description": "Other retail sale of new goods in specialised stores",
+            "children": []
+          },
+          {
+            "code": "G47.7.9",
+            "description": "Retail sale of second-hand goods in stores",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.8",
+        "description": "Retail sale via stalls and markets",
+        "children": [
+          {
+            "code": "G47.8.1",
+            "description": "Retail sale via stalls and markets of food, beverages and tobacco products",
+            "children": []
+          },
+          {
+            "code": "G47.8.2",
+            "description": "Retail sale via stalls and markets of textiles, clothing and footwear",
+            "children": []
+          },
+          {
+            "code": "G47.8.9",
+            "description": "Retail sale via stalls and markets of other goods",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "G47.9",
+        "description": "Retail trade not in stores, stalls or markets",
+        "children": [
+          {
+            "code": "G47.9.1",
+            "description": "Retail sale via mail order houses or via Internet",
+            "children": []
+          },
+          {
+            "code": "G47.9.9",
+            "description": "Other retail sale not in stores, stalls or markets",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H",
+    "description": "Transporting and storage",
+    "children": []
+  },
+  {
+    "code": "H49",
+    "description": "Land transport and transport via pipelines",
+    "children": [
+      {
+        "code": "H49.1",
+        "description": "Passenger rail transport, interurban",
+        "children": [
+          {
+            "code": "H49.1.0",
+            "description": "Passenger rail transport, interurban",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H49.2",
+        "description": "Freight rail transport",
+        "children": [
+          {
+            "code": "H49.2.0",
+            "description": "Freight rail transport",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H49.3",
+        "description": "Other passenger land transport",
+        "children": [
+          {
+            "code": "H49.3.1",
+            "description": "Urban and suburban passenger land transport",
+            "children": []
+          },
+          {
+            "code": "H49.3.2",
+            "description": "Taxi operation",
+            "children": []
+          },
+          {
+            "code": "H49.3.9",
+            "description": "Other passenger land transport n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H49.4",
+        "description": "Freight transport by road and removal services",
+        "children": [
+          {
+            "code": "H49.4.1",
+            "description": "Freight transport by road",
+            "children": []
+          },
+          {
+            "code": "H49.4.2",
+            "description": "Removal services",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H49.5",
+        "description": "Transport via pipeline",
+        "children": [
+          {
+            "code": "H49.5.0",
+            "description": "Transport via pipeline",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H50",
+    "description": "Water transport",
+    "children": [
+      {
+        "code": "H50.1",
+        "description": "Sea and coastal passenger water transport",
+        "children": [
+          {
+            "code": "H50.1.0",
+            "description": "Sea and coastal passenger water transport",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H50.2",
+        "description": "Sea and coastal freight water transport",
+        "children": [
+          {
+            "code": "H50.2.0",
+            "description": "Sea and coastal freight water transport",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H50.3",
+        "description": "Inland passenger water transport",
+        "children": [
+          {
+            "code": "H50.3.0",
+            "description": "Inland passenger water transport",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H50.4",
+        "description": "Inland freight water transport",
+        "children": [
+          {
+            "code": "H50.4.0",
+            "description": "Inland freight water transport",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H51",
+    "description": "Air transport",
+    "children": [
+      {
+        "code": "H51.1",
+        "description": "Passenger air transport",
+        "children": [
+          {
+            "code": "H51.1.0",
+            "description": "Passenger air transport",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H51.2",
+        "description": "Freight air transport and space transport",
+        "children": [
+          {
+            "code": "H51.2.1",
+            "description": "Freight air transport",
+            "children": []
+          },
+          {
+            "code": "H51.2.2",
+            "description": "Space transport",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H52",
+    "description": "Warehousing and support activities for transportation",
+    "children": [
+      {
+        "code": "H52.1",
+        "description": "Warehousing and storage",
+        "children": [
+          {
+            "code": "H52.1.0",
+            "description": "Warehousing and storage",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H52.2",
+        "description": "Support activities for transportation",
+        "children": [
+          {
+            "code": "H52.2.1",
+            "description": "Service activities incidental to land transportation",
+            "children": []
+          },
+          {
+            "code": "H52.2.2",
+            "description": "Service activities incidental to water transportation",
+            "children": []
+          },
+          {
+            "code": "H52.2.3",
+            "description": "Service activities incidental to air transportation",
+            "children": []
+          },
+          {
+            "code": "H52.2.4",
+            "description": "Cargo handling",
+            "children": []
+          },
+          {
+            "code": "H52.2.9",
+            "description": "Other transportation support activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H53",
+    "description": "Postal and courier activities",
+    "children": [
+      {
+        "code": "H53.1",
+        "description": "Postal activities under universal service obligation",
+        "children": [
+          {
+            "code": "H53.1.0",
+            "description": "Postal activities under universal service obligation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "H53.2",
+        "description": "Other postal and courier activities",
+        "children": [
+          {
+            "code": "H53.2.0",
+            "description": "Other postal and courier activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "I",
+    "description": "Accommodation and food service activities",
+    "children": []
+  },
+  {
+    "code": "I55",
+    "description": "Accommodation",
+    "children": [
+      {
+        "code": "I55.1",
+        "description": "Hotels and similar accommodation",
+        "children": [
+          {
+            "code": "I55.1.0",
+            "description": "Hotels and similar accommodation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "I55.2",
+        "description": "Holiday and other short-stay accommodation",
+        "children": [
+          {
+            "code": "I55.2.0",
+            "description": "Holiday and other short-stay accommodation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "I55.3",
+        "description": "Camping grounds, recreational vehicle parks and trailer parks",
+        "children": [
+          {
+            "code": "I55.3.0",
+            "description": "Camping grounds, recreational vehicle parks and trailer parks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "I55.9",
+        "description": "Other accommodation",
+        "children": [
+          {
+            "code": "I55.9.0",
+            "description": "Other accommodation",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "I56",
+    "description": "Food and beverage service activities",
+    "children": [
+      {
+        "code": "I56.1",
+        "description": "Restaurants and mobile food service activities",
+        "children": [
+          {
+            "code": "I56.1.0",
+            "description": "Restaurants and mobile food service activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "I56.2",
+        "description": "Event catering and other food service activities",
+        "children": [
+          {
+            "code": "I56.2.1",
+            "description": "Event catering activities",
+            "children": []
+          },
+          {
+            "code": "I56.2.9",
+            "description": "Other food service activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "I56.3",
+        "description": "Beverage serving activities",
+        "children": [
+          {
+            "code": "I56.3.0",
+            "description": "Beverage serving activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J",
+    "description": "Information and communication",
+    "children": []
+  },
+  {
+    "code": "J58",
+    "description": "Publishing activities",
+    "children": [
+      {
+        "code": "J58.1",
+        "description": "Publishing of books, periodicals and other publishing activities",
+        "children": [
+          {
+            "code": "J58.1.1",
+            "description": "Book publishing",
+            "children": []
+          },
+          {
+            "code": "J58.1.2",
+            "description": "Publishing of directories and mailing lists",
+            "children": []
+          },
+          {
+            "code": "J58.1.3",
+            "description": "Publishing of newspapers",
+            "children": []
+          },
+          {
+            "code": "J58.1.4",
+            "description": "Publishing of journals and periodicals",
+            "children": []
+          },
+          {
+            "code": "J58.1.9",
+            "description": "Other publishing activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J58.2",
+        "description": "Software publishing",
+        "children": [
+          {
+            "code": "J58.2.1",
+            "description": "Publishing of computer games",
+            "children": []
+          },
+          {
+            "code": "J58.2.9",
+            "description": "Other software publishing",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J59",
+    "description": "Motion picture, video and television programme production, sound recording and music publishing activities",
+    "children": [
+      {
+        "code": "J59.1",
+        "description": "Motion picture, video and television programme activities",
+        "children": [
+          {
+            "code": "J59.1.1",
+            "description": "Motion picture, video and television programme production activities",
+            "children": []
+          },
+          {
+            "code": "J59.1.2",
+            "description": "Motion picture, video and television programme post-production activities",
+            "children": []
+          },
+          {
+            "code": "J59.1.3",
+            "description": "Motion picture, video and television programme distribution activities",
+            "children": []
+          },
+          {
+            "code": "J59.1.4",
+            "description": "Motion picture projection activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J59.2",
+        "description": "Sound recording and music publishing activities",
+        "children": [
+          {
+            "code": "J59.2.0",
+            "description": "Sound recording and music publishing activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J60",
+    "description": "Programming and broadcasting activities",
+    "children": [
+      {
+        "code": "J60.1",
+        "description": "Radio broadcasting",
+        "children": [
+          {
+            "code": "J60.1.0",
+            "description": "Radio broadcasting",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J60.2",
+        "description": "Television programming and broadcasting activities",
+        "children": [
+          {
+            "code": "J60.2.0",
+            "description": "Television programming and broadcasting activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J61",
+    "description": "Telecommunications",
+    "children": [
+      {
+        "code": "J61.1",
+        "description": "Wired telecommunications activities",
+        "children": [
+          {
+            "code": "J61.1.0",
+            "description": "Wired telecommunications activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J61.2",
+        "description": "Wireless telecommunications activities",
+        "children": [
+          {
+            "code": "J61.2.0",
+            "description": "Wireless telecommunications activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J61.3",
+        "description": "Satellite telecommunications activities",
+        "children": [
+          {
+            "code": "J61.3.0",
+            "description": "Satellite telecommunications activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J61.9",
+        "description": "Other telecommunications activities",
+        "children": [
+          {
+            "code": "J61.9.0",
+            "description": "Other telecommunications activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J62",
+    "description": "Computer programming, consultancy and related activities",
+    "children": [
+      {
+        "code": "J62.0",
+        "description": "Computer programming, consultancy and related activities",
+        "children": [
+          {
+            "code": "J62.0.1",
+            "description": "Computer programming activities",
+            "children": []
+          },
+          {
+            "code": "J62.0.2",
+            "description": "Computer consultancy activities",
+            "children": []
+          },
+          {
+            "code": "J62.0.3",
+            "description": "Computer facilities management activities",
+            "children": []
+          },
+          {
+            "code": "J62.0.9",
+            "description": "Other information technology and computer service activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J63",
+    "description": "Information service activities",
+    "children": [
+      {
+        "code": "J63.1",
+        "description": "Data processing, hosting and related activities; web portals",
+        "children": [
+          {
+            "code": "J63.1.1",
+            "description": "Data processing, hosting and related activities",
+            "children": []
+          },
+          {
+            "code": "J63.1.2",
+            "description": "Web portals",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "J63.9",
+        "description": "Other information service activities",
+        "children": [
+          {
+            "code": "J63.9.1",
+            "description": "News agency activities",
+            "children": []
+          },
+          {
+            "code": "J63.9.9",
+            "description": "Other information service activities n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "K",
+    "description": "Financial and insurance activities",
+    "children": []
+  },
+  {
+    "code": "K64",
+    "description": "Financial service activities, except insurance and pension funding",
+    "children": [
+      {
+        "code": "K64.1",
+        "description": "Monetary intermediation",
+        "children": [
+          {
+            "code": "K64.1.1",
+            "description": "Central banking",
+            "children": []
+          },
+          {
+            "code": "K64.1.9",
+            "description": "Other monetary intermediation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K64.2",
+        "description": "Activities of holding companies",
+        "children": [
+          {
+            "code": "K64.2.0",
+            "description": "Activities of holding companies",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K64.3",
+        "description": "Trusts, funds and similar financial entities",
+        "children": [
+          {
+            "code": "K64.3.0",
+            "description": "Trusts, funds and similar financial entities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K64.9",
+        "description": "Other financial service activities, except insurance and pension funding",
+        "children": [
+          {
+            "code": "K64.9.1",
+            "description": "Financial leasing",
+            "children": []
+          },
+          {
+            "code": "K64.9.2",
+            "description": "Other credit granting",
+            "children": []
+          },
+          {
+            "code": "K64.9.9",
+            "description": "Other financial service activities, except insurance and pension funding n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "K65",
+    "description": "Insurance, reinsurance and pension funding, except compulsory social security",
+    "children": [
+      {
+        "code": "K65.1",
+        "description": "Insurance",
+        "children": [
+          {
+            "code": "K65.1.1",
+            "description": "Life insurance",
+            "children": []
+          },
+          {
+            "code": "K65.1.2",
+            "description": "Non-life insurance",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K65.2",
+        "description": "Reinsurance",
+        "children": [
+          {
+            "code": "K65.2.0",
+            "description": "Reinsurance",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K65.3",
+        "description": "Pension funding",
+        "children": [
+          {
+            "code": "K65.3.0",
+            "description": "Pension funding",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "K66",
+    "description": "Activities auxiliary to financial services and insurance activities",
+    "children": [
+      {
+        "code": "K66.1",
+        "description": "Activities auxiliary to financial services, except insurance and pension funding",
+        "children": [
+          {
+            "code": "K66.1.1",
+            "description": "Administration of financial markets",
+            "children": []
+          },
+          {
+            "code": "K66.1.2",
+            "description": "Security and commodity contracts brokerage",
+            "children": []
+          },
+          {
+            "code": "K66.1.9",
+            "description": "Other activities auxiliary to financial services, except insurance and pension funding",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K66.2",
+        "description": "Activities auxiliary to insurance and pension funding",
+        "children": [
+          {
+            "code": "K66.2.1",
+            "description": "Risk and damage evaluation",
+            "children": []
+          },
+          {
+            "code": "K66.2.2",
+            "description": "Activities of insurance agents and brokers",
+            "children": []
+          },
+          {
+            "code": "K66.2.9",
+            "description": "Other activities auxiliary to insurance and pension funding",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "K66.3",
+        "description": "Fund management activities",
+        "children": [
+          {
+            "code": "K66.3.0",
+            "description": "Fund management activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "L",
+    "description": "Real estate activities",
+    "children": []
+  },
+  {
+    "code": "L68",
+    "description": "Real estate activities",
+    "children": [
+      {
+        "code": "L68.1",
+        "description": "Buying and selling of own real estate",
+        "children": [
+          {
+            "code": "L68.1.0",
+            "description": "Buying and selling of own real estate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "L68.2",
+        "description": "Renting and operating of own or leased real estate",
+        "children": [
+          {
+            "code": "L68.2.0",
+            "description": "Renting and operating of own or leased real estate",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "L68.3",
+        "description": "Real estate activities on a fee or contract basis",
+        "children": [
+          {
+            "code": "L68.3.1",
+            "description": "Real estate agencies",
+            "children": []
+          },
+          {
+            "code": "L68.3.2",
+            "description": "Management of real estate on a fee or contract basis",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M",
+    "description": "Professional, scientific and technical activities",
+    "children": []
+  },
+  {
+    "code": "M69",
+    "description": "Legal and accounting activities",
+    "children": [
+      {
+        "code": "M69.1",
+        "description": "Legal activities",
+        "children": [
+          {
+            "code": "M69.1.0",
+            "description": "Legal activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M69.2",
+        "description": "Accounting, bookkeeping and auditing activities; tax consultancy",
+        "children": [
+          {
+            "code": "M69.2.0",
+            "description": "Accounting, bookkeeping and auditing activities; tax consultancy",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M70",
+    "description": "Activities of head offices; management consultancy activities",
+    "children": [
+      {
+        "code": "M70.1",
+        "description": "Activities of head offices",
+        "children": [
+          {
+            "code": "M70.1.0",
+            "description": "Activities of head offices",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M70.2",
+        "description": "Management consultancy activities",
+        "children": [
+          {
+            "code": "M70.2.1",
+            "description": "Public relations and communication activities",
+            "children": []
+          },
+          {
+            "code": "M70.2.2",
+            "description": "Business and other management consultancy activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M71",
+    "description": "Architectural and engineering activities; technical testing and analysis",
+    "children": [
+      {
+        "code": "M71.1",
+        "description": "Architectural and engineering activities and related technical consultancy",
+        "children": [
+          {
+            "code": "M71.1.1",
+            "description": "Architectural activities",
+            "children": []
+          },
+          {
+            "code": "M71.1.2",
+            "description": "Engineering activities and related technical consultancy",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M71.2",
+        "description": "Technical testing and analysis",
+        "children": [
+          {
+            "code": "M71.2.0",
+            "description": "Technical testing and analysis",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M72",
+    "description": "Scientific research and development",
+    "children": [
+      {
+        "code": "M72.1",
+        "description": "Research and experimental development on natural sciences and engineering",
+        "children": [
+          {
+            "code": "M72.1.1",
+            "description": "Research and experimental development on biotechnology",
+            "children": []
+          },
+          {
+            "code": "M72.1.9",
+            "description": "Other research and experimental development on natural sciences and engineering",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M72.2",
+        "description": "Research and experimental development on social sciences and humanities",
+        "children": [
+          {
+            "code": "M72.2.0",
+            "description": "Research and experimental development on social sciences and humanities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M73",
+    "description": "Advertising and market research",
+    "children": [
+      {
+        "code": "M73.1",
+        "description": "Advertising",
+        "children": [
+          {
+            "code": "M73.1.1",
+            "description": "Advertising agencies",
+            "children": []
+          },
+          {
+            "code": "M73.1.2",
+            "description": "Media representation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M73.2",
+        "description": "Market research and public opinion polling",
+        "children": [
+          {
+            "code": "M73.2.0",
+            "description": "Market research and public opinion polling",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M74",
+    "description": "Other professional, scientific and technical activities",
+    "children": [
+      {
+        "code": "M74.1",
+        "description": "Specialised design activities",
+        "children": [
+          {
+            "code": "M74.1.0",
+            "description": "Specialised design activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M74.2",
+        "description": "Photographic activities",
+        "children": [
+          {
+            "code": "M74.2.0",
+            "description": "Photographic activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M74.3",
+        "description": "Translation and interpretation activities",
+        "children": [
+          {
+            "code": "M74.3.0",
+            "description": "Translation and interpretation activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "M74.9",
+        "description": "Other professional, scientific and technical activities n.e.c.",
+        "children": [
+          {
+            "code": "M74.9.0",
+            "description": "Other professional, scientific and technical activities n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M75",
+    "description": "Veterinary activities",
+    "children": [
+      {
+        "code": "M75.0",
+        "description": "Veterinary activities",
+        "children": [
+          {
+            "code": "M75.0.0",
+            "description": "Veterinary activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N",
+    "description": "Administrative and support service activities",
+    "children": []
+  },
+  {
+    "code": "N77",
+    "description": "Rental and leasing activities",
+    "children": [
+      {
+        "code": "N77.1",
+        "description": "Renting and leasing of motor vehicles",
+        "children": [
+          {
+            "code": "N77.1.1",
+            "description": "Renting and leasing of cars and light motor vehicles",
+            "children": []
+          },
+          {
+            "code": "N77.1.2",
+            "description": "Renting and leasing of trucks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N77.2",
+        "description": "Renting and leasing of personal and household goods",
+        "children": [
+          {
+            "code": "N77.2.1",
+            "description": "Renting and leasing of recreational and sports goods",
+            "children": []
+          },
+          {
+            "code": "N77.2.2",
+            "description": "Renting of video tapes and disks",
+            "children": []
+          },
+          {
+            "code": "N77.2.9",
+            "description": "Renting and leasing of other personal and household goods",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N77.3",
+        "description": "Renting and leasing of other machinery, equipment and tangible goods",
+        "children": [
+          {
+            "code": "N77.3.1",
+            "description": "Renting and leasing of agricultural machinery and equipment",
+            "children": []
+          },
+          {
+            "code": "N77.3.2",
+            "description": "Renting and leasing of construction and civil engineering machinery and equipment",
+            "children": []
+          },
+          {
+            "code": "N77.3.3",
+            "description": "Renting and leasing of office machinery and equipment (including computers)",
+            "children": []
+          },
+          {
+            "code": "N77.3.4",
+            "description": "Renting and leasing of water transport equipment",
+            "children": []
+          },
+          {
+            "code": "N77.3.5",
+            "description": "Renting and leasing of air transport equipment",
+            "children": []
+          },
+          {
+            "code": "N77.3.9",
+            "description": "Renting and leasing of other machinery, equipment and tangible goods n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N77.4",
+        "description": "Leasing of intellectual property and similar products, except copyrighted works",
+        "children": [
+          {
+            "code": "N77.4.0",
+            "description": "Leasing of intellectual property and similar products, except copyrighted works",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N78",
+    "description": "Employment activities",
+    "children": [
+      {
+        "code": "N78.1",
+        "description": "Activities of employment placement agencies",
+        "children": [
+          {
+            "code": "N78.1.0",
+            "description": "Activities of employment placement agencies",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N78.2",
+        "description": "Temporary employment agency activities",
+        "children": [
+          {
+            "code": "N78.2.0",
+            "description": "Temporary employment agency activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N78.3",
+        "description": "Other human resources provision",
+        "children": [
+          {
+            "code": "N78.3.0",
+            "description": "Other human resources provision",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N79",
+    "description": "Travel agency, tour operator and other reservation service and related activities",
+    "children": [
+      {
+        "code": "N79.1",
+        "description": "Travel agency and tour operator activities",
+        "children": [
+          {
+            "code": "N79.1.1",
+            "description": "Travel agency activities",
+            "children": []
+          },
+          {
+            "code": "N79.1.2",
+            "description": "Tour operator activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N79.9",
+        "description": "Other reservation service and related activities",
+        "children": [
+          {
+            "code": "N79.9.0",
+            "description": "Other reservation service and related activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N80",
+    "description": "Security and investigation activities",
+    "children": [
+      {
+        "code": "N80.1",
+        "description": "Private security activities",
+        "children": [
+          {
+            "code": "N80.1.0",
+            "description": "Private security activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N80.2",
+        "description": "Security systems service activities",
+        "children": [
+          {
+            "code": "N80.2.0",
+            "description": "Security systems service activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N80.3",
+        "description": "Investigation activities",
+        "children": [
+          {
+            "code": "N80.3.0",
+            "description": "Investigation activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N81",
+    "description": "Services to buildings and landscape activities",
+    "children": [
+      {
+        "code": "N81.1",
+        "description": "Combined facilities support activities",
+        "children": [
+          {
+            "code": "N81.1.0",
+            "description": "Combined facilities support activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N81.2",
+        "description": "Cleaning activities",
+        "children": [
+          {
+            "code": "N81.2.1",
+            "description": "General cleaning of buildings",
+            "children": []
+          },
+          {
+            "code": "N81.2.2",
+            "description": "Other building and industrial cleaning activities",
+            "children": []
+          },
+          {
+            "code": "N81.2.9",
+            "description": "Other cleaning activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N81.3",
+        "description": "Landscape service activities",
+        "children": [
+          {
+            "code": "N81.3.0",
+            "description": "Landscape service activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N82",
+    "description": "Office administrative, office support and other business support activities",
+    "children": [
+      {
+        "code": "N82.1",
+        "description": "Office administrative and support activities",
+        "children": [
+          {
+            "code": "N82.1.1",
+            "description": "Combined office administrative service activities",
+            "children": []
+          },
+          {
+            "code": "N82.1.9",
+            "description": "Photocopying, document preparation and other specialised office support activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N82.2",
+        "description": "Activities of call centres",
+        "children": [
+          {
+            "code": "N82.2.0",
+            "description": "Activities of call centres",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N82.3",
+        "description": "Organisation of conventions and trade shows",
+        "children": [
+          {
+            "code": "N82.3.0",
+            "description": "Organisation of conventions and trade shows",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "N82.9",
+        "description": "Business support service activities n.e.c.",
+        "children": [
+          {
+            "code": "N82.9.1",
+            "description": "Activities of collection agencies and credit bureaus",
+            "children": []
+          },
+          {
+            "code": "N82.9.2",
+            "description": "Packaging activities",
+            "children": []
+          },
+          {
+            "code": "N82.9.9",
+            "description": "Other business support service activities n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "O",
+    "description": "Public administration and defence; compulsory social security",
+    "children": []
+  },
+  {
+    "code": "O84",
+    "description": "Public administration and defence; compulsory social security",
+    "children": [
+      {
+        "code": "O84.1",
+        "description": "Administration of the State and the economic and social policy of the community",
+        "children": [
+          {
+            "code": "O84.1.1",
+            "description": "General public administration activities",
+            "children": []
+          },
+          {
+            "code": "O84.1.2",
+            "description": "Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security",
+            "children": []
+          },
+          {
+            "code": "O84.1.3",
+            "description": "Regulation of and contribution to more efficient operation of businesses",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "O84.2",
+        "description": "Provision of services to the community as a whole",
+        "children": [
+          {
+            "code": "O84.2.1",
+            "description": "Foreign affairs",
+            "children": []
+          },
+          {
+            "code": "O84.2.2",
+            "description": "Defence activities",
+            "children": []
+          },
+          {
+            "code": "O84.2.3",
+            "description": "Justice and judicial activities",
+            "children": []
+          },
+          {
+            "code": "O84.2.4",
+            "description": "Public order and safety activities",
+            "children": []
+          },
+          {
+            "code": "O84.2.5",
+            "description": "Fire service activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "O84.3",
+        "description": "Compulsory social security activities",
+        "children": [
+          {
+            "code": "O84.3.0",
+            "description": "Compulsory social security activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "P",
+    "description": "Education",
+    "children": []
+  },
+  {
+    "code": "P85",
+    "description": "Education",
+    "children": [
+      {
+        "code": "P85.1",
+        "description": "Pre-primary education",
+        "children": [
+          {
+            "code": "P85.1.0",
+            "description": "Pre-primary education",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "P85.2",
+        "description": "Primary education",
+        "children": [
+          {
+            "code": "P85.2.0",
+            "description": "Primary education",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "P85.3",
+        "description": "Secondary education",
+        "children": [
+          {
+            "code": "P85.3.1",
+            "description": "General secondary education",
+            "children": []
+          },
+          {
+            "code": "P85.3.2",
+            "description": "Technical and vocational secondary education",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "P85.4",
+        "description": "Higher education",
+        "children": [
+          {
+            "code": "P85.4.1",
+            "description": "Post-secondary non-tertiary education",
+            "children": []
+          },
+          {
+            "code": "P85.4.2",
+            "description": "Tertiary education",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "P85.5",
+        "description": "Other education",
+        "children": [
+          {
+            "code": "P85.5.1",
+            "description": "Sports and recreation education",
+            "children": []
+          },
+          {
+            "code": "P85.5.2",
+            "description": "Cultural education",
+            "children": []
+          },
+          {
+            "code": "P85.5.3",
+            "description": "Driving school activities",
+            "children": []
+          },
+          {
+            "code": "P85.5.9",
+            "description": "Other education n.e.c.",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "P85.6",
+        "description": "Educational support activities",
+        "children": [
+          {
+            "code": "P85.6.0",
+            "description": "Educational support activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "Q",
+    "description": "Human health and social work activities",
+    "children": []
+  },
+  {
+    "code": "Q86",
+    "description": "Human health activities",
+    "children": [
+      {
+        "code": "Q86.1",
+        "description": "Hospital activities",
+        "children": [
+          {
+            "code": "Q86.1.0",
+            "description": "Hospital activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q86.2",
+        "description": "Medical and dental practice activities",
+        "children": [
+          {
+            "code": "Q86.2.1",
+            "description": "General medical practice activities",
+            "children": []
+          },
+          {
+            "code": "Q86.2.2",
+            "description": "Specialist medical practice activities",
+            "children": []
+          },
+          {
+            "code": "Q86.2.3",
+            "description": "Dental practice activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q86.9",
+        "description": "Other human health activities",
+        "children": [
+          {
+            "code": "Q86.9.0",
+            "description": "Other human health activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "Q87",
+    "description": "Residential care activities",
+    "children": [
+      {
+        "code": "Q87.1",
+        "description": "Residential nursing care activities",
+        "children": [
+          {
+            "code": "Q87.1.0",
+            "description": "Residential nursing care activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q87.2",
+        "description": "Residential care activities for mental retardation, mental health and substance abuse",
+        "children": [
+          {
+            "code": "Q87.2.0",
+            "description": "Residential care activities for mental retardation, mental health and substance abuse",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q87.3",
+        "description": "Residential care activities for the elderly and disabled",
+        "children": [
+          {
+            "code": "Q87.3.0",
+            "description": "Residential care activities for the elderly and disabled",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q87.9",
+        "description": "Other residential care activities",
+        "children": [
+          {
+            "code": "Q87.9.0",
+            "description": "Other residential care activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "Q88",
+    "description": "Social work activities without accommodation",
+    "children": [
+      {
+        "code": "Q88.1",
+        "description": "Social work activities without accommodation for the elderly and disabled",
+        "children": [
+          {
+            "code": "Q88.1.0",
+            "description": "Social work activities without accommodation for the elderly and disabled",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "Q88.9",
+        "description": "Other social work activities without accommodation",
+        "children": [
+          {
+            "code": "Q88.9.1",
+            "description": "Child day-care activities",
+            "children": []
+          },
+          {
+            "code": "Q88.9.9",
+            "description": "Other social work activities without accommodation n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "R",
+    "description": "Arts, entertainment and recreation",
+    "children": []
+  },
+  {
+    "code": "R90",
+    "description": "Creative, arts and entertainment activities",
+    "children": [
+      {
+        "code": "R90.0",
+        "description": "Creative, arts and entertainment activities",
+        "children": [
+          {
+            "code": "R90.0.1",
+            "description": "Performing arts",
+            "children": []
+          },
+          {
+            "code": "R90.0.2",
+            "description": "Support activities to performing arts",
+            "children": []
+          },
+          {
+            "code": "R90.0.3",
+            "description": "Artistic creation",
+            "children": []
+          },
+          {
+            "code": "R90.0.4",
+            "description": "Operation of arts facilities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "R91",
+    "description": "Libraries, archives, museums and other cultural activities",
+    "children": [
+      {
+        "code": "R91.0",
+        "description": "Libraries, archives, museums and other cultural activities",
+        "children": [
+          {
+            "code": "R91.0.1",
+            "description": "Library and archives activities",
+            "children": []
+          },
+          {
+            "code": "R91.0.2",
+            "description": "Museums activities",
+            "children": []
+          },
+          {
+            "code": "R91.0.3",
+            "description": "Operation of historical sites and buildings and similar visitor attractions",
+            "children": []
+          },
+          {
+            "code": "R91.0.4",
+            "description": "Botanical and zoological gardens and nature reserves activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "R92",
+    "description": "Gambling and betting activities",
+    "children": [
+      {
+        "code": "R92.0",
+        "description": "Gambling and betting activities",
+        "children": [
+          {
+            "code": "R92.0.0",
+            "description": "Gambling and betting activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "R93",
+    "description": "Sports activities and amusement and recreation activities",
+    "children": [
+      {
+        "code": "R93.1",
+        "description": "Sports activities",
+        "children": [
+          {
+            "code": "R93.1.1",
+            "description": "Operation of sports facilities",
+            "children": []
+          },
+          {
+            "code": "R93.1.2",
+            "description": "Activities of sport clubs",
+            "children": []
+          },
+          {
+            "code": "R93.1.3",
+            "description": "Fitness facilities",
+            "children": []
+          },
+          {
+            "code": "R93.1.9",
+            "description": "Other sports activities",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "R93.2",
+        "description": "Amusement and recreation activities",
+        "children": [
+          {
+            "code": "R93.2.1",
+            "description": "Activities of amusement parks and theme parks",
+            "children": []
+          },
+          {
+            "code": "R93.2.9",
+            "description": "Other amusement and recreation activities",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "S",
+    "description": "Other services activities",
+    "children": []
+  },
+  {
+    "code": "S94",
+    "description": "Activities of membership organisations",
+    "children": [
+      {
+        "code": "S94.1",
+        "description": "Activities of business, employers and professional membership organisations",
+        "children": [
+          {
+            "code": "S94.1.1",
+            "description": "Activities of business and employers membership organisations",
+            "children": []
+          },
+          {
+            "code": "S94.1.2",
+            "description": "Activities of professional membership organisations",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "S94.2",
+        "description": "Activities of trade unions",
+        "children": [
+          {
+            "code": "S94.2.0",
+            "description": "Activities of trade unions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "S94.9",
+        "description": "Activities of other membership organisations",
+        "children": [
+          {
+            "code": "S94.9.1",
+            "description": "Activities of religious organisations",
+            "children": []
+          },
+          {
+            "code": "S94.9.2",
+            "description": "Activities of political organisations",
+            "children": []
+          },
+          {
+            "code": "S94.9.9",
+            "description": "Activities of other membership organisations n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "S95",
+    "description": "Repair of computers and personal and household goods",
+    "children": [
+      {
+        "code": "S95.1",
+        "description": "Repair of computers and communication equipment",
+        "children": [
+          {
+            "code": "S95.1.1",
+            "description": "Repair of computers and peripheral equipment",
+            "children": []
+          },
+          {
+            "code": "S95.1.2",
+            "description": "Repair of communication equipment",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "S95.2",
+        "description": "Repair of personal and household goods",
+        "children": [
+          {
+            "code": "S95.2.1",
+            "description": "Repair of consumer electronics",
+            "children": []
+          },
+          {
+            "code": "S95.2.2",
+            "description": "Repair of household appliances and home and garden equipment",
+            "children": []
+          },
+          {
+            "code": "S95.2.3",
+            "description": "Repair of footwear and leather goods",
+            "children": []
+          },
+          {
+            "code": "S95.2.4",
+            "description": "Repair of furniture and home furnishings",
+            "children": []
+          },
+          {
+            "code": "S95.2.5",
+            "description": "Repair of watches, clocks and jewellery",
+            "children": []
+          },
+          {
+            "code": "S95.2.9",
+            "description": "Repair of other personal and household goods",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "S96",
+    "description": "Other personal service activities",
+    "children": [
+      {
+        "code": "S96.0",
+        "description": "Other personal service activities",
+        "children": [
+          {
+            "code": "S96.0.1",
+            "description": "Washing and (dry-)cleaning of textile and fur products",
+            "children": []
+          },
+          {
+            "code": "S96.0.2",
+            "description": "Hairdressing and other beauty treatment",
+            "children": []
+          },
+          {
+            "code": "S96.0.3",
+            "description": "Funeral and related activities",
+            "children": []
+          },
+          {
+            "code": "S96.0.4",
+            "description": "Physical well-being activities",
+            "children": []
+          },
+          {
+            "code": "S96.0.9",
+            "description": "Other personal service activities n.e.c.",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "T",
+    "description": "Activities of households as employers; undifferentiated goods - and services - producing activities of households for own use",
+    "children": []
+  },
+  {
+    "code": "T97",
+    "description": "Activities of households as employers of domestic personnel",
+    "children": [
+      {
+        "code": "T97.0",
+        "description": "Activities of households as employers of domestic personnel",
+        "children": [
+          {
+            "code": "T97.0.0",
+            "description": "Activities of households as employers of domestic personnel",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "T98",
+    "description": "Undifferentiated goods- and services-producing activities of private households for own use",
+    "children": [
+      {
+        "code": "T98.1",
+        "description": "Undifferentiated goods-producing activities of private households for own use",
+        "children": [
+          {
+            "code": "T98.1.0",
+            "description": "Undifferentiated goods-producing activities of private households for own use",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "T98.2",
+        "description": "Undifferentiated service-producing activities of private households for own use",
+        "children": [
+          {
+            "code": "T98.2.0",
+            "description": "Undifferentiated service-producing activities of private households for own use",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "U",
+    "description": "Activities of extraterritorial organisations and bodies",
+    "children": []
+  },
+  {
+    "code": "U99",
+    "description": "Activities of extraterritorial organisations and bodies",
+    "children": [
+      {
+        "code": "U99.0",
+        "description": "Activities of extraterritorial organisations and bodies",
+        "children": [
+          {
+            "code": "U99.0.0",
+            "description": "Activities of extraterritorial organisations and bodies",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
