@@ -192,19 +192,18 @@ def scrape_listings_from_page(driver, existing_hashes):
                 # Get detailed information from the ad page
                 print(f"Scraping details for: {card_data['title']}")
                 details = scrape_ad_details(driver, card_data['url'])
-                
                 # Combine all information
                 listing_data = {
                     **card_data,
                     'long_description': details.get('long_description', ''),
                     'standort': '; '.join(details.get('Standort', '')),
-                    'branchen': '; '.join(details.get('Branchen', [])),
+                    # 'branchen': '; '.join(details.get('Branchen', [])),
+                    'branchen': '; '.join(details.get('Branchen', '') if details.get('Branchen', '') else details.get('Branche', '')),
                     'mitarbeiter': details.get('Anzahl Mitarbeiter', ''),
                     'jahresumsatz': details.get('Letzter Jahresumsatz', ''),
                     'preisvorstellung': details.get('Preisvorstellung', ''),
                     'international': details.get('Internationale Tätigkeit', '')
                 }
-                
                 listings.append(listing_data)
                 print(f"Successfully scraped: {card_data['title']} => {card_data['date']}")
                 
@@ -240,7 +239,7 @@ def main():
     driver = setup_driver()
     base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Verkaufsangebot_Suche/Verkaufsangebotssuche_Formular.html" # sales req
     # base_url = "https://www.nexxt-change.org/SiteGlobals/Forms/Kaufgesuch_Suche/Kaufgesuche_Formular.html" #purchase request
-    filename = "./data/nexxt_change_sales_listings_update.csv"
+    filename = "./data/branche_nexxt_change_sales_listings_scrape.csv"
     # filename = "./data/nexxt_change_purchase_listings.csv"
     all_listings = []
     
@@ -253,8 +252,8 @@ def main():
         #LAST SCAPPED TILL: 318
         # Visit main page
         driver.get(base_url)
-        total_pages = 70
-        start_page = 7
+        total_pages = 80
+        start_page = 1
         print(f"Found {total_pages} pages to scrape")
         
         # Scrape each page

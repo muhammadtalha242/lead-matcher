@@ -3,33 +3,34 @@ import streamlit as st
 
 def main():
     # Load latest matches
-    matches_df = pd.read_csv('./matches/nlp_business_matches_24_21-06_similarity_threshold_0.95.csv')
+    matches_df = pd.read_csv('./matches/nlp_business_all_matches_19_23-52.csv')
     
     st.title("Match Evaluation Dashboard")
     
     # Show match statistics
     st.write("## Match Statistics")
     st.write(f"Total matches: {len(matches_df)}")
-    st.write(f"Average confidence score: {matches_df['confidence_score'].mean():.3f}")
+    # st.write(f"Average confidence score: {matches_df['confidence_score'].mean():.3f}")
     
     # Match reviewer
     st.write("## Review Matches")
     for idx, match in matches_df.iterrows():
         st.write("---")
         st.write(f"### Match {idx+1}")
-        print(match)
         col1, col2 = st.columns(2)
         with col1:
             st.write("**Buyer**")
             st.write(f"Title: {match['buyer_title']}")
-            st.write(f"Description: {match['buyer_summary']}")
+            st.write(f"buyer_description: {match['buyer_description']}")
             st.write(f"buyer_nace_code: {match['buyer_nace_code']}")
+            st.write(f"buyer_location: {match['buyer_location']}")
             
         with col2:
             st.write("**Seller**") 
             st.write(f"Title: {match['seller_title']}")
-            st.write(f"Description: {match['seller_summary']}")
+            st.write(f"seller_description: {match['seller_description']}")
             st.write(f"seller_nace_code: {match['seller_nace_code']}")
+            st.write(f"seller_location: {match['seller_location']}")
             
         quality = st.radio(
             f"Rate match quality #{idx+1}",

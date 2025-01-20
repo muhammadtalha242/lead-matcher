@@ -93,8 +93,8 @@ def is_valid_coordinate(lat, lon):
 def main():
     # Load updated datasets
     logging.info('Loading datasets...')
-    buyers_df = pd.read_csv('./data/buyer_dejuna_geocoded.csv')
-    sellers_df = pd.read_csv('./data/nexxt_change_sales_listings_geocoded.csv')
+    buyers_df = pd.read_csv('./data/buyer_dejuna_geocoded_test-.csv')
+    sellers_df = pd.read_csv('./data/branche_nexxt_change_sales_listings_nace_geocoded.csv')
 
     # Parse JSON-encoded latitude and longitude lists
     logging.info('Parsing latitude and longitude...')
@@ -145,7 +145,8 @@ def main():
     # Initialize the models
     logging.info('Loading the Sentence Transformer models...')
     model_names = [
-        'paraphrase-multilingual-MiniLM-L12-v2'
+        # 'paraphrase-multilingual-MiniLM-L12-v2' #427 matches
+        "paraphrase-multilingual-mpnet-base-v2"
     ]
     models = {}
     for name in model_names:
@@ -170,7 +171,7 @@ def main():
     seller_coords = np.radians(sellers_flat[['latitude', 'longitude']].astype(float).values)
     ball_tree = BallTree(seller_coords, metric='haversine')
 
-    similarity_threshold = 0.79
+    similarity_threshold = 0.91
 
     matches = []
 
@@ -243,6 +244,7 @@ def main():
                 'buyer_latitude': buyer_row['latitude'],
                 'buyer_longitude': buyer_row['longitude'],
                 'buyer_open_to_foreign': buyer_open_to_foreign,
+                'buyer_nace_code': buyer_row.get('nace_code', ''),
                 'seller_date': seller_row.get('date', ''),
                 'seller_title': seller_row.get('title', ''),
                 'seller_summary': seller_row.get('description', ''),
@@ -252,6 +254,7 @@ def main():
                 'seller_longitude': seller_row['longitude'],
                 'seller_open_to_foreign': seller_open_to_foreign,
                 'seller_url': seller_row.get('url', ''),
+                'seller_nace_code': seller_row.get('nace_code', ''),
                 'distance_km': distance
             }
 

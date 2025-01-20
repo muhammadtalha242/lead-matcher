@@ -1,7 +1,7 @@
 import json
 
 # Multiline string containing all NACE codes and descriptions
-nace_data = """
+nace_data_eng = """
 A - Agriculture, forestry and fishing
 A1 - Crop and animal production, hunting and related service activities
 A1.1 - Growing of non-perennial crops
@@ -1000,6 +1000,1001 @@ U99.0 - Activities of extraterritorial organisations and bodies
 U99.0.0 - Activities of extraterritorial organisations and bodies
 """
 
+nace_data_dutch = """
+A - Land- und Forstwirtschaft, Fischerei
+A1 - Pflanzenbau, Tierproduktion, Jagd und damit verbundene Dienstleistungen
+A1.1 - Anbau einjähriger Pflanzen
+A1.1.1 - Anbau von Getreide (ohne Reis), Hülsenfrüchten und Ölsaaten
+A1.1.2 - Anbau von Reis
+A1.1.3 - Anbau von Gemüse und Melonen, Wurzeln und Knollen
+A1.1.4 - Anbau von Zuckerrohr
+A1.1.5 - Anbau von Tabak
+A1.1.6 - Anbau von Faserpflanzen
+A1.1.9 - Anbau anderer einjähriger Pflanzen
+A1.2 - Anbau mehrjähriger Pflanzen
+A1.2.1 - Anbau von Weintrauben
+A1.2.2 - Anbau tropischer und subtropischer Früchte
+A1.2.3 - Anbau von Zitrusfrüchten
+A1.2.4 - Anbau von Kern- und Steinobst
+A1.2.5 - Anbau von sonstige Baum- und Strauchfrüchte und Nüsse
+A1.2.6 - Anbau von Ölfrüchten
+A1.2.7 - Anbau von Getränkepflanzen
+A1.2.8 - Anbau von Gewürzen, aromatischen Pflanzen, Drogen und pharmazeutischen Pflanzen
+A1.2.9 - Anbau sonstiger mehrjähriger Pflanzen
+A1.3 - Pflanzenvermehrung
+A1.3.0 - Pflanzenvermehrung
+A1.4 - Tierproduktion
+A1.4.1 - Milchviehhaltung
+A1.4.2 - Haltung sonstiger Rinder und Büffel
+A1.4.3 - Haltung von Pferden und anderen Einhufern
+A1.4.4 - Haltung von Kamelen und Kamelartigen
+A1.4.5 - Haltung von Schafen und Ziegen
+A1.4.6 - Haltung von Schweinen
+A1.4.7 - Haltung von Geflügel
+A1.4.9 - Haltung sonstiger Tiere
+A1.5 - Gemischte Landwirtschaft
+A1.5.0 - Gemischte Landwirtschaft
+A1.6 - Unterstützende Tätigkeiten für die Landwirtschaft und Nacherntefrüchte Tätigkeiten
+A1.6.1 - Unterstützende Tätigkeiten für die Pflanzenproduktion
+A1.6.2 - Unterstützende Tätigkeiten für die Tierproduktion
+A1.6.3 - Nacherntetätigkeiten für Pflanzen
+A1.6.4 - Saatgutaufbereitung für Vermehrungszwecke
+A1.7 - Jagd, Fallenstellerei und damit verbundene Tätigkeiten
+A1.7.0 - Jagd, Fallenstellerei und damit verbundene Tätigkeiten
+A2 - Forstwirtschaft und Holzeinschlag
+A2.1 - Forstwirtschaft und sonstige forstwirtschaftliche Tätigkeiten
+A2.1.0 - Forstwirtschaft und sonstige forstwirtschaftliche Tätigkeiten
+A2.2 - Holzeinschlag
+A2.2.0 - Holzeinschlag
+A2.3 - Sammeln von wild wachsenden Nichtholzprodukten
+A2.3.0 - Sammeln von wild wachsenden Nichtholzprodukten
+A2.4 - Unterstützende Dienste für die Forstwirtschaft
+A2.4.0 - Unterstützende Dienste für die Forstwirtschaft
+A3 - Fischerei und Aquakultur
+A3.1 - Fischerei
+A3.1.1 - Meeresfischerei
+A3.1.2 - Süßwasserfischerei
+A3.2 - Aquakultur
+A3.2.1 - Meeresaquakultur
+A3.2.2 - Süßwasseraquakultur
+B - Bergbau und Gewinnung von Steinen und Erden 
+B5 - Kohlebergbau 
+B5.1 - Steinkohlebergbau
+B5.1.0 - Steinkohlebergbau
+B5.2 - Braunkohlebergbau
+B5.2.0 - Braunkohlebergbau
+B6 - Gewinnung von Erdöl und Erdgas
+B6.1 - Gewinnung von Erdöl
+B6.1.0 - Gewinnung von Erdöl
+B6.2 - Gewinnung von Erdgas 
+B6.2.0 - Gewinnung von Erdgas
+B7 - Erzbergbau 
+B7.1 - Eisenerzbergbau 
+B7.1.0 - Eisenerzbergbau 
+B7.2 - Nichteisenmetallerzbergbau 
+B7.2.1 - Uran- und Thoriumerzbergbau 
+B7.2.9 - Bergbau auf sonstige Nichteisenmetallerze 
+B8 - Sonstiger Bergbau und Gewinnung von Steinen und Erden 
+B8.1 - Gewinnung von Natursteinen, Sand und Ton 
+B8.1.1 - Gewinnung von Schmuck- und Bausteinen, Kalkstein, Gips, Kreide und Schiefer 
+B8.1.2 - Betrieb von Kies- und Sandgruben; Ton- und Kaolinabbau 
+B8.9 - Bergbau und Gewinnung von Steinen und Erden a. g. 
+B8.9.1 - Bergbau auf chemische und Düngemittelmineralien 
+B8.9.2 - Torfgewinnung 
+B8.9.3 - Salzgewinnung 
+B8.9.9 - Sonstiger Bergbau und Gewinnung von Steinen und Erden a. g. 
+B9 - Erbringung von unterstützenden Dienstleistungen für den Bergbau 
+B9.1 - Erbringung von unterstützenden Dienstleistungen für die Erdöl- und Erdgasförderung 
+B9.1.0 - Erbringung von unterstützenden Dienstleistungen für die Erdöl- und Erdgasförderung 
+B9.9 - Erbringung von sonstigen Bergbauleistungen und Gewinnung von Steinen und Erden a. g. 
+B9.9.0 - Erbringung von sonstigen Bergbauleistungen und Gewinnung von Steinen und Erden a. g. 
+C - Verarbeitendes Gewerbe
+C10 - Herstellung von Nahrungsmitteln
+C10.1 - Fleischverarbeitung und -konservierung und Herstellung von Fleischerzeugnissen
+C10.1.1 - Fleischverarbeitung und -konservierung
+C10.1.2 - Geflügelfleischverarbeitung und -konservierung
+C10.1.3 - Herstellung von Fleisch
+C10.2.0 - Verarbeitung und Konservierung von Fischen, Krebs- und Weichtieren
+C10.3 - Verarbeitung und Konservierung von Obst und Gemüse
+C10.3.1 - Verarbeitung und Konservierung von Kartoffeln
+C10.3.2 - Herstellung von Frucht- und Gemüsesäften
+C10.3.9 - Sonstige Verarbeitung und Konservierung von Obst und Gemüse
+C10.4 - Herstellung von pflanzlichen und tierischen Ölen und Fetten
+C10.4.1 - Herstellung von Ölen und Fetten
+C10.4.2 - Herstellung von Margarine und ähnlichen Speisefetten
+C10.5 - Herstellung von Molkereiprodukten
+C10.5.1 - Betrieb von Molkereien und Käsereien
+C10.5.2 - Herstellung von Speiseeis
+C10.6 - Herstellung von Mahlprodukten, Stärke und Stärkeerzeugnissen
+C10.6.1 - Herstellung von Mahlprodukten
+C10.6.2 - Herstellung von Stärke und Stärkeerzeugnissen
+C10.7 - Herstellung von Back- und Mehlwaren
+C10.7.1 - Herstellung von Brot; Herstellung von frischen Backwaren und Kuchen
+C10.7.2 - Herstellung von Zwieback und Keksen; Herstellung von haltbar gemachten Backwaren und Kuchen
+C10.7.3 - Herstellung von Makkaroni, Nudeln, Couscous und ähnlichen mehlhaltigen Erzeugnissen
+C10.8 - Herstellung von sonstigen Nahrungsmitteln
+C10.8.1 - Herstellung von Zucker
+C10.8.2 - Herstellung von Kakao, Schokolade und Zuckerwaren
+C10.8.3 - Verarbeitung von Tee und Kaffee
+C10.8.4 - Herstellung von Würzmitteln und Gewürzen
+C10.8.5 - Herstellung von Fertiggerichten und Speisen
+C10.8.6 - Herstellung von homogenisierten Lebensmittelzubereitungen und diätetischen Lebensmitteln
+C10.8.9 - Herstellung von sonstigen Nahrungsmitteln ang 
+C10.9 - Herstellung von zubereitetem Tierfutter
+C10.9.1 - Herstellung von Fertigfutter für Nutztiere
+C10.9.2 - Herstellung von zubereitetem Heimtierfutter
+C11 - Herstellung von Getränken
+C11.0 - Herstellung von Getränken
+C11.0.1 - Destillieren, Rektifizieren und Mischen von Spirituosen
+C11.0.2 - Herstellung von Wein aus Trauben
+C11.0.3 - Herstellung von Apfelwein und anderen Fruchtweinen
+C11.0.4 - Herstellung von sonstigen nicht destillierten gegorenen Getränken
+C11.0.5 - Herstellung von Bier
+C11.0.6 - Herstellung von Malz
+C11.0.7 - Herstellung von alkoholfreien Getränken; Herstellung von Mineralwasser und anderen abgefüllten Wässern
+C12 - Herstellung von Tabakwaren
+C12.0 - Herstellung von Tabakwaren
+C12.0.0 - Herstellung von Tabakwaren
+C13 - Herstellung von Textilien
+C13.1 - Textilfaseraufbereitung und -spinnerei
+C13.1.0 - Textilfaseraufbereitung und -spinnerei 
+C13.2 - Weberei von Textilien
+C13.2.0 - Weberei von Textilien
+C13.3 - Textilveredelung
+C13.3.0 - Textilveredelung
+C13.9 - Herstellung von sonstigen Textilien
+C13.9.1 - Herstellung von gewirktem und gestricktem Stoff
+C13.9.2 - Herstellung von konfektionierten Textilwaren (ohne Bekleidung)
+C13.9.3 - Herstellung von Teppichen
+C13.9.4 - Herstellung von Tauen, Seilen, Bindfäden und Netzen
+C13.9.5 - Herstellung von Vliesstoffen und Waren aus Vliesstoffen (ausgenommen Bekleidung)
+C13.9.6 - Herstellung von sonstigen technischen und industriellen Textilien
+C13.9.9 - Herstellung von sonstigen Textilien ang
+C14 - Herstellung von Bekleidung
+C14.1 - Herstellung von Bekleidung (ausgenommen Pelzbekleidung)
+C14.1.1 - Herstellung von Lederbekleidung
+C14.1.2 - Herstellung von Arbeitskleidung
+C14.1.3 - Herstellung von sonstiger Oberbekleidung
+C14.1.4 - Herstellung von Unterwäsche
+C14.1.9 - Herstellung von sonstiger Bekleidung und Zubehör
+C14.2 - Herstellung von Pelzwaren
+C14.2.0 - Herstellung von Pelzwaren
+C14.3 - Herstellung von gewirkter und gehäkelter Bekleidung
+C14.3.1 - Herstellung von Strumpfwaren
+C14.3.9 - Herstellung von sonstiger gewirkter und gehäkelter Bekleidung
+C15 - Herstellung von Leder und verwandten Produkten
+C15.1 - Gerben und Zurichtung von Leder; Herstellung von Reisegepäck, Handtaschen, Sattlerwaren und Geschirren; Zurichtung und Färben von Pelzen
+C15.1.1 - Gerben und Zurichtung von Leder; Zurichtung und Färben von Pelzen
+C15.1.2 - Herstellung von Reisegepäck, Handtaschen und dergleichen, Sattlerwaren und Geschirren
+C15.2 - Herstellung von Schuhen
+C15.2.0 - Herstellung von Schuhen
+C16 - Herstellung von Holz und von Produkten aus Holz und Kork (ausgenommen Möbel); Herstellung von Waren aus Stroh und Flechtstoffen
+C16.1 - Säge- und Hobelarbeiten von Holz
+C16.1.0 - Säge- und Hobelarbeiten von Holz
+C16.2 - Herstellung von Waren aus Holz, Kork, Stroh und Flechtstoffen
+C16.2.1 - Herstellung von Furnierblättern und Holzwerkstoffen
+C16.2.2 - Herstellung von Fertigparkett
+C16.2.3 - Herstellung von sonstigen Bautischlerei- und Zimmereiarbeiten
+C16.2.4 - Herstellung von Holzbehältern
+C16.2.9 - Herstellung von sonstigen Produkten aus Holz; Herstellung von Waren aus Kork, Stroh und Flechtstoffen
+C17 - Herstellung von Papier und Papierwaren
+C17.1 - Herstellung von Zellstoff, Papier und Pappe
+C17.1.1 - Herstellung von Zellstoff
+C17.1.2 - Herstellung von Papier und Pappe
+C17.2 - Herstellung von Waren aus Papier und Pappe
+C17.2.1 - Herstellung von Wellpapier und Wellpappe und von Behältern aus Papier und Pappe
+C17.2.2 - Herstellung von Haushalts- und Hygieneartikeln sowie von Toilettenartikeln
+C17.2.3 - Herstellung von Schreibwaren aus Papier
+C17.2.4 - Herstellung von Tapeten
+C17.2.9 - Herstellung von sonstigen Waren aus Papier und Pappe
+C18 - Drucken und Vervielfältigen von bespielten Datenträgern
+C18.1 - Druckerei- und Dienstleistungstätigkeiten im Zusammenhang mit dem Drucken
+C18.1.1 - Drucken von Zeitungen
+C18.1.2 - Sonstige Druckereidienstleistungen
+C18.1.3 - Druckvorstufe und Medienvorstufe
+C18.1.4 - Buchbinderei und damit verbundene Dienstleistungen
+C18.2 - Vervielfältigen von bespielten Datenträgern 
+C18.2.0 - Vervielfältigen von bespielten Datenträgern
+C19 - Herstellung von Kokerei- und Mineralölerzeugnissen
+C19.1 - Herstellung von Kokereierzeugnissen
+C19.1.0 - Herstellung von Kokereierzeugnissen 
+C19.2 - Herstellung von Mineralölerzeugnissen
+C19.2.0 - Herstellung von Mineralölerzeugnissen
+C20 - Herstellung von Chemikalien und chemischen Erzeugnissen
+C20.1 - Herstellung von chemischen Grundstoffen, Düngemitteln und Stickstoffverbindungen, Kunststoffen und synthetischem Kautschuk in Primärformen
+C20.1.1 - Herstellung von Industriegasen
+C20.1.2 - Herstellung von Pigmente
+C20.1.3 - Herstellung von sonstigen anorganischen Grundstoffen
+C20.1.4 - Herstellung von sonstigen organischen Grundstoffen
+C20.1.5 - Herstellung von Düngemitteln und Stickstoffverbindungen
+C20.1.6 - Herstellung von Kunststoffen in Primärformen
+C20.1.7 - Herstellung von synthetischem Kautschuk in Primärformen
+C20.2 - Herstellung von Pestiziden und sonstigen Agrochemikalien
+C20.2.0 - Herstellung von Pestiziden und sonstigen Agrochemikalien
+C20.3 - Herstellung von Farben, Lacken und ähnlichen Überzügen, Druckfarben und Kitten
+C20.3.0 - Herstellung von Farben, Lacken und ähnlichen Überzügen, Druckfarben und Kitten
+C20.4 - Herstellung von Seifen und Waschmitteln, Reinigungs- und Poliermitteln, Parfüms und Körperpflegemitteln
+C20.4.1 - Herstellung von Seifen und Waschmitteln, Reinigungs- und Poliermitteln
+C20.4.2 - Herstellung von Parfüms und Körperpflegemitteln
+C20.5 - Herstellung von sonstigen chemischen Erzeugnissen
+C20.5.1 - Herstellung von Explosivstoffen
+C20.5.2 - Herstellung von Klebstoffen
+C20.5.3 - Herstellung von ätherischen Ölen
+C20.5.9 - Herstellung von sonstigen chemischen Erzeugnissen ang
+C20.6 - Herstellung von Chemiefasern
+C20.6.0 - Herstellung von Chemiefasern
+C21 - Herstellung von pharmazeutischen Grundstoffen und pharmazeutischen Präparaten
+C21.1 - Herstellung von pharmazeutischen Grundstoffen
+C21.1.0 - Herstellung von pharmazeutischen Grundstoffen
+C21.2 - Herstellung von pharmazeutischen Präparaten
+C21.2.0 - Herstellung von pharmazeutischen Erzeugnissen
+C22 - Herstellung von Gummi- und Kunststoffwaren
+C22.1 - Herstellung von Gummiwaren
+C22.1.1 - Herstellung von Gummireifen und -schläuchen; Runderneuerung und Erneuerung von Gummireifen
+C22.1.9 - Herstellung von sonstigen Gummiwaren
+C22.2 - Herstellung von Kunststoffwaren
+C22.2.1 - Herstellung von Platten, Folien, Schläuchen und Profilen aus Kunststoff
+C22.2.2 - Herstellung von Verpackungsmaterial aus Kunststoff
+C22.2.3 - Herstellung von Baubedarfsartikeln aus Kunststoff
+C22.2.9 - Herstellung von sonstigen Kunststoffwaren
+C23 - Herstellung von sonstigen Erzeugnissen aus nichtmetallischen Mineralien
+C23.1 - Herstellung von Glas und Glaswaren
+C23.1.1 - Herstellung von Flachglas
+C23.1.2 - Formgebung und Bearbeitung von Flachglas
+C23.1.3 - Herstellung von Hohlglas
+C23.1.4 - Herstellung von Glasfasern
+C23.1.9 - Herstellung und Bearbeitung von sonstigem Glas, einschließlich technischer Glaswaren
+C23.2 - Herstellung von feuerfesten Erzeugnissen
+C23.2.0 - Herstellung von feuerfesten Erzeugnissen
+C23.3 - Herstellung von keramischen Baustoffen
+C23.3.1 - Herstellung von keramischen Fliesen und Platten
+C23.3.2 - Herstellung von Ziegeln, Fliesen und Bauprodukten aus gebranntem Ton
+C23.4 - Herstellung von sonstigen Porzellan- und Keramikwaren
+C23.4.1 - Herstellung von keramischen Haushalts- und Ziergegenständen
+C23.4.2 - Herstellung von keramischen Sanitärgegenständen
+C23.4.3 - Herstellung von keramischen Isolatoren und Isolierstücken
+C23.4.4 - Herstellung von sonstigen technischen Keramikwaren
+C23.4.9 - Herstellung von sonstigen keramischen Waren
+C23.5 - Herstellung von Zement, Kalk und Gips
+C23.5.1 - Herstellung von Zement
+C23.5.2 - Herstellung von Kalk und Gips
+C23.6 - Herstellung von Waren aus Beton, Zement und Gips
+C23.6.1 - Herstellung von Betonwaren für Bauzwecke
+C23.6.2 - Herstellung von Gipswaren für Bauzwecke
+C23.6.3 - Herstellung von Transportbeton
+C23.6.4 - Herstellung von Mörtel
+C23.6.5 - Herstellung von Faserzement
+C23.6.9 - Herstellung von sonstigen Waren aus Beton, Gips und Zement
+C23.7 - Schneiden, Bearbeiten und Veredeln von Steinen
+C23.7.0 - Schneiden, Bearbeiten und Veredeln von Steinen
+C23.9 - Herstellung von Schleifmitteln und Produkten aus nichtmetallischen Mineralien, ang
+C23.9.1 - Herstellung von Schleifmitteln
+C23.9.9 - Herstellung von sonstigen nichtmetallischen Mineralprodukten ang
+C24 - Metallerzeugung und -verarbeitung
+C24.1 - Erzeugung von Roheisen, Stahl und Ferrolegierungen
+C24.1.0 - Erzeugung von Roheisen, Stahl und Ferrolegierungen
+C24.2 - Herstellung von Rohren, Hohlprofilen und entsprechenden Formstücken aus Stahl
+C24.2.0 - Herstellung von Rohren, Hohlprofilen und entsprechenden Formstücken aus Stahl
+C24.3 - Herstellung von sonstigen Erzeugnissen aus der Erstbearbeitung von Stahl
+C24.3.1 - Kaltziehen von Stangen
+C24.3.2 - Kaltwalzen von Schmalbändern
+C24.3.3 - Kaltverformen oder Abkanten
+C24.3.4 - Kaltziehen von Draht
+C24.4 - Erzeugung von Edelmetallen und sonstigen Nichteisenmetallen
+C24.4.1 - Erzeugung von Edelmetallen
+C24.4.2 - Erzeugung von Aluminium
+C24.4.3 - Erzeugung von Blei, Zink und Zinn
+C24.4.4 - Erzeugung von Kupfer
+C24.4.5 - Sonstige Erzeugung von Nichteisenmetallen
+C24.4.6 - Verarbeitung von Kernbrennstoffen
+C24.5 - Metallgießereien 
+C24.5.1 - Eisengießereien
+C24.5.2 - Stahlgießereien
+C24.5.3 - Leichtmetallgießereien
+C24.5.4 - Sonstige Nichteisenmetallgießereien
+C25 - Herstellung von Metallerzeugnissen (ohne Maschinen und Ausrüstungen)
+C25.1 - Herstellung von Metallbauteilen 
+C25.1.1 - Herstellung von Metallkonstruktionen und Konstruktionsteilen 
+C25.1.2 - Herstellung von Türen und Fenstern aus Metall 
+C25.2 - Herstellung von Tanks, Sammelbehältern und Behältern aus Metall
+C25.2.1 - Herstellung von Heizkörpern und Kesseln für Zentralheizungen
+C25.2.9 - Herstellung von sonstigen Tanks, Sammelbehältern und Behältern aus Metall
+C25.3 - Herstellung von Dampferzeugern (ohne Warmwasserkessel für Zentralheizungen)
+C25.3.0 - Herstellung von Dampferzeugern (ohne Warmwasserkessel für Zentralheizungen)
+C25.4 - Herstellung von Waffen und Munition
+C25.4.0 - Herstellung von Waffen und Munition
+C25.5 - Schmieden, Pressen, Stanzen und Rollformen von Metall; Pulvermetallurgie
+C25.5.0 - Schmieden, Pressen, Stanzen und Rollformen von Metall; Pulvermetallurgie
+C25.6 - Behandlung und Beschichtung von Metallen; Spanende Bearbeitung
+C25.6.1 - Behandlung und Beschichtung von Metallen
+C25.6.2 - Spanende Bearbeitung
+C25.7 - Herstellung von Schneidwaren, Werkzeugen und Eisenwaren im Allgemeinen
+C25.7.1 - Herstellung von Schneidwaren
+C25.7.2 - Herstellung von Schlössern und Scharnieren
+C25.7.3 - Herstellung von Werkzeugen
+C25.9 - Herstellung von sonstigen Metallerzeugnissen
+C25.9.1 - Herstellung von Stahlfässern und ähnlichen Behältern
+C25.9.2 - Herstellung von Verpackungen aus Leichtmetall
+C25.9.3 - Herstellung von Drahtwaren, Ketten und Federn
+C25.9.4 - Herstellung von Befestigungselementen und Schraubmaschinenprodukten
+C25.9.9 - Herstellung von sonstigen Metallwaren a. g.
+C26 - Herstellung von Computer-, elektronischen und optischen Erzeugnissen
+C26.1 - Herstellung von elektronischen Bauteilen und Platinen
+C26.1.1 - Herstellung von elektronischen Bauteilen
+C26.1.2 - Herstellung von bestückten elektronischen Platinen
+C26.2 - Herstellung von Computern und Peripheriegeräten
+C26.2.0 - Herstellung von Computern und Peripheriegeräten
+C26.3 - Herstellung von Kommunikationsgeräten
+C26.3.0 - Herstellung von Kommunikationsgeräten 
+C26.4 - Herstellung von Unterhaltungselektronik
+C26.4.0 - Herstellung von Unterhaltungselektronik
+C26.5 - Herstellung von Mess-, Prüf- und Navigationsinstrumenten und -geräten; Uhren und Uhrmacherei
+C26.5.1 - Herstellung von Mess-, Kontroll- und Navigationsinstrumenten und -vorrichtungen
+C26.5.2 - Herstellung von Uhren und Uhrmacherei
+C26.6 - Herstellung von Bestrahlungs-, elektromedizinischen und elektrotherapeutischen Geräten
+C26.6.0 - Herstellung von Bestrahlungs-, elektromedizinischen und elektrotherapeutischen Geräten
+C26.7 - Herstellung von optischen Instrumenten und fotografischen Geräten
+C26.7.0 - Herstellung von optischen Instrumenten und fotografischen Geräten
+C26.8 - Herstellung von magnetischen und optischen Datenträgern
+C26.8.0 - Herstellung von magnetischen und optischen Datenträgern
+C27 - Herstellung von elektrischen Ausrüstungen
+C27.1 - Herstellung von Elektromotoren, Generatoren, Transformatoren und Elektrizitätsverteilungs- und -steuergeräten
+C27.1.1 - Herstellung von Elektromotoren, Generatoren und Transformatoren
+C27.1.2 - Herstellung von Elektrizitätsverteilungs- und -steuergeräten
+C27.2 - Herstellung von Batterien und Akkumulatoren
+C27.2.0 - Herstellung von Batterien und Akkumulatoren
+C27.3 - Herstellung von Verdrahtungen und Verdrahtungsgeräten
+C27.3.1 - Herstellung von Glasfaserkabeln
+C27.3.2 - Herstellung von sonstigen elektronischen und elektrischen Drähten und Kabeln
+C27.3.3 - Herstellung von Installationsgeräten
+C27.4 - Herstellung von elektrischen Beleuchtungsgeräten
+C27.4.0 - Herstellung von elektrischen Beleuchtungsgeräten
+C27.5 - Herstellung von Haushaltsgeräten
+C27.5.1 - Herstellung von elektrischen Haushaltsgeräten
+C27.5.2 - Herstellung von nichtelektrischen Haushaltsgeräten
+C27.9 - Herstellung von sonstigen elektrischen Ausrüstungen
+C27.9.0 - Herstellung von sonstigen elektrischen Ausrüstungen
+C28 - Herstellung von Maschinen und Ausrüstungen a. g.
+C28.1 - Herstellung von nicht wirtschaftszweigspezifischen Maschinen
+C28.1.1 - Herstellung von Motoren und Turbinen (ohne Motoren für Luftfahrzeuge, Fahrzeuge und Fahrräder)
+C28.1.2 - Herstellung von hydraulischen Ausrüstungen
+C28.1.3 - Herstellung von sonstigen Pumpen und Kompressoren
+C28.1.4 - Herstellung von sonstigen Armaturen und Ventilen
+C28.1.5 - Herstellung von Lagern, Zahnrädern, Getrieben und Antriebselementen
+C28.2 - Herstellung von sonstigen nicht wirtschaftszweigspezifischen Maschinen
+C28.2.1 - Herstellung von Öfen, Brennern und Brennern
+C28.2.2 - Herstellung von Hebezeugen und Fördergeräten
+C28.2.3 - Herstellung von Büromaschinen und -geräten (ohne Computer und Peripheriegeräte)
+C28.2.4 - Herstellung von motorbetriebenen Handwerkzeugen
+C28.2.5 - Herstellung von Kühl- und Lüftungsgeräten, nicht für den Haushalt
+C28.2.9 - Herstellung von sonstigen nicht wirtschaftszweigspezifischen Maschinen ang
+C28.3 - Herstellung von land- und forstwirtschaftlichen Maschinen
+C28.3.0 - Herstellung von land- und forstwirtschaftlichen Maschinen
+C28.4 - Herstellung von Maschinen und Werkzeugmaschinen für die Metallumformung
+C28.4.1 - Herstellung von Maschinen für die Metallumformung
+C28.4.9 - Herstellung von sonstigen Werkzeugmaschinen
+C28.9 - Herstellung von sonstigen Maschinen für bestimmte Wirtschaftszweige
+C28.9.1 - Herstellung von Maschinen für die Metallurgie
+C28.9.2 - Herstellung von Maschinen für Bergbau, Gewinnung von Steinen und Erden und für das Baugewerbe
+C28.9.3 - Herstellung von Maschinen für die Nahrungs- und Genussmittelindustrie und die Tabakverarbeitung
+C28.9.4 - Herstellung von Maschinen für die Textil-, Bekleidungs- und Lederverarbeitung
+C28.9.5 - Herstellung von Maschinen für die Papier- und Kartonherstellung
+C28.9.6 - Herstellung von Maschinen zur Verarbeitung von Kunststoffen und Gummi
+C28.9.9 - Herstellung von sonstigen Maschinen für bestimmte Wirtschaftszweige ang
+C29 - Herstellung von Kraftwagen und Kraftwagenanhängern
+C29.1 - Herstellung von Kraftwagen
+C29.1.0 - Herstellung von Kraftfahrzeugen
+C29.2 - Herstellung von Karosserien für Kraftfahrzeuge; Herstellung von Anhängern und Sattelanhängern
+C29.2.0 - Herstellung von Karosserien für Kraftfahrzeuge; Herstellung von Anhängern und Sattelanhängern
+C29.3 - Herstellung von Teilen und Zubehör für Kraftfahrzeuge
+C29.3.1 - Herstellung von elektrischen und elektronischen Ausrüstungen für Kraftfahrzeuge
+C29.3.2 - Herstellung von sonstigen Teilen und Zubehör für Kraftfahrzeuge
+C30 - Herstellung von sonstigen Transportmitteln
+C30.1 - Schiffs- und Bootsbau
+C30.1.1 - Schiffs- und schwimmende Konstruktionen
+C30.1.2 - Bau von Sportbooten und Freizeitbooten
+C30.2 - Herstellung von Lokomotiven und rollendem Material
+C30.2.0 - Herstellung von Lokomotiven und rollendem Material
+C30.3 - Herstellung von Luft- und Raumfahrzeugen und entsprechenden Maschinen
+C30.3.0 - Herstellung von Luft- und Raumfahrzeugen und entsprechenden Maschinen
+C30.4 - Herstellung von militärischen Kampffahrzeugen
+C30.4.0 - Herstellung von militärischen Kampffahrzeugen
+C30.9 - Herstellung von Transportmitteln, a. g.
+C30.9.1 - Herstellung von Motorrädern
+C30.9.2 - Herstellung von Fahrrädern und Rollwagen
+C30.9.9 - Herstellung von sonstigen Transportmitteln, a. g.
+C31 - Herstellung von Möbeln
+C31.0 - Herstellung von Möbeln
+C31.0.1 - Herstellung von Büro- und Ladenmöbeln
+C31.0.2 - Herstellung von Küchenmöbeln
+C31.0.3 - Herstellung von Matratzen
+C31.0.9 - Herstellung von sonstigen Möbeln
+C32 - Herstellung von sonstigen Erzeugnissen
+C32.1 - Herstellung von Schmuck, Juwelen und ähnlichen Erzeugnissen
+C32.1.1 - Prägen von Münzen 
+C32.1.2 - Herstellung von Schmuck und ähnlichen Erzeugnissen
+C32.1.3 - Herstellung von Modeschmuck und ähnlichen Erzeugnissen
+C32.2 - Herstellung von Musikinstrumenten
+C32.2.0 - Herstellung von Musikinstrumenten 
+C32.3 - Herstellung von Sportartikeln
+C32.3.0 - Herstellung von Sportartikeln
+C32.4 - Herstellung von Spielen und Spielzeug
+C32.4.0 - Herstellung von Spielen und Spielzeug
+C32.5 - Herstellung von medizinischen und zahnmedizinischen Instrumenten und Materialien
+C32.5.0 - Herstellung von medizinischen und zahnmedizinischen Instrumenten und Materialien
+C32.9 - Herstellung von Waren ohne besondere Kenntnisse
+C32.9.1 - Herstellung von Besen und Bürsten
+C32.9.9 - Herstellung von sonstigen Erzeugnissen ohne besondere Kenntnisse
+C33 - Reparatur und Installation von Maschinen und Geräten 
+C33.1 - Reparatur von
+C33.1.1 - Reparatur von Metallerzeugnissen
+C33.1.2 - Reparatur von Maschinen
+C33.1.3 - Reparatur von elektronischen und optischen Geräten
+C33.1.4 - Reparatur von elektrischen Geräten
+C33.1.5 - Reparatur und Wartung von Schiffen und Booten
+C33.1.6 - Reparatur und Wartung von Luft- und Raumfahrzeugen
+C33.1.7 - Reparatur und Wartung von sonstigen Transportgeräten
+C33.1.9 - Reparatur von sonstigen Geräten
+C33.2 - Installation von industriellen Maschinen und Geräten
+C33.2.0 - Installation von industriellen Maschinen und Geräten
+D - Strom-, Gas-, Dampf- und Klimaanlagenversorgung
+D35 - Strom-, Gas-, Dampf- und Klimaanlagenversorgung 
+D35.1 - Stromerzeugung, -übertragung und -verteilung 
+D35.1.1 - Stromerzeugung
+D35.1.2 - Stromübertragung
+D35.1.3 - Stromverteilung
+D35.1.4 - Stromhandel
+D35.2 - Gasherstellung; Verteilung gasförmiger Brennstoffe über Leitungen
+D35.2.1 - Gasherstellung
+D35.2.2 - Verteilung gasförmiger Brennstoffe über Leitungen
+D35.2.3 - Gashandel über Leitungen
+D35.3 - Dampf- und Klimaanlagenversorgung
+D35.3.0 - Dampf- und Klimaanlagenversorgung
+E - Wasserversorgung; Kanalisation; Abfallbewirtschaftung und -beseitigung
+E36 - Wassersammlung, -aufbereitung und -versorgung
+E36.0 - Wassersammlung, -aufbereitung und -versorgung
+E36.0.0 - Wassersammlung, -aufbereitung und -versorgung
+E37 - Kanalisation
+E37.0 - Kanalisation
+E37.0.0 - Kanalisation
+E38 - Abfallsammlung, -aufbereitung und -entsorgung; Materialrückgewinnung
+E38.1 - Abfallsammlung
+E38.1.1 - Sammlung nicht gefährlicher Abfälle
+E38.1.2 - Sammlung gefährlicher Abfälle
+E38.2 - Abfallbehandlung und -entsorgung
+E38.2.1 - Behandlung und Entsorgung nicht gefährlicher Abfälle
+E38.2.2 - Behandlung und Entsorgung gefährlicher Abfälle
+E38.3 - Materialrückgewinnung
+E38.3.1 - Demontage von Wracks
+E38.3.2 - Rückgewinnung sortierter Materialien
+E39 - Sanierungstätigkeiten und sonstige Abfallbewirtschaftung
+E39.0 - Sanierungstätigkeiten und sonstige Abfallbewirtschaftung
+E39.0.0 - Sanierungstätigkeiten und sonstige Abfallbewirtschaftung
+F - Baugewerbe
+F41 - Bau von Gebäuden
+F41.1 - Entwicklung von Bauprojekten
+F41.1.0 - Entwicklung von Bauprojekten
+F41.2 - Bau von Wohn- und Nichtwohngebäuden
+F41.2.0 - Bau von Wohn- und Nichtwohngebäuden
+F42 - Tiefbau
+F42.1 - Bau von Straßen und Eisenbahnen
+F42.1.1 - Bau von Straßen und Autobahnen
+F42.1.2 - Bau von Eisenbahnen und U-Bahnen
+F42.1.3 - Bau von Brücken und Tunneln
+F42.2 - Bau von Versorgungsprojekten
+F42.2.1 - Rohrleitungsbau für Flüssigkeiten
+F42.2.2 - Rohrleitungsbau für Elektrizität und Telekommunikation
+F42.9 - Sonstiger Tiefbau
+F42.9.1 - Wasserbau
+F42.9.9 - Sonstiger Tiefbau ang
+F43 - Vorbereitende Bauarbeiten
+F43.1 - Abbrucharbeiten und vorbereitende Baustellenarbeiten
+F43.1.1 - Abbrucharbeiten
+F43.1.2 - Vorbereitende Baustellenarbeiten
+F43.1.3 - Probebohrungen und -bohrungen
+F43.2 - Elektro-, Klempner- und sonstige Bauinstallationstätigkeiten
+F43.2.1 - Elektroinstallation
+F43.2.2 - Klempner-, Heizungs- sowie Klimaanlageninstallation
+F43.2.9 - Sonstige Bauinstallation
+F43.3 - Sonstiger Bauausbau
+F43.3.1 - Verputzarbeiten
+F43.3.2 - Bautischlerei und -bau
+F43.3.3 - Bodenbelags- und Tapezierarbeiten
+F43.3.4 - Maler- und Glaserarbeiten
+F43.3.9 - Sonstiger Bauausbau
+F43.9 - Sonstige spezialisierte Bautätigkeiten
+F43.9.1 - Dachdeckerarbeiten
+F43.9.9 - Sonstige spezialisierte Bautätigkeiten
+G - Groß- und Einzelhandel; Reparatur von Kraftfahrzeugen und Motorrädern
+G45 - Groß- und Einzelhandel und Reparatur von Kraftfahrzeugen und Motorrädern
+G45.1 - Handel mit Kraftfahrzeugen
+G45.1.1 - Handel mit Personenkraftwagen und leichten Kraftfahrzeugen
+G45.1.9 - Handel mit sonstigen Kraftfahrzeugen
+G45.2 - Instandhaltung und Reparatur von Kraftfahrzeugen
+G45.2.0 - Instandhaltung und Reparatur von Kraftfahrzeugen
+G45.3 - Handel mit Kraftfahrzeugteilen und Zubehör
+G45.3.1 - Großhandel mit Kraftfahrzeugteilen und Zubehör
+G45.3.2 - Einzelhandel mit Kraftfahrzeugteilen und Zubehör
+G45.4 - Verkauf, Instandhaltung und Reparatur von Motorrädern und dazugehörigen Teilen und Zubehör
+G45.4.0 - Verkauf, Instandhaltung und Reparatur von Motorrädern und dazugehörigen Teilen und Zubehör
+G46 - Großhandel (ohne Handel mit Kraftfahrzeugen und Motorrädern)
+G46.1 - Großhandel auf Honorar- oder Vertragsbasis
+G46.1.1 - Handelsvermittlung von landwirtschaftlichen Rohstoffen, lebenden Tieren, textilen Rohstoffen und Halbfabrikaten
+G46.1.2 - Handelsvermittlung von Brennstoffe, Erze, Metalle und Industriechemikalien
+G46.1.3 - Handelsvermittlung von Holz und Baustoffen
+G46.1.4 - Handelsvermittlung von Maschinen, Industrieanlagen, Schiffen und Flugzeugen
+G46.1.5 - Verkaufsmakler für Möbel, Haushaltswaren, Eisen- und Metallwaren
+G46.1.6 - Verkaufsmakler für Textilien, Bekleidung, Pelze, Schuhe und Lederwaren
+G46.1.7 - Verkaufsmakler für Nahrungsmittel, Getränke und Tabak
+G46.1.8 - Verkaufsmakler für sonstige bestimmte Erzeugnisse
+G46.1.9 - Verkaufsmakler für verschiedene Waren
+G46.2 - Großhandel mit landwirtschaftlichen Rohstoffen und lebenden Tieren
+G46.2.1 - Großhandel mit Getreide, Rohtabak, Saatgut und Futtermitteln
+G46.2.2 - Großhandel mit Blumen und Pflanzen 
+G46.2.3 - Großhandel mit lebenden Tieren 
+G46.2.4 - Großhandel mit Häuten, Fellen und Leder
+G46.3 - Großhandel mit Nahrungsmitteln, Getränken und Tabak
+G46.3.1 - Großhandel mit Obst und Gemüse
+G46.3.2 - Großhandel mit Fleisch und Fleischwaren
+G46.3.3 - Großhandel mit Milchprodukten , Eiern und Speiseölen und -fetten
+G46.3.4 - Getränkegroßhandel
+G46.3.5 - Tabakgroßhandel
+G46.3.6 - Zuckergroßhandel und Schokolade und Zuckerwaren
+G46.3.7 - Kaffeegroßhandel, Teegroßhandel, Kakaogroßhandel und Gewürzen
+G46.3.8 - Sonstiger Nahrungsmittelgroßhandel 
+G46.3.9 - Großhandel mit Nahrungsmitteln, Getränken und Tabakwaren ohne ausgeprägten Schwerpunkt
+G46.4 - Großhandel mit Gebrauchs- und Verbrauchsgütern
+G46.4.1 - Textiliengroßhandel
+G46.4.2 - Bekleidungsgroßhandel und Schuhgroßhandel
+G46.4.3 - Elektrische Haushaltsgeräte
+G46.4.4 - Großhandel mit Porzellan, Glaswaren und Reinigungsmitteln
+G46.4.5 - Parfümerien und Kosmetikartikel
+G46.4.6 - Pharmagroßhandel
+G46.4.7 - Möbelgroßhandel, Teppichgroßhandel und Beleuchtungskörper
+G46.4.8 - Uhrengroßhandel und Schmuck
+G46.4.9 - Großhandel mit sonstigen Gebrauchs- und Verbrauchsgütern
+G46.5 - Großhandel mit Geräten der Informations- und Kommunikationstechnik
+G46.5.1 - Großhandel mit Computern, Computerperipheriegeräten und Software
+G46.5.2 - Großhandel mit elektronischen Geräten und Teilen der Telekommunikationstechnik
+G46.6 - Großhandel mit sonstigen Maschinen, Geräten und Zubehör
+G46.6.1 - Großhandel mit landwirtschaftlichen Maschinen, Geräten und Zubehör
+G46.6.2 - Großhandel mit Werkzeugmaschinen
+G46.6.3 - Großhandel mit Maschinen für den Bergbau, das Hoch- und Tiefbau
+G46.6.4 - Großhandel mit Maschinen für die Textilindustrie sowie mit Näh- und Strickmaschinen
+G46.6.5 - Großhandel mit Büromöbeln
+G46.6.6 - Großhandel mit sonstigen Büromaschinen und -geräten
+G46.6.9 - Großhandel mit sonstigen Maschinen und Geräten
+G46.7 - Sonstiger spezialisierter Großhandel
+G46.7.1 - Großhandel mit festen, flüssigen und gasförmigen Brennstoffen und verwandten Erzeugnissen
+G46.7.2 - Großhandel mit Metallen und Erzen
+G46.7.3 - Großhandel mit Holz, Baustoffen und Sanitärkeramik
+G46.7.4 - Großhandel mit Eisen- und Metallwaren, Installations- und Heizungsanlagen und -bedarf
+G46.7.5 - Großhandel mit chemischen Erzeugnissen
+G46.7.6 - Großhandel mit sonstigen Halberzeugnissen 
+G46.7.7 - Großhandel mit Altmaterialien und Schrott
+G46.9 - Großhandel ohne spezialisierten Schwerpunkt
+G46.9.0 - Großhandel ohne spezialisierten Schwerpunkt
+G47 - Einzelhandel (ohne Handel mit Kraftfahrzeugen und Krafträdern)
+G47.1 - Einzelhandel mit nicht spezialisierten Verkaufsräumen
+G47.1.1 - Einzelhandel mit nicht spezialisierten Verkaufsräumen, mit Hauptschwerpunkt Nahrungsmittel, Getränke und Tabakwaren
+G47.1.9 - Sonstiger Einzelhandel mit nicht spezialisierter Einzelhandel mit Nahrungsmitteln, Getränken und Tabakwaren 
+G47.2 - Einzelhandel mit Nahrungsmitteln, Getränken und Tabakwaren in Fachgeschäften
+G47.2.1 - Einzelhandel mit Obst und Gemüse in Fachgeschäften
+G47.2.2 - Einzelhandel mit Fleisch und Fleischwaren in Fachgeschäften
+G47.2.3 - Einzelhandel mit Fisch, Krebstieren und Weichtieren in Fachgeschäften
+G47.2.4 - Einzelhandel mit Brot, Kuchen, Mehlwaren und Zuckerwaren in Fachgeschäften
+G47.2.5 - Einzelhandel mit Getränken in Fachgeschäften
+G47.2.6 - Einzelhandel mit Tabakwaren in Fachgeschäften
+G47.2.9 - Sonstiger Einzelhandel mit Nahrungsmitteln in Fachgeschäften
+G47.3 - Einzelhandel mit Kraftstoffen in Fachgeschäften 
+G47.3.0 - Einzelhandel mit Kraftstoffen in Fachgeschäften
+G47.4 - Einzelhandel mit Informations- und Kommunikationsgeräten in Fachgeschäften
+G47.4.1 - Einzelhandel mit Computern, Peripheriegeräten und Software in Fachgeschäften
+G47.4.2 - Einzelhandel mit Telekommunikationsgeräten (in Fachgeschäften)
+G47.4.3 - Einzelhandel mit Audio- und Videogeräten (in Fachgeschäften)
+G47.5 - Einzelhandel mit sonstigen Haushaltsgeräten (in Fachgeschäften)
+G47.5.1 - Einzelhandel mit Textilien (in Fachgeschäften)
+G47.5.2 - Einzelhandel mit Eisenwaren, Farben und Glas (in Fachgeschäften)
+G47.5.3 - Einzelhandel mit Teppichen, Läufern, Wand- und Bodenbelägen (in Fachgeschäften)
+G47.5.4 - Einzelhandel mit elektrischen Haushaltsgeräten (in Fachgeschäften)
+G47.5.9 - Einzelhandel mit Möbeln, Beleuchtungskörpern und sonstigen Haushaltsartikeln (in Fachgeschäften)
+G47.6 - Einzelhandel mit Kultur- und Freizeitartikeln (in Fachgeschäften)
+G47.6.1 - Einzelhandel mit Büchern (in Fachgeschäften)
+G47.6.2 - Einzelhandel mit Zeitungen und Schreibwaren (in Fachgeschäften)
+G47.6.3 - Einzelhandel mit Musik- und Videoaufnahmen (in Fachgeschäften)
+G47.6.4 - Einzelhandel mit Sportgeräten (in Fachgeschäften)
+G47.6.5 - Einzelhandel mit Spielen und Spielsachen (in Fachgeschäften)
+G47.7 - Einzelhandel mit sonstigen Gütern (in Fachgeschäften)
+G47.7.1 - Einzelhandel mit Bekleidung (in Fachgeschäften)
+G47.7.2 - Einzelhandel mit Schuhen und Lederwaren (in Fachgeschäften)
+G47.7.3 - Apotheken (in Fachgeschäften)
+G47.7.4 - Einzelhandel mit medizinischen und orthopädischen Artikeln (in Fachgeschäften)
+G47.7.5 - Einzelhandel mit Kosmetik- und Toilettenartikeln (in Fachgeschäften)
+G47.7.6 - Einzelhandel mit Blumen, Pflanzen, Saatgut, Düngemitteln, Heimtieren Lebensmittel in Fachgeschäften
+G47.7.7 - Einzelhandel mit Uhren und Schmuck in Fachgeschäften
+G47.7.8 - Sonstiger Einzelhandel mit Neuwaren in Fachgeschäften
+G47.7.9 - Einzelhandel mit Gebrauchtwaren in Geschäften
+G47.8 - Einzelhandel an Verkaufsständen und auf Märkten
+G47.8.1 - Einzelhandel mit Nahrungsmitteln, Getränken und Tabakwaren an Verkaufsständen und auf Märkten
+G47.8.2 - Einzelhandel mit Textilien, Bekleidung und Schuhen an Verkaufsständen und auf Märkten
+G47.8.9 - Einzelhandel mit sonstigen Gütern an Verkaufsständen und auf Märkten
+G47.9 - Einzelhandel, nicht in Geschäften, an Verkaufsständen und auf Märkten
+G47.9.1 - Versandhandel und Internet
+G47.9.9 - Sonstiger Einzelhandel, nicht in Geschäften, an Verkaufsständen und auf Märkten
+H - Transport und Lagerung
+H49 - Landtransport und Transport in Rohrfernleitungen
+H49.1 - Personenverkehr auf der Schiene, Interurban
+H49.1.0 - Personenverkehr auf der Schiene, Interurban
+H49.2 - Güterverkehr auf der Schiene
+H49.2.0 - Güterbeförderung auf der Schiene
+H49.3 - Sonstige Personenbeförderung zu Lande
+H49.3.1 - Stadt- und Vorort-Personenbeförderung zu Lande
+H49.3.2 - Taxibetrieb
+H49.3.9 - Sonstige Personenbeförderung zu Lande, ang
+H49.4 - Güterbeförderung auf der Straße und Umzugsdienstleistungen
+H49.4.1 - Güterbeförderung auf der Straße
+H49.4.2 - Umzugsdienstleistungen
+H49.5 - Transport durch Rohrleitungen 
+H49.5.0 - Transport durch Rohrleitungen 
+H50 - Transport auf der Wasserstraße
+H50.1 - Personenbeförderung zu Wasser und an der Küste 
+H50.1.0 - Personenbeförderung zu Wasser und an der Küste 
+H50.2 - Güterbeförderung zu Wasser und an der Küste
+H50.2.0 - Güterbeförderung auf See und in Küstennähe 
+H50.3 - Personenbeförderung auf Binnenwasserstraßen 
+H50.3.0 - Personenbeförderung auf Binnenwasserstraßen 
+H50.4 - Güterbeförderung auf Binnenwasserstraßen 
+H50.4.0 - Güterbeförderung auf Binnenwasserstraßen
+H51 - Luftverkehr
+H51.1 - Personenbeförderung auf Luftstraßen
+H51.1.0 - Personenbeförderung auf Luftstraßen
+H51.2 - Frachtbeförderung auf Luftstraßen und Raumtransport
+H51.2.1 - Frachtbeförderung auf Luftstraßen
+H51.2.2 - Raumtransport
+H52 - Lagerei und unterstützende Tätigkeiten für den Verkehr
+H52.1 - Lagerei und Aufbewahrung
+H52.1.0 - Lagerei und Aufbewahrung
+H52.2 - Unterstützende Tätigkeiten für den Verkehr
+H52.2.1 - Erbringung von sonstigen Dienstleistungen für den Landtransport
+H52.2.2 - Erbringung von sonstigen Dienstleistungen für den Wassertransport
+H52.2.3 - Erbringung von sonstigen Dienstleistungen für den Luftverkehr
+H52.2.4 - Frachtumschlag
+H52.2.9 - Sonstige unterstützende Tätigkeiten für den Verkehr
+H53 - Post-, Kurier- und Expressdienste
+H53.1 - Postdienstleistungen mit Universaldienstverpflichtung
+H53.1.0 - Postdienstleistungen mit Universaldienstverpflichtung
+H53.2 - Sonstige Post- und Kurierdienste
+H53.2.0 - Sonstige Post- und Kurierdienste
+I - Beherbergung und Gastronomie
+I55 - Beherbergung
+I55.1 - Hotels und ähnliche Beherbergungsbetriebe
+I55.1.0 - Hotels und ähnliche Beherbergungsbetriebe
+I55.2 - Ferienunterkünfte und sonstige Beherbergungsbetriebe
+I55.2.0 - Ferienunterkünfte und sonstige Beherbergungsbetriebe
+I55.3 - Campingplätze, Wohnmobilstellplätze und Wohnwagenparks
+I55.3.0 - Campingplätze, Wohnmobilstellplätze und Wohnwagenparks
+I55.9 - Sonstige Beherbergungsbetriebe
+I55.9.0 - Sonstige Beherbergungsbetriebe
+I56 - Gastronomie
+I56.1 - Restaurants, Imbissbuden und Ausschank von Speisen
+I56.1.0 - Restaurants, Imbissbuden und Ausschank von Speisen
+I56.2 - Event-Catering und sonstige Beherbergungsbetriebe
+I56.2.1 - Event-Catering
+I56.2.9 - Sonstige Beherbergungsbetriebe
+I56.3 - Ausschank von Getränken
+I56.3.0 - Ausschank von Getränken
+J - Information und Kommunikation
+J58 - Verlagswesen
+J58.1 - Verlegen von Büchern, Zeitschriften und sonstigem Verlagswesen
+J58.1.1 - Verlegen von Büchern
+J58.1.2 - Verlegen von Verzeichnissen und Mailinglisten
+J58.1.3 - Verlegen von Zeitungen
+J58.1.4 - Verlegen von Zeitschriften und Periodika
+J58.1.9 - Sonstiges Verlagswesen
+J58.2 - Verlegen von Software
+J58.2.1 - Verlegen von Computerspielen
+J58.2.9 - Sonstiges Softwareverlagswesen
+J59 - Produktion von Film-, Video- und Fernsehprogrammen, Tonaufzeichnungen und Musikverlage
+J59.1 - Tätigkeiten im Bereich Film-, Video- und Fernsehprogramme 
+J59.1.1 - Produktion von Film-, Video- und Fernsehprogrammen
+J59.1.2 - Nachbearbeitung von Film-, Video- und Fernsehprogrammen
+J59.1.3 - Vertrieb von Film-, Video- und Fernsehprogrammen
+J59.1.4 - Vorführung von Filmen
+J59.2 - Tonaufzeichnungen und Musikverlage 
+J59.2.0 - Tonaufzeichnungen und Musikverlage
+J60 - Sende- und Rundfunktätigkeiten
+J60.1 - Rundfunk 
+J60.1.0 - Rundfunk
+J60.2 - Fernsehsendungen und -rundfunktätigkeiten
+J60.2.0 - Fernsehsendungen und -rundfunktätigkeiten
+J61 - Telekommunikation
+J61.1 - Leitungsgebundene Telekommunikation
+J61.1.0 - Leitungsgebundene Telekommunikation
+J61.2 - Drahtlose Telekommunikation
+J61.2.0 - Drahtlose Telekommunikation
+J61.3 - Satellitentelekommunikation
+J61.3.0 - Satellitentelekommunikation
+J61.9 - Sonstige Telekommunikationstätigkeiten
+J61.9.0 - Sonstige Telekommunikationstätigkeiten
+J62 - Erbringung von Dienstleistungen der Computerprogrammierung und -beratung sowie damit verbundene Tätigkeiten
+J62.0 - Erbringung von Dienstleistungen der Computerprogrammierung
+J62.0.2 - EDV-Beratung
+J62.0.3 - Verwaltung von EDV-Anlagen
+J62.0.9 - Sonstige Tätigkeiten der Informationstechnologie und Computerdienste
+J63 - Erbringung von Informationsdienstleistungen
+J63.1 - Datenverarbeitung, Hosting und damit verbundene Tätigkeiten; Webportale
+J63.1.1 - Datenverarbeitung, Hosting und damit verbundene Tätigkeiten
+J63.1.2 - Webportale
+J63.9 - Erbringung sonstiger Informationsdienstleistungen
+J63.9.1 - Nachrichtenagenturen
+J63.9.9 - Erbringung sonstiger Informationsdienstleistungen
+K - Erbringung von Finanz- und Versicherungsdienstleistungen
+K64 - Erbringung von Finanzdienstleistungen (ohne Versicherungs- und Pensionskassen)
+K64.1 - Kreditinstitute und sonstige Kreditinstitute
+K64.1.1 - Zentralbanken
+K64.1.9 - Sonstige Kreditinstitute und sonstige Kreditinstitute
+K64.2 - Holdinggesellschaften
+K64.2.0 - Holdinggesellschaften
+K64.3 - Treuhandgesellschaften, Fonds und ähnliche Finanzinstitute
+K64.3.0 - Treuhandgesellschaften, Fonds und ähnliche Finanzinstitute
+K64.9 - Erbringung sonstiger Finanzdienstleistungen (ohne Versicherungs- und Pensionskassen)
+K64.9.1 - Finanzierungsleasing
+K64.9.2 - Sonstige Kreditgewährung
+K64.9.9 - Erbringung sonstiger Finanzdienstleistungen (ohne Versicherungs- und Pensionskassen)
+K65 - Versicherungen, Rückversicherungen und Pensionskassen (ohne Sozialversicherungswesen)
+K65.1 - Versicherungen
+K65.1.1 - Lebensversicherungen
+K65.1.2 - Nichtlebensversicherungen
+K65.2 - Rückversicherungen
+K65.2.0 - Rückversicherungen
+K65.3 - Pensionskassen
+K65.3.0 - Pensionskassen
+K66 - Mit Finanzdienstleistungen und Versicherungsdienstleistungen verbundene Tätigkeiten
+K66.1 - Mit Finanzdienstleistungen verbundene Tätigkeiten (ohne Versicherungs- und Pensionskassen)
+K66.1.1 - Verwaltung der Finanzmärkte
+K66.1.2 - Vermittlung von Wertpapier- und Warenkontrakten
+K66.1.9 - Sonstige mit Finanzdienstleistungen verbundene Tätigkeiten (außer Versicherungs- und Pensionskassen)
+K66.2 - Mit Versicherungs- und Pensionskassen verbundene Tätigkeiten
+K66.2.1 - Risiko- und Schadensbewertung
+K66.2.2 - Tätigkeit von Versicherungsvertretern und -maklern
+K66.2.9 - Sonstige mit Versicherungs- und Pensionskassen verbundene Tätigkeiten
+K66.3 - Fondsverwaltung
+K66.3.0 - Fondsverwaltung
+L - Immobiliendienstleistungen
+L68 - Immobiliendienstleistungen
+L68.1 - Kauf und Verkauf von eigenen Immobilien
+L68.1.0 - Kauf und Verkauf von eigenen Immobilien
+L68.2 - Vermietung und Verwaltung von eigenen oder gepachteten Immobilien
+L68.2.0 - Vermietung und Verwaltung von eigenen oder gepachteten Immobilien
+L68.3 - Immobiliendienstleistungen gegen Entgelt oder auf Auftragsbasis
+L68.3.1 - Immobilienvermittlung
+L68.3.2 - Immobilienverwaltung gegen Entgelt oder auf Auftragsbasis
+M - Freiberufliche, wissenschaftliche und technische Tätigkeiten
+M69 - Rechtsdienstleistungen, Buchführung und Wirtschaftsprüfung; Steuerberatung
+M69.1 - Rechtsdienstleistungen
+M69.1.0 - Rechtsdienstleistungen
+M69.2 - Wirtschaftsprüfung und Buchführung; Steuerberatung
+M69.2.0 - Wirtschaftsprüfung und Buchführung; Steuerberatung
+M70 - Tätigkeiten von Unternehmen und Hauptverwaltungen; Managementberatung
+M70.1 - Tätigkeiten von Unternehmen und Hauptverwaltungen
+M70.1.0 - Tätigkeiten von Unternehmen und Hauptverwaltungen
+M70.2 - Public-Relations- und Kommunikationsdienstleistungen
+M70.2.2 - Unternehmensberatung und sonstige Managementberatung
+M71 - Architektur- und Ingenieurbüros; technische Prüfungen und Analysen
+M71.1 - Architektur- und Ingenieurtätigkeiten und damit verbundene technische Beratung
+M71.1.1 - Architekturtätigkeiten
+M71.1.2 - Ingenieurtätigkeiten und damit verbundene technische Beratung
+M71.2 - Technische Prüfungen und Analysen
+M71.2.0 - Technische Prüfungen und Analysen
+M72 - Wissenschaftliche Forschung und Entwicklung
+M72.1 - Forschung und experimentelle Entwicklung in Naturwissenschaften und Ingenieurwissenschaften
+M72.1.1 - Forschung und experimentelle Entwicklung in Biotechnologie
+M72.1.9 - Sonstige Forschung und experimentelle Entwicklung in Naturwissenschaften und Ingenieurwissenschaften
+M72.2 - Forschung und experimentelle Entwicklung in Sozialwissenschaften und Geisteswissenschaften
+M72.2.0 - Forschung und experimentelle Entwicklung in Sozialwissenschaften und Geisteswissenschaften
+M73 - Werbung und Marktforschung 
+M73.1 - Werbung
+M73.1.1 - Werbeagenturen
+M73.1.2 - Medienvertretung
+M73.2 - Markt- und Meinungsforschung
+M73.2.0 - Markt- und Meinungsforschung 
+M74 - Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten Designtätigkeiten
+M74.1.0 - Designtätigkeiten
+M74.2 - Fotografische Tätigkeiten
+M74.2.0 - Fotografische Tätigkeiten
+M74.3 - Übersetzer- und Dolmetschertätigkeiten
+M74.3.0 - Übersetzer- und Dolmetschertätigkeiten
+M74.9 - Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten ang
+M74.9.0 - Sonstige freiberufliche, wissenschaftliche und technische Tätigkeiten ang
+M75 - Veterinärwesen
+M75.0 - Veterinärwesen
+M75.0.0 - Veterinärwesen
+N - Erbringung von sonstigen Verwaltungsdienstleistungen
+N77 - Vermietung und Leasing 
+N77.1 - Vermietung und Leasing von Kraftfahrzeugen
+N77.1.1 - Vermietung und Leasing von Personenkraftwagen und leichten Kraftfahrzeugen
+N77.1.2 - Vermietung und Leasing von Lastkraftwagen
+N77.2 - Vermietung und Leasing von persönlichen Gegenständen und Haushaltsgegenständen
+N77.2.1 - Vermietung und Leasing von Freizeit- und Sportartikeln
+N77.2.2 - Vermietung von Videobändern und -disks
+N77.2.9 - Miete und Leasing von sonstigen persönlichen und Haushaltsgegenständen
+N77.3 - Miete und Leasing von sonstigen Maschinen, Geräten und materiellen Gütern
+N77.3.1 - Vermietung und Leasing von landwirtschaftlichen Maschinen und Geräten
+N77.3.2 - Vermietung und Leasing von Maschinen und Geräten für das Hoch- und Tiefbau
+N77.3.3 - Vermietung und Leasing von Büromaschinen und -geräten (einschließlich Computern)
+N77.3.4 - Vermietung und Leasing von Wassertransportausrüstung
+N77.3.5 - Vermietung und Leasing von Lufttransportausrüstung
+N77.3.9 - Vermietung und Leasing von sonstigen Maschinen, Ausrüstungen und materiellen Gütern ang
+N77.4 - Leasing von geistigem Eigentum und ähnlichen Produkten, ausgenommen urheberrechtlich geschützte Werke
+N77.4.0 - Leasing von geistigem Eigentum und ähnlichen Produkten, ausgenommen urheberrechtlich geschützte Werke
+N78 - Vermittlung von Arbeitskräften
+N78.1 - Tätigkeiten von Arbeitsvermittlungen
+N78.1.0 - Tätigkeiten von Arbeitsvermittlungen
+N78.2 - Überlassung von Arbeitskräften
+N78.2.0 - Überlassung von Arbeitskräften
+N78.3 - Sonstige Überlassung von Arbeitskräften
+N78.3.0 - Sonstige Überlassung von Arbeitskräften
+N79 - Reisebüros, Reiseveranstalter und sonstige Reservierungsdienste und damit verbundene Tätigkeiten
+N79.1 - Reisebüros und Reiseveranstalter
+N79.1.1 - Reisebüros
+N79.1.2 - Reiseveranstalter
+N79.9 - Sonstige Reservierungsdienste und damit verbundene Tätigkeiten
+N79.9.0 - Sonstige Reservierungsdienste und damit verbundene Tätigkeiten
+N80 - Wach- und Sicherheitsdienste und Ermittlungstätigkeiten
+N80.1 - Private Wach- und Sicherheitsdienste
+N80.1.0 - Private Wach- und Sicherheitsdienste
+N80.2 - Dienste für Sicherheitssysteme
+N80.2.0 - Dienste für Sicherheitssysteme
+N80.3 - Ermittlungstätigkeiten
+N80.3.0 - Ermittlungstätigkeiten
+N81 - Gebäude- und Landschaftsbaudienstleistungen
+N81.1 - Kombinierte Einrichtungenbetreuung
+N81.1.0 - Kombinierte Einrichtungenbetreuung
+N81.2 - Reinigungstätigkeiten
+N81.2.1 - Allgemeine Gebäudereinigung
+N81.2.2 - Sonstige Gebäude- und Industriereinigung
+N81.2.9 - Sonstige Reinigungstätigkeiten
+N81.3 - Landschaftsbaudienstleistungen
+N81.3.0 - Landschaftsbaudienstleistungen
+N82 - Bürodienstleistungen und sonstige unterstützende Tätigkeiten
+N82.1 - Allgemeine Bürodienstleistungen
+N82.1.1 - Allgemeine Bürodienstleistungen
+N82.1.9 - Fotokopieren, Dokumentenvorbereitung und sonstige spezialisierte Bürodienstleistungen
+N82.2 - Call-Center
+N82.2.0 - Call-Center
+N82.3 - Messe- und Kongressveranstalter
+N82.3.0 - Messe- und Kongressveranstalter
+N82.9 - Erbringung von betriebswirtschaftlichen und geschäftlichen Dienstleistungen, a. g.
+N82.9.1 - Inkassobüros und Kreditauskunfteien
+N82.9.2 - Verpackungsdienstleistungen
+N82.9.9 - Erbringung von sonstigen betriebswirtschaftlichen und geschäftlichen Dienstleistungen, a. g.
+O - Öffentliche Verwaltung, Verteidigung; soziale Sicherheit
+O84 - Öffentliche Verwaltung, Verteidigung; obligatorische soziale Sicherheit
+O84.1 - Staatsverwaltung und Wirtschafts- und Sozialpolitik der Gemeinschaft
+O84.1.1 - Allgemeine öffentliche Verwaltungstätigkeiten
+O84.1.2 - Regulierung der Tätigkeiten zur Bereitstellung von Gesundheitsfürsorge, Bildung, kulturellen Dienstleistungen und anderen sozialen Dienstleistungen, ausgenommen soziale Sicherheit
+O84.1.3 - Regulierung von und Beitrag zu effizienterem Betrieb von Unternehmen
+O84.2 - Bereitstellung von Dienstleistungen für die Gemeinschaft als Ganzes
+O84.2.1 - Auswärtige Angelegenheiten
+O84.2.2 - Verteidigungstätigkeiten 
+O84.2.3 - Justiz und Rechtsprechung
+O84.2.4 - Öffentliche Ordnung und Sicherheit
+O84.2.5 - Feuerwehr
+O84.3 - obligatorische soziale Sicherheit 
+O84.3.0 - obligatorische soziale Sicherheit
+P - Bildung
+P85 - Bildung
+P85.1 - Vorschulische Bildung
+P85.1.0 - Vorschulische Bildung
+P85.2 - Primarschulbildung
+P85.2.0 - Primarschulbildung
+P85.3 - Sekundarschulbildung
+P85.3.1 - Allgemeinbildender Sekundarunterricht
+P85.3.2 - Technischer und beruflicher Sekundarunterricht
+P85.4 - Hochschulbildung
+P85.4.1 - Postsekundärer, nicht tertiärer Unterricht
+P85.4.2 - Tertiärer Unterricht
+P85.5 - Sonstiger Unterricht
+P85.5.1 - Sport- und Freizeitunterricht
+P85.5.2 - Kulturunterricht
+P85.5.3 - Fahrschulen
+P85.5.9 - Sonstiger Unterricht, a. g.
+P85.6 - Unterrichtsunterstützende Tätigkeiten
+P85.6.0 - Unterrichtsunterstützende Tätigkeiten
+Q - Gesundheitswesen und Sozialwesen
+Q86 - Gesundheitswesen
+Q86.1 - Krankenhäuser
+Q86.1.0 - Krankenhäuser
+Q86.2 - Arzt- und Zahnarztpraxen
+Q86.2.1 - Allgemeinmedizinische Arztpraxen
+Q86.2.2 - Facharztpraxen
+Q86.2.3 - Zahnarztpraxen
+Q86.9 - Sonstige Gesundheitswesen
+Q86.9.0 - Sonstige Tätigkeiten des Gesundheitswesens
+Q87 - Heimpflege
+Q87.1 - Krankenpflege in Heimen
+Q87.1.0 - Krankenpflege in Heimen
+Q87.2 - Heime für Geistige Behinderung, psychische Erkrankungen und Drogenmissbrauch
+Q87.2.0 - Heime für Geistige Behinderung, psychische Erkrankungen und Drogenmissbrauch
+Q87.3 - Heime für Alte und Behinderte
+Q87.3.0 - Heime für Alte und Behinderte
+Q87.9 - Sonstige Heimpflege
+Q87.9.0 - Sonstige Heimpflege
+Q88 - Sozialwesen ohne Unterbringung
+Q88.1 - Sozialwesen ohne Unterbringung für Alte und Behinderte
+Q88.1.0 - Sozialwesen ohne Unterbringung für Alte und Behinderte
+Q88.9 - Sonstiges Sozialwesen ohne Unterbringung
+Q88.9.1 - Kindertagesstätten
+Q88.9.9 - Sonstiges Sozialwesen ohne Unterbringung, ang
+R - Kunst, Unterhaltung und Erholung
+R90 - Kreative, künstlerische und unterhaltende Tätigkeiten
+R90.0 - Kreative, künstlerische und unterhaltende Tätigkeiten
+R90.0.1 - Darstellende Künste
+R90.0.2 - Unterstützende Tätigkeiten für darstellende Künste
+R90.0.3 - Künstlerisches Schaffen
+R90.0.4 - Betrieb von Kunsteinrichtungen
+R91 - Bibliotheken, Archive, Museen und sonstige kulturelle Tätigkeiten
+R91.0 - Bibliotheken, Archive, Museen und sonstige kulturelle Tätigkeiten
+R91.0.1 - Bibliotheks- und Archivtätigkeiten
+R91.0.2 - Museumstätigkeiten
+R91.0.3 - Betrieb von historischen Stätten und Gebäuden und ähnlichen Besucherattraktionen
+R91.0.4 - Botanische und zoologische Gärten und Naturschutzgebiete
+R92 - Glücks- und Wettaktivitäten
+R92.0 - Glücks- und Wettaktivitäten
+R92.0.0 - Glücks- und Wettaktivitäten
+R93 - Sportaktivitäten und Aktivitäten der Unterhaltung und Erholung
+R93.1 - Sportaktivitäten
+R93.1.1 - Betrieb von Sporteinrichtungen
+R93.1.2 - Aktivitäten von Sportvereinen
+R93.1.3 - Fitnesseinrichtungen
+R93.1.9 - Sonstige sportliche Tätigkeiten
+R93.2 - Erbringung von Unterhaltungs- und Freizeitdienstleistungen
+R93.2.1 - Tätigkeiten von Vergnügungs- und Themenparks
+R93.2.9 - Sonstige Tätigkeiten von Unterhaltungs- und Freizeitdienstleistungen
+S - Erbringung von sonstigen Dienstleistungen
+S94 - Tätigkeiten von Mitgliederorganisationen
+S94.1 - Wirtschafts-, Arbeitgeber- und Berufsverbände
+S94.1.1 - Wirtschafts- und Arbeitgeberverbände
+S94.1.2 - Berufsverbände
+S94.2 - Gewerkschaften
+S94.2.0 - Gewerkschaften
+S94.9 - Sonstige Mitgliederorganisationen
+S94.9.1 - Kirchliche Vereinigungen
+S94.9.2 - Politische Vereinigungen
+S94.9.9 - Sonstige Mitgliederorganisationen, ang
+S95 - Reparatur von Computern und persönlichen und Haushaltsgegenständen
+S95.1 - Reparatur von Computern und Kommunikationsgeräten
+S95.1.1 - Reparatur von Computern und Peripheriegeräten
+S95.1.2 - Reparatur von Kommunikationsgeräten
+S95.2 - Reparatur von persönlichen und Haushaltsgegenständen
+S95.2.1 - Reparatur von Unterhaltungselektronik
+S95.2.2 - Reparatur von Haushaltsgeräten und Haus- und Gartengeräten
+S95.2.3 - Reparatur von Schuhen und Lederwaren
+S95.2.4 - Reparatur von Möbeln und Einrichtungsgegenständen
+S95.2.5 - Reparatur von Uhren und Schmuck
+S95.2.9 - Reparatur von sonstigen persönlichen Gegenständen und Haushaltsgegenständen
+S96 - Erbringung sonstiger persönlicher Dienstleistungen
+S96.0 - Erbringung sonstiger persönlicher Dienstleistungen
+S96.0.1 - Waschen und (chemische) Reinigen von Textil- und Pelzwaren
+S96.0.2 - Friseur- und sonstige Schönheitspflege
+S96.0.3 - Bestattungsgewerbe und damit verbundene Tätigkeiten
+S96.0.4 - Erbringung körperlicher Dienstleistungen
+S96.0.9 - Erbringung sonstiger persönlicher Dienstleistungen ang
+T - Tätigkeiten von privaten Haushalten als Arbeitgeber; Undifferenzierte Güter- und Dienstleistungstätigkeiten privater Haushalte für den Eigenbedarf
+T97 - Tätigkeiten privater Haushalte als Arbeitgeber von Hauspersonal
+T97.0 - Tätigkeiten privater Haushalte als Arbeitgeber von Hauspersonal
+T97.0.0 - Tätigkeiten privater Haushalte als Arbeitgeber von Hauspersonal
+T98 - Undifferenzierte Güter- und Dienstleistungstätigkeiten privater Haushalte für den Eigenbedarf
+T98.1 - Undifferenzierte Güterproduktionstätigkeiten privater Haushalte für den Eigenbedarf
+T98.1.0 - Undifferenzierte Güterproduktionstätigkeiten privater Haushalte für den Eigenbedarf
+T98.2 - Undifferenzierte Dienstleistungstätigkeiten privater Haushalte für den Eigenbedarf
+T98.2.0 - Undifferenzierte Dienstleistungstätigkeiten privater Haushalte für den Eigenbedarf
+U - Tätigkeiten extraterritorialer Organisationen und Körperschaften
+U99 - Tätigkeiten extraterritorialer Organisationen und Körperschaften
+U99.0 - Aktivitäten extraterritorialer Organisationen und Körperschaften
+U99.0.0 - Aktivitäten extraterritorialer Organisationen und Körperschaften
+"""
+
 def get_parent_code(code):
     """
     Determines the parent code of a given NACE code.
@@ -1021,40 +2016,41 @@ def build_nace_hierarchy(data):
     """
     code_map = {}
     roots = []
-
+    output = {}
     # First pass: create all nodes
     for line in data.strip().split('\n'):
         line = line.strip()
         if not line:
             continue  # Skip empty lines
-        if ' - ' not in line:
-            continue  # Skip lines without proper formatting
+        # if ' - ' not in line:
+        #     continue  # Skip lines without proper formatting
         code, description = line.split(' - ', 1)
-        code_map[code] = {
-            'code': code,
-            'description': description,
-            'children': []
-        }
+        output[code] = description
+    #     code_map[code] = {
+    #         'code': code,
+    #         'description': description,
+    #         'children': []
+    #     }
 
-    # Second pass: assign children to parents
-    for code, node in code_map.items():
-        parent_code = get_parent_code(code)
-        if parent_code and parent_code in code_map:
-            code_map[parent_code]['children'].append(node)
-        else:
-            roots.append(node)
+    # # Second pass: assign children to parents
+    # for code, node in code_map.items():
+    #     parent_code = get_parent_code(code)
+    #     if parent_code and parent_code in code_map:
+    #         code_map[parent_code]['children'].append(node)
+    #     else:
+    #         roots.append(node)
 
-    return roots
+    return output
 
 def main():
     # Build the hierarchical structure
-    nace_hierarchy = build_nace_hierarchy(nace_data)
+    nace_hierarchy = build_nace_hierarchy(nace_data_dutch)
 
     # Output the JSON to a file
-    with open('./data/nace_codes.json', 'w', encoding='utf-8') as f:
+    with open('./data/nace_codes_object_du.json', 'w', encoding='utf-8') as f:
         json.dump(nace_hierarchy, f, ensure_ascii=False, indent=2)
 
-    print("NACE hierarchy has been successfully written to 'nace_codes.json'.")
+    print("NACE hierarchy has been successfully written to 'nace_codes_object.json'.")
 
 if __name__ == "__main__":
     main()
