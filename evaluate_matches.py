@@ -3,7 +3,7 @@ import streamlit as st
 
 def main():
     # Load latest matches
-    matches_df = pd.read_csv('./matches/nlp_business_all_matches_19_23-52.csv')
+    matches_df = pd.read_csv('./matches/nlp_business_all_matches_03_02-19.csv')
     
     st.title("Match Evaluation Dashboard")
     
@@ -22,14 +22,14 @@ def main():
             st.write("**Buyer**")
             st.write(f"Title: {match['buyer_title']}")
             st.write(f"buyer_description: {match['buyer_description']}")
-            st.write(f"buyer_nace_code: {match['buyer_nace_code']}")
+            # st.write(f"buyer_nace_code: {match['buyer_nace_code']}")
             st.write(f"buyer_location: {match['buyer_location']}")
             
         with col2:
             st.write("**Seller**") 
             st.write(f"Title: {match['seller_title']}")
             st.write(f"seller_description: {match['seller_description']}")
-            st.write(f"seller_nace_code: {match['seller_nace_code']}")
+            # st.write(f"seller_nace_code: {match['seller_nace_code']}")
             st.write(f"seller_location: {match['seller_location']}")
             
         quality = st.radio(
